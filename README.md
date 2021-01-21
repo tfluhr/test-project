@@ -1,12 +1,9 @@
-# Doctic
-
-![github pages](https://github.com/nulib-oer/doctic/workflows/github%20pages/badge.svg)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/wikiti/pandoc-book-template/blob/master/LICENSE.md)
+# Landtern
 
 ## Description
 
 This repository contains template and workflow files for building open textbooks with [Pandoc](http://pandoc.org/).
-Pandoc is a suite of tools to compile markdown files into readable files (PDF, EPUB, HTML...). Doctic is based on [Pandoc Book Template](https://github.com/wikiti/pandoc-book-template).
+Pandoc is a suite of tools to compile markdown files into readable files (PDF, EPUB, HTML...). Lantern is based on [Pandoc Book Template](https://github.com/wikiti/pandoc-book-template).
 
 ## Usage
 
@@ -36,8 +33,8 @@ sudo apt-get install texlive-fonts-recommended texlive-xetex
 
 This repository contains two extra directories for instructional purposes:
 
-`/docs/` = Documentation folder containing the instructional manual for using Doctic.
-`/example/` = An example textbook demonstrating Doctic supported features
+`/docs/` = Documentation folder containing the instructional manual for using Lantern.
+`/example/` = An example textbook demonstrating Lantern supported features
 
 These directores can be removed. Here's a folder structure for a open textbook:
 
