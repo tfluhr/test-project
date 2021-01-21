@@ -1,0 +1,28 @@
+body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 10vw 30vw 10vw;
+    grid-gap: 1em;
+  }
+  
+  header,
+  footer {
+    grid-column: 1 / span 5;
+  }
+  
+  nav {
+    grid-column: span 2;
+  }
+  
+  main {
+    grid-column: 1 / span 3;
+  }
+  
+  @media (max-width: 700px) {
+    
+    main,
+    nav {
+      grid-column: 1 / span 5;
+    }
+    
+  }

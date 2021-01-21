@@ -1,0 +1,28 @@
+---
+title: Lantern
+# subtitle: 
+author: 
+  - Chris Diaz
+  - Lauren McKeen McDonald
+copyright: 
+  - Chris Diaz
+  - Lauren McKeen McDonald
+license: Creative Commons Attribution (CC BY) 4.0 International
+publisher: Northwestern University Libraries
+date: 2020-12-10
+contributor:
+  - Sherry Wang
+lang: en-US
+description: |
+  Lantern is a digital publishing toolkit for open textbooks. No experience with programming or coding is necessary. Lantern provides instructional guides and re-usable document templates needed for making open textbooks with free and open source software. With Lantern, we hope to minimize the technical maintenance costs of building, distributing, and preserving open textbooks. 
+subjects: 
+  - OER
+  - Digital Publishing
+  - Open Textbooks
+  - Pandoc
+mainfont: DejaVu Sans
+
+# Filter preferences:
+# - pandoc-crossref
+linkReferences: true
+---
