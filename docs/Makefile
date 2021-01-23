@@ -88,7 +88,9 @@ $(BUILD)/$(OUTPUT_FILENAME).html:	$(HTML_DEPENDENCIES)
 	mkdir -p $(BUILD)
 	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(ARGS) $(HTML_ARGS) -o $@
 	cp --parents $(IMAGES) $(BUILD)
-	cp assets/* $(BUILD)
+	cp assets/*.js $(BUILD)
+	purgecss --css assets/uikit.css --content build/book.html --output build/styles.css
+	mv build/book.html build/index.html
 	@echo "$@ was built"
 
 $(BUILD)/$(OUTPUT_FILENAME).pdf:	$(PDF_DEPENDENCIES)
