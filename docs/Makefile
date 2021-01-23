@@ -89,7 +89,7 @@ $(BUILD)/$(OUTPUT_FILENAME).html:	$(HTML_DEPENDENCIES)
 	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(ARGS) $(HTML_ARGS) -o $@
 	cp --parents $(IMAGES) $(BUILD)
 	cp assets/*.js $(BUILD)
-	purgecss --css assets/uikit.css --content build/book.html --output build/styles.css
+	purgecss --css assets/uikit.css --content build/book.html --safelist uk-open uk-offcanvas-bar-animation uk-offcanvas-slide --output build/styles.css
 	mv build/book.html build/index.html
 	@echo "$@ was built"
 
