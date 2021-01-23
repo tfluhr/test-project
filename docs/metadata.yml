@@ -20,9 +20,20 @@ subjects:
   - Digital Publishing
   - Open Textbooks
   - Pandoc
+
+publication_date:
+editors:
+doi:
+isbn_p:
+isbn_e:
+
 mainfont: DejaVu Sans
 
 # Filter preferences:
 # - pandoc-crossref
 linkReferences: true
+
+keywords: [pandoc, book, my-book, etc]
+
+toc-title: Contents
 ---

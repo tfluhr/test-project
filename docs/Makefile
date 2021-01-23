@@ -45,7 +45,7 @@ PANDOC_COMMAND = pandoc
 
 DOCX_ARGS = --standalone --reference-doc templates/docx.docx
 EPUB_ARGS = --template templates/epub.html --epub-cover-image $(COVER_IMAGE)
-HTML_ARGS = --template templates/html.html --standalone --to html5
+HTML_ARGS = --template templates/lantern.html --standalone --to html5
 PDF_ARGS = --template templates/pdf.latex --pdf-engine xelatex
 
 # Per-format file dependencies
@@ -88,6 +88,7 @@ $(BUILD)/$(OUTPUT_FILENAME).html:	$(HTML_DEPENDENCIES)
 	mkdir -p $(BUILD)
 	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(ARGS) $(HTML_ARGS) -o $@
 	cp --parents $(IMAGES) $(BUILD)
+	cp assets/* $(BUILD)
 	@echo "$@ was built"
 
 $(BUILD)/$(OUTPUT_FILENAME).pdf:	$(PDF_DEPENDENCIES)
