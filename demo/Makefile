@@ -8,13 +8,24 @@ BUILD = build
 MAKEFILE = Makefile
 OUTPUT_FILENAME = book
 METADATA = metadata.yml
-CHAPTERS = chapters/*.md
 TOC = --toc --toc-depth 2
 METADATA_ARGS = --metadata-file $(METADATA)
 IMAGES = $(shell find images -type f)
 TEMPLATES = $(shell find templates/ -type f)
 COVER_IMAGE = images/cover.png
 MATH_FORMULAS = --mathjax
+#CHAPTERS = chapters/*.md
+CHAPTERS += $(addprefix ./chapters/,\
+ text.md\
+ lists.md\
+ tables.md\
+ figures.md\
+ references.md\
+ objectives.md\
+ exercises.md\
+ summaries.md\
+ media.md\
+)
 
 # Chapters content
 CONTENT = awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $(CHAPTERS)
@@ -22,7 +33,7 @@ CONTENT_FILTERS = tee # Use this to add sed filters or other piped commands
 
 # Debugging
 
-# DEBUG_ARGS = --verbose
+DEBUG_ARGS = --verbose
 
 # Pandoc filtes - uncomment the following variable to enable cross references filter. For more
 # information, check the "Cross references" section on the README.md file.
@@ -65,32 +76,34 @@ clean:
 # File builders
 ####################################################################################################
 
-epub:	$(BUILD)/epub/$(OUTPUT_FILENAME).epub
+epub:	$(BUILD)/$(OUTPUT_FILENAME).epub
 
-html:	$(BUILD)/html/$(OUTPUT_FILENAME).html
+html:	$(BUILD)/$(OUTPUT_FILENAME).html
 
-pdf:	$(BUILD)/pdf/$(OUTPUT_FILENAME).pdf
+pdf:	$(BUILD)/$(OUTPUT_FILENAME).pdf
 
-docx:	$(BUILD)/docx/$(OUTPUT_FILENAME).docx
+docx:	$(BUILD)/$(OUTPUT_FILENAME).docx
 
-$(BUILD)/epub/$(OUTPUT_FILENAME).epub:	$(EPUB_DEPENDENCIES)
-	mkdir -p $(BUILD)/epub
+$(BUILD)/$(OUTPUT_FILENAME).epub:	$(EPUB_DEPENDENCIES)
+	mkdir -p $(BUILD)
 	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(ARGS) $(EPUB_ARGS) -o $@
 	@echo "$@ was built"
 
-$(BUILD)/html/$(OUTPUT_FILENAME).html:	$(HTML_DEPENDENCIES)
-	mkdir -p $(BUILD)/html
+$(BUILD)/$(OUTPUT_FILENAME).html:	$(HTML_DEPENDENCIES)
+	mkdir -p $(BUILD)
 	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(ARGS) $(HTML_ARGS) -o $@
-	cp --parent $(IMAGES) $(BUILD)/html/
-	cp templates/lantern.css build/html/
+	cp --parents $(IMAGES) $(BUILD)
+	cp assets/* $(BUILD)
+	#purgecss --css assets/uikit.css --content build/book.html --safelist uk-open uk-offcanvas-bar-animation uk-offcanvas-slide --output build/styles.css
+	mv build/book.html build/index.html
 	@echo "$@ was built"
 
-$(BUILD)/pdf/$(OUTPUT_FILENAME).pdf:	$(PDF_DEPENDENCIES)
-	mkdir -p $(BUILD)/pdf
+$(BUILD)/$(OUTPUT_FILENAME).pdf:	$(PDF_DEPENDENCIES)
+	mkdir -p $(BUILD)
 	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(ARGS) $(PDF_ARGS) -o $@
 	@echo "$@ was built"
 
-$(BUILD)/docx/$(OUTPUT_FILENAME).docx:	$(DOCX_DEPENDENCIES)
-	mkdir -p $(BUILD)/docx
+$(BUILD)/$(OUTPUT_FILENAME).docx:	$(DOCX_DEPENDENCIES)
+	mkdir -p $(BUILD)
 	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(ARGS) $(DOCX_ARGS) -o $@
 	@echo "$@ was built"

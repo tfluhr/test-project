@@ -1,3 +1,15 @@
+# Tables
+
+| Index | Name |
+| ----- | ---- |
+| 0     | AAA  |
+| 1     | BBB  |
+| ...   | ...  |
+
+Table: This is an example table.
+
+
+
 # Example Chapter
 
 This is the introductory paragraph. Paragraphs in markdown don't require any special tags or syntax. They just need to be separated by one or more lines. 
