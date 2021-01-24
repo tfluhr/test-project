@@ -33,3 +33,17 @@ Summary content.
 
 :::
 ```
+
+### Exercise
+
+Exercise content.
+
+<details>
+  <summary>Solution</summary>
+  
+  ## Heading
+  1. A numbered
+  2. list
+     * With some
+     * Sub bullets
+</details>
