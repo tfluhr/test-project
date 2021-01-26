@@ -1,6 +1,6 @@
-# Lists
+## Lists
 
-## Unordered Lists
+### Unordered Lists
 
 - item
 - item
@@ -12,7 +12,7 @@
 - item
 ```
 
-## Ordered Lists
+### Ordered Lists
 
 1. item
 2. item
@@ -24,7 +24,7 @@
 3. item
 ```
 
-## Definition Lists
+### Definition Lists
 
 item
 

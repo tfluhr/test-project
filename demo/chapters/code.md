@@ -1,4 +1,4 @@
-# Code Snippets
+## Code Snippets
 
 And a code sample:
 

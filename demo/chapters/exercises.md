@@ -1,4 +1,4 @@
-# Exercises and Solutions
+## Exercises and Solutions
 
 ::: exercise
 
