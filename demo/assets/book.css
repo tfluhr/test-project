@@ -92,6 +92,16 @@ details summary {
   font-weight: bold;
 }
 
+.summary {
+  position: relative;
+  box-sizing: border-box;
+  transition: box-shadow 0.1s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  display: flow-root;
+  padding: 30px 30px;
+  background: #f8f8f8;
+}
+
 /* ========================================================================
    Component: Table
  ========================================================================== */
@@ -148,6 +158,9 @@ table caption {
   font-size: 0.875rem;
   text-align: left;
   color: #999;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: right;
 }
 
 table caption::before {
