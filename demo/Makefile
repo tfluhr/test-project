@@ -6,7 +6,7 @@
 
 BUILD = build
 MAKEFILE = Makefile
-OUTPUT_FILENAME = book
+OUTPUT_FILENAME = textbook
 METADATA = metadata.yml
 TOC = --toc --toc-depth 3
 METADATA_ARGS = --metadata-file $(METADATA)
