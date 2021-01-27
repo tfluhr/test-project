@@ -90,7 +90,7 @@ $(BUILD)/$(OUTPUT_FILENAME).html:	$(HTML_DEPENDENCIES)
 	cp --parents $(IMAGES) $(BUILD)
 	cp assets/* $(BUILD)
 	#purgecss --css assets/uikit.css --content build/book.html --safelist uk-open uk-offcanvas-bar-animation uk-offcanvas-slide --output build/styles.css
-	mv build/book.html build/index.html
+	mv build/textbook.html build/index.html
 	@echo "$@ was built"
 
 $(BUILD)/$(OUTPUT_FILENAME).pdf:	$(PDF_DEPENDENCIES)
