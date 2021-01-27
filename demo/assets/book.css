@@ -15,3 +15,29 @@
     padding-left: 1rem;
     font-size: 0.875rem;
 }
+
+.objectives {
+    position: relative;
+    box-sizing: border-box;
+    transition: box-shadow 0.1s ease-in-out;
+    background: #222;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    display: flow-root;
+    padding: 30px 30px;
+}
+
+.objectives ul {
+    list-style: square;
+}
+
+ul > * > :last-child {
+    margin-bottom: 0;
+}
+  /*
+   * Style
+   */
+ul > :nth-child(n+2),
+ul > * > ul {
+    margin-top: 10px;
+}
