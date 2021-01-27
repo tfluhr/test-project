@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="$lang$" dir="$dir$">
+<html lang="$lang$"$if(dir)$ dir="$dir$"$endif$>
     <head>
         <meta charset="utf-8" />
         <meta name="generator" content="pandoc" />
@@ -21,6 +21,36 @@
         $if(math)$
         $math$
         $endif$
+        <!-- Bibliographic Metadata -->
+        <meta name="citation_title" content="$title$">
+        <meta name="citation_year" content="$publication_year$">
+        <meta name="citation_language" content="$lang$">
+        $for(keyword)$
+        <meta name="citation_keywords" content="$keyword$">
+        $endfor$
+        <meta name="citation_publisher" content="$publisher$">
+        <meta name="citation_isbn" content="$isbn_e$">
+        $for(author)$
+        <meta name="citation_author" content="$author$">
+        $endfor$
+        $if(book_editor)$
+        <meta name="citation_author" content="$book_editor$ (Book Editor)">
+        $endif$
+        $if(series_editor)$
+        <meta name="citation_author" content="$series_editor$ (Series Editor)">
+        $endif$
+        $if(doi)$
+        <meta name="dc.identifier" content="$doi$">
+        $endif$
+        <!-- Open Graph Metadata -->
+        <meta property="og:title" content="$title$" />
+        <meta property="og:description" content="$description$" />
+        <meta property="og:image" content="cover.png" />
+        <!-- Twitter Card Metadata -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="$title$" />
+        <meta name="twitter:description" content="$description$" />
+        <meta name="twitter:image" content="cover.png" />
         <!--[if lt IE 9]>
             <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
         <![endif]-->
@@ -70,9 +100,7 @@
                     $if(subtitle)$
                     <h3>$subtitle$</h3>
                     $endif$
-                    $for(author)$
-                    <p class="uk-text-bold">$author$</p>
-                    $endfor$
+                    <p class="uk-text-bold">$for(author)$$author$$sep$, $endfor$</p>
                     <p>$description$</p>
                     <ul uk-accordion>
                         <li>
