@@ -35,5 +35,6 @@ linkReferences: true
 
 keywords: [pandoc, book, my-book, etc]
 
-toc-title: Contents
+toc_title: Contents
+git_url: https://github.com/nulib-oer/lantern
 ---
