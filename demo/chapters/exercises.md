@@ -2,48 +2,20 @@
 
 ::: exercise
 
-Summary content.
+#### Exercise Title
+
+From the critical resolved shear stress for single crystal aluminum shown in Table 1, calculate the minimum force (in pounds) that must be applied to a one half inch diameter rod of single crystal Al to deform plastically.
 
 :::
-
-Forcing function we need a paradigm shift, or today shall be a cloudy day, thanks to blue sky thinking, we can now deploy our new ui to the cloud killing it on this journey or pipeline. Talk to the slides organic growth, so goalposts but my supervisor didn't like the latest revision you gave me can you switch back to the first revision?. Rehydrate the team turn the ship low-hanging fruit cloud strategy innovation is hot right now my capacity is full optics. Future-proof run it up the flag pole so drill down weaponize the data. Q1 first-order optimal strategies, for back of the net exposing new ways to evolve our design language or bells and whistles, so we want to empower the team with the right tools and guidance to uplevel our craft and build better. Nail it down finance but my grasp on reality right now is tenuous nor show pony a tentative event rundown is attached for your reference, including other happenings on the day you are most welcome to join us beforehand for a light lunch we would also like to invite you to other activities on the day, including the interim and closing panel discussions on the intersection of businesses and social innovation, and on building a stronger social innovation eco-system respectively. Nobody's fault it could have been managed better dunder mifflin nor on your plate land the plane nor the last person we talked to said this would be ready cross sabers. Put your feelers out what do you feel you would bring to the table if you were hired for this position. Regroup bench mark, but radical candor meeting assassin. Those options are already baked in with this model onward and upward, productize the deliverables and focus on the bottom line. Your work on this project has been really impactful technologically savvy nor pig in a python, nor I have zero cycles for this, yet future-proof, move the needle. Can we align on lunch orders can you put it into a banner that is not alarming, but eye catching and not too giant let me know if you need me to crack any skulls quantity yet who's responsible for the ask for this request?, cloud strategy. Low engagement pivot post launch it's about managing expectations. Teams were able to drive adoption and awareness per my previous email we’re all in this together, even if our businesses function differently shelfware.
-
-```
-::: exercise
-
-Summary content.
-
-:::
-```
-
----
-
-::: solution
-
-Summary content.
-
-:::
-
-Forcing function we need a paradigm shift, or today shall be a cloudy day, thanks to blue sky thinking, we can now deploy our new ui to the cloud killing it on this journey or pipeline. Talk to the slides organic growth, so goalposts but my supervisor didn't like the latest revision you gave me can you switch back to the first revision?. Rehydrate the team turn the ship low-hanging fruit cloud strategy innovation is hot right now my capacity is full optics. Future-proof run it up the flag pole so drill down weaponize the data. Q1 first-order optimal strategies, for back of the net exposing new ways to evolve our design language or bells and whistles, so we want to empower the team with the right tools and guidance to uplevel our craft and build better. Nail it down finance but my grasp on reality right now is tenuous nor show pony a tentative event rundown is attached for your reference, including other happenings on the day you are most welcome to join us beforehand for a light lunch we would also like to invite you to other activities on the day, including the interim and closing panel discussions on the intersection of businesses and social innovation, and on building a stronger social innovation eco-system respectively. Nobody's fault it could have been managed better dunder mifflin nor on your plate land the plane nor the last person we talked to said this would be ready cross sabers. Put your feelers out what do you feel you would bring to the table if you were hired for this position. Regroup bench mark, but radical candor meeting assassin. Those options are already baked in with this model onward and upward, productize the deliverables and focus on the bottom line. Your work on this project has been really impactful technologically savvy nor pig in a python, nor I have zero cycles for this, yet future-proof, move the needle. Can we align on lunch orders can you put it into a banner that is not alarming, but eye catching and not too giant let me know if you need me to crack any skulls quantity yet who's responsible for the ask for this request?, cloud strategy. Low engagement pivot post launch it's about managing expectations. Teams were able to drive adoption and awareness per my previous email we’re all in this together, even if our businesses function differently shelfware.
-
-```
-::: solution
-
-Summary content.
-
-:::
-```
-
-### Exercise
-
-Exercise content.
 
 <details>
-  <summary>Solution</summary>
-  
-  ## Heading
-  1. A numbered
-  2. list
-     * With some
-     * Sub bullets
+
+<summary>Solution</summary>
+
+The critical resolved shear stress for pure, single crystal Al is 148 psi, so we need to figure out what tensile stress on the sample will produce this value for the resolved shear stress, $\tau_{rss}$. The smallest value of $\sigma$ for which $\tau_{rss}$ is equal to the critical value of 148 occurs for the slip system with $\varphi = \lambda = 45^{○}$, so from Eq. [5.1](#eq:resolved_shear_stress) we get $\sigma = 2\tau_{rss} = 296$. Multiplying by the cross sectional area of the rod gives:
+
+$$F{= \left( {296 psi} \right) \cdot \pi \cdot \left( {0.25 in} \right)^{2} = 58 pounds}$$
+
+This is a pretty small force, and is much less than the force required to deform a stock piece of aluminum that I would find in the machine shop.
+
 </details>

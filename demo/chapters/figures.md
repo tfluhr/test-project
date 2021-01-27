@@ -1,4 +1,4 @@
-## Figures
+## Images
 
 This is the first subsection. Please, admire the gloriousness of this seagull:
 
