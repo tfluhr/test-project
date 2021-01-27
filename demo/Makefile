@@ -16,7 +16,6 @@ COVER_IMAGE = images/cover.png
 MATH_FORMULAS = --mathjax
 #CHAPTERS = chapters/*.md
 CHAPTERS += $(addprefix ./chapters/,\
- text.md\
  lists.md\
  tables.md\
  figures.md\
