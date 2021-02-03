@@ -1,4 +1,4 @@
-# Custom Blocks
+## Custom Blocks
 
 Lantern uses custom blocks[^1] to give you the flexibility to customize the styles for specific sections within your textbook. Custom blocks in Lantern begin and end with three colons `:::` and are separated by empty lines before and after they occur in the text (like paragraphs). You can label the custom block anything by placing the label after the opening three colons. Custom block labels are case-senstive and must contain spaces (use hyphens to sepearate multi-word labels for readability). Here's an example:
 

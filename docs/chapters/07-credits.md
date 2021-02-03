@@ -1,0 +1,5 @@
+## Credits
+
+Lantern is led by Chris Diaz (Digital Publishing Librarian) and Lauren McKeen McDonald (Open Education Librarian) of Northwestern University with seed funding from the [Association of Research Libraries](https://www.arl.org/). Lantern would not exist with the research and development contributions of Sherry Wang (Physics, '24). Our goal with Lantern is to distill what we've learned from these communities into a reproducible workflow for any open textbook publisher or [open educational resources](https://en.wikipedia.org/wiki/Open_educational_resources) advocate to use on their own.  
+
+Like most open source projects, Lantern wouldn't exist without building on the foundation of existing open source projects. Lantern is modification of [Pandoc Book Template](https://github.com/wikiti/pandoc-book-template) by [Daniel Herzog Cruz](https://danielherzog.es/) with open textbook features.  

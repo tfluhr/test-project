@@ -1,0 +1,13 @@
+## Further Reading
+
+Publishing is expensive. OER publishing programs require investments in several categories, including project management, editorial services, marketing, and technology. Lantern is an attempt to reduce the technology costs as much as possible in order to increase investments in other publishing cost categories. Our approach to reducing the technology footprint is to apply minimal computing principles to OER publishing. 
+
+The term “[minimal computing](http://go-dh.github.io/mincomp/about/)” was coined in the digital humanities community with respect to the dissemination and preservation of scholarly works. It refers to a practice of using software, hardware, and network bandwidth under certain constraints.[^1] These constraints are intentional and self-imposed. In some ways, minimal computing is a counter-measure against the collateral effects of easy-to-use interfaces:
+
+> The culture of “user friendly” interfaces that helped popularize computers for almost three decades now, and which underlines the dominant role of `.docx`, `.pdf` and `.epub` files today, has also led to some basic misunderstandings of what computers can and should do. In the case of writing, the expectation that you should get what you see continues to distance producers from their tools. As with any human tool, we need to understand computers a bit more intimately if we’re going to use them with any degree of critical awareness, and in order to avoid falling into what Matthew Kirschenbaum dubs the “haptic fallacy,” or “the belief that electronic objects are immaterial simply because we cannot reach out and touch them.” [^2]
+
+In practice, minimal computing is a planning framework for digital projects that essentially asks: "What do we need?" In open education, we need to license and diseminate educational texts in formats that enable unlimited distribution, transformation, and modification. Lantern teaches the value of plain text formats in order to provide flexible multiple publishing and distribution options. Because minimal computing does not imply minimal effort, we hope that Lantern helps flatten the learning curve. 
+
+[^1]: “What is Minimal Computing?” (n.d.). _Minimal Computing: a working group of Go::DH_: http://go-dh.github.io/mincomp/about/
+
+[^2]: Gil, Alex. (2015). "The User, the Learner, and the Machines we Make," _Minimal Computing: a working group of Go::DH_: https://go-dh.github.io/mincomp/thoughts/2015/05/21/user-vs-learner/
