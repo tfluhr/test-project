@@ -9,3 +9,7 @@ Lantern is a [minimal computing](https://go-dh.github.io/mincomp/about/) toolkit
 - **Accessible:** Lantern teaches semantic markup formatting for producing accessible HTML, PDF, and DOCX versions of open textbooks. 
 
 With Lantern, we hope to minimize the technical maintenance costs of building, distributing, and preserving open textbooks. 
+
+### Credits
+
+Lantern is a project by Chris Diaz (Digital Publishing Librarian) and Lauren McKeen McDonald (Open Education Librarian) of Northwestern University with support from the [Association of Research Libraries](https://www.arl.org/). Lantern took inspiration from [Pandoc Book Template](https://github.com/wikiti/pandoc-book-template) by [Daniel Herzog Cruz](https://danielherzog.es/).  
