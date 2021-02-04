@@ -16,4 +16,4 @@
 
 ### Credits
 
-Lantern is a project by Chris Diaz (Digital Publishing Librarian) and Lauren McKeen McDonald (Open Education Librarian) of Northwestern University with support from the [Association of Research Libraries](https://www.arl.org/). Lantern took inspiration from [Pandoc Book Template](https://github.com/wikiti/pandoc-book-template) by [Daniel Herzog Cruz](https://danielherzog.es/).  
+Lantern is a project by Chris Diaz (Digital Publishing Librarian) and Lauren McKeen McDonald (Open Education Librarian) of Northwestern University with support from the [Association of Research Libraries](https://www.arl.org/). Lantern is based on [Pandoc Book Template](https://github.com/wikiti/pandoc-book-template), and was inspired by [Bookdown](https://bookdown.org/), [Course-in-a-Box](https://course-in-a-box.p2pu.org/), [CollectionBuilder](https://collectionbuilder.github.io/), and [Wax](https://minicomp.github.io/wax/).
