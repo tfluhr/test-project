@@ -1,14 +1,18 @@
 ## Introduction
 
-Lantern is a [minimal computing](https://go-dh.github.io/mincomp/about/) toolkit for open textbook creators. Lantern can help you produce texts that are built for longevity and reusability. 
+::: summary :::
 
-- **Sustainable:** Lantern focuses on plain text formats and static files in order to minimize installation, hosting, and maintenance costs related to digital web publishing.
+**Digital publishing is expensive.** Lantern aims to minimize the technology costs of producing and distributing open textbooks in order to focus limited resources on funding the writing and editing of open educational resources. 
 
-- **Portable:** Lantern relies on open source software and non-prorprietary file formats that can run on any machine or web host. No databases, application software, or server maintenance required. 
+:::
 
-- **Accessible:** Lantern teaches semantic markup formatting for producing accessible HTML, PDF, and DOCX versions of open textbooks. 
+### Features
 
-With Lantern, we hope to minimize the technical maintenance costs of building, distributing, and preserving open textbooks. 
+- **Sustainable:** Lantern focuses on [minimal computing](https://go-dh.github.io/mincomp/about/) techniques in order to minimize infrastructure, configuration, hosting, and maintenance costs related to digital web publishing.
+
+- **Portable:** Lantern emphasizes the use of plain text, non-prorprietary file formats that can run on any machine or web host. No databases, application software, or server maintenance required. 
+
+- **Multi-format:** Lantern teaches semantic markup technologies for producing Markdown, HTML, PDF, and DOCX editions of open textbooks. 
 
 ### Credits
 

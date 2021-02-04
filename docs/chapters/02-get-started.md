@@ -4,6 +4,8 @@
 
 **TL;DR**
 
+Lantern uses a combination of Markdown syntax and GitHub resources to format, build, and publish open textbooks. 
+
 - Install a text editor. We recommend [VS Code](https://code.visualstudio.com/) for beginners. 
 - Install a word processor. We recommend [Microsoft Word](https://en.wikipedia.org/wiki/Microsoft_Word).
 - Create a [GitHub](https://github.com) account.
