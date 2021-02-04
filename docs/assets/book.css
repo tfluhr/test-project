@@ -202,4 +202,18 @@ blockquote:before {
 }
 blockquote p {
   display: inline;
+  color: #666;
+}
+
+blockquote em {
+  margin-top: 10px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #666;
+  display: block;
+  text-align: right;
+}
+
+blockquote em::before {
+  content: "\A";
 }
