@@ -2,17 +2,19 @@
 
 ::: summary :::
 
-**Digital publishing is expensive.** Lantern aims to minimize the technology costs of producing and distributing open textbooks in order to focus limited resources on funding the writing and editing of open educational resources. 
+**Digital publishing is expensive.** Lantern aims to minimize the technology costs of producing and distributing open textbooks in order to help creators focus limited resources on writing and editing of open textbooks. 
 
 :::
 
 ### Features
 
-- **Sustainable:** Lantern focuses on [minimal computing](https://go-dh.github.io/mincomp/about/) techniques in order to minimize infrastructure, configuration, hosting, and maintenance costs related to digital web publishing.
+- **Sustainable:** Lantern applies [minimal computing](https://go-dh.github.io/mincomp/about/) techniques to minimize infrastructure, configuration, hosting, and maintenance costs related to digital publishing.
 
-- **Portable:** Lantern emphasizes the use of plain text, non-prorprietary file formats that can run on any machine or web host. No databases, application software, or server maintenance required. 
+- **Portable:** Lantern emphasizes the use of plain text, non-prorprietary file formats that can run on any machine or web host. No databases or servers are required. 
 
 - **Multi-format:** Lantern teaches semantic markup technologies for producing Markdown, HTML, PDF, and DOCX editions of open textbooks. 
+
+- **Free:** Lantern uses free and open source software and web services for processing, building, deploying, and hosting open textbooks. 
 
 ### Credits
 
