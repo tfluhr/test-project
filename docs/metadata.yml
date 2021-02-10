@@ -21,13 +21,11 @@ subjects:
   - Open Textbooks
   - Pandoc
 
-publication_date:
+publication_date: 2021
 editors:
 doi:
 isbn_p:
 isbn_e:
-
-mainfont: DejaVu Sans
 
 # Filter preferences:
 # - pandoc-crossref
@@ -37,4 +35,10 @@ keywords: [pandoc, book, my-book, etc]
 
 toc_title: Contents
 git_url: https://github.com/nulib-oer/lantern
+
+
+### LaTeX/PDF Options ###
+#mainfont: DejaVu Sans # Requires font installation and xelatex engine
+documentclass: book
+classoption: openany
 ---
