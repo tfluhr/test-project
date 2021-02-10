@@ -13,7 +13,7 @@ METADATA_ARGS = --metadata-file $(METADATA)
 IMAGES = $(shell find images -type f)
 TEMPLATES = $(shell find templates/ -type f)
 COVER_IMAGE = images/cover.png
-#MATH_FORMULAS = --mathjax
+MATH_FORMULAS = --mathjax
 CHAPTERS = chapters/*.md
 #CHAPTERS += $(addprefix ./chapters/,\
  introduction.md\
