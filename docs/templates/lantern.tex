@@ -1,0 +1,106 @@
+\documentclass[titlepage]{book}
+
+\usepackage[colorlinks]{hyperref}
+\usepackage{longtable,booktabs,array}
+
+\usepackage{lipsum}
+
+% Pandoc LaTeX Configurations %
+
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+$if(numbersections)$
+    \setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
+$else$
+    \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+$endif$
+
+% Textbook Metadata %
+
+\title{$title$}
+\author{$for(author)$$author$$sep$ \and $endfor$}
+\date{$date$}
+
+\begin{document}
+
+$for(include-before)$
+$include-before$
+$endfor$
+
+\maketitle
+
+\pagestyle{empty}
+
+%% copyright page
+
+\begingroup
+\footnotesize
+\parindent 0pt
+\parskip \baselineskip
+\textcopyright{} $publication_date$ $for(author)$$author$$sep$ \and $endfor$ \\
+All rights reserved.
+
+This work may be distributed and/or modified under the conditions
+of the $license$ License.
+
+The Current Maintainer of this work is Jubobs.
+
+$description$
+
+\begin{center}
+ 99 32 11 88 48 01\hspace{2em}9 9 8 6 5 4 %1 
+\end{center}
+
+\begin{center}
+\begin{tabular}{ll}
+First edition:  & May 2013 \\
+Second impression, with minor extensions & January 2009 \\
+Third impression, with minor extensions & May 2013 
+\end{tabular}
+\end{center}
+
+\vfill
+
+Catalogging in publication data
+
+
+\vfill
+
+$publisher$, \\
+$publisher_location$ \\
+\texttt{$publisher_url$}
+
+%%%%{\LARGE\plogo}
+\vspace*{2\baselineskip}
+
+
+\endgroup
+\clearpage
+
+
+$if(toc-title)$
+\renewcommand*\contentsname{$toc-title$}
+$endif$
+\setcounter{tocdepth}{$toc-depth$}
+\tableofcontents
+
+$if(lot)$
+\listoftables
+$endif$
+
+$if(lof)$
+\listoffigures
+$endif$
+
+$body$
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+\end{document}
