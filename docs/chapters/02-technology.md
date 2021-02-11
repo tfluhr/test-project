@@ -26,8 +26,8 @@ Both workflows use [GitHub](https://github.com/) as a web hosting service, but y
 
 Lantern uses a few open source software programs to build the web, PDF, and DOCX outputs, but you won't interact with these programs if you're using the online workflow:
 
-- [Pandoc](https://pandoc.org/) transforms the Markdown source files into web, LaTeX, and DOCX editions
-- [LaTeX](https://www.latex-project.org/) (via Pandoc) typesets and renders the PDF edition
+- [Pandoc](https://pandoc.org/) transforms the Markdown source files into web, $\LaTeX$, and DOCX editions
+- [$\LaTeX$](https://www.latex-project.org/) (via Pandoc) typesets and renders the PDF edition
 - [Make](https://www.gnu.org/software/make/) simplifies the production settings and processes
 
 The online workflow provides a GitHub repository that is preconfigured to run all of the required software for building the web, PDF, and DOCX editions. The Desktop workflow includes guidance on installing and using Pandoc, LaTeX, and Make.

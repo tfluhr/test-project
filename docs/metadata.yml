@@ -41,6 +41,8 @@ git_url: https://github.com/nulib-oer/lantern
 
 ### LaTeX/PDF Options ###
 #mainfont: DejaVu Sans # Requires font installation and xelatex engine
-#documentclass: book
-#classoption: openany
+documentclass: book # book, report, article, proc
+classoption: openany # openright, openany
+font_size: 11pt # 10pt (default), 11pt, 12pt
+column_number: onecolumn # onecolumn, twocolumn
 ---
