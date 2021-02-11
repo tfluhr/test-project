@@ -1,12 +1,23 @@
-\documentclass[titlepage]{book}
+\documentclass[$font_size$,$column_number$,$classoption$]{$documentclass$}
 
+% Standard Packages %
 \usepackage[colorlinks]{hyperref}
 \usepackage{longtable,booktabs,array}
 
-\usepackage{lipsum}
+% Math Packages %
+\usepackage{amsmath,amssymb}
+\usepackage{ntheorem}
+
+% Load mdframed package for styling content blocks %
+\usepackage{xcolor}
+\usepackage[framemethod=default,backgroundcolor=lightgray]{mdframed}
+
+% Summary Content Block Styles %
+\newenvironment{summary}
+{\begin{mdframed}}
+{\end{mdframed}}
 
 % Pandoc LaTeX Configurations %
-
 \providecommand{\subtitle}[1]{% add subtitle to \maketitle
   \apptocmd{\@title}{\par {\large #1 \par}}{}{}
 }
