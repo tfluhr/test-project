@@ -31,6 +31,13 @@ $else$
     \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 $endif$
 
+% Load Fonts %
+$if(fontfamily)$
+\usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
+$else$
+\usepackage{lmodern}
+$endif$
+
 % Textbook Metadata %
 
 \title{$title$}
