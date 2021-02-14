@@ -45,8 +45,8 @@ documentclass: book # book, report, article, proc
 classoption: openany # openright, openany
 fontfamily: libertinus
 fontfamilyoptions:
-- osf
-- p
-font_size: 11pt # 10pt (default), 11pt, 12pt
+  - osf
+  - p
+fontsize: 11pt # 10pt (default), 11pt, 12pt
 column_number: onecolumn # onecolumn, twocolumn
 ---

@@ -1,4 +1,10 @@
-\documentclass[$font_size$,$column_number$,$classoption$]{$documentclass$}
+\documentclass[
+$if(fontsize)$
+  $fontsize$,
+$endif$,
+$column_number$,
+$classoption$
+]{$documentclass$}
 
 % Standard Packages %
 \usepackage[colorlinks]{hyperref}
