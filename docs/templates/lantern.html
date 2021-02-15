@@ -72,13 +72,15 @@
                     </a>
                 </div>
                 <div class="nav-overlay uk-navbar-right">
-                    <a uk-icon="menu" href="#toc" uk-toggle></a>
+                    <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #toc">
+                        $toc-title$
+                    </button>
                 </div>
             </nav>
         </div>
     </header>
 
-    <div id="toc" uk-offcanvas="mode: slide; flip: true">
+    <div id="toc" uk-offcanvas="mode: slide">
         <div class="uk-offcanvas-bar">
             <button class="uk-offcanvas-close" type="button" uk-close></button>
             $if(toc)$
