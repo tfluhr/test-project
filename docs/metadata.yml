@@ -3,7 +3,7 @@
 # TEXTBOOK INFORMATION
 ######################################################### 
 title: Lantern
-subtitle: 
+subtitle: A Digital Publishing Toolkit for Open Textbooks
 author:
   - Chris Diaz
   - Lauren McKeen McDonald
@@ -25,7 +25,7 @@ subjects:
   - Open Textbooks
   - Pandoc
 description: |
-  Lantern is an open source, digital publishing toolkit for open textbooks. Lantern includes instructional guides, adaptable templates, and production tools. No experience with programming or coding is necessary.
+  This guide introduces and demonstrates a minimal computing approach to producing open textbooks using free and open source software.
 
 ######################################################### 
 # COPYRIGHT AND LICENSING

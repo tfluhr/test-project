@@ -45,7 +45,7 @@ PANDOC_COMMAND = pandoc
 
 DOCX_ARGS = --standalone --reference-doc templates/docx.docx
 EPUB_ARGS = --template templates/epub.html --epub-cover-image $(COVER_IMAGE)
-HTML_ARGS = --template templates/lantern.html --standalone --to html5
+HTML_ARGS = --template templates/lantern.html --standalone --to html5 --section-divs
 PDF_ARGS = --template templates/lantern.tex --pdf-engine xelatex
 
 # Per-format file dependencies

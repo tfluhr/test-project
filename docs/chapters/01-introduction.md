@@ -2,13 +2,13 @@
 
 ::: summary :::
 
-**Digital publishing is expensive.** Lantern aims to minimize the technology costs of producing and distributing open textbooks in order to help creators focus limited resources on writing and editing of open textbooks. 
+"[Minimal computing](https://go-dh.github.io/mincomp/about/)" is a critical framework for producing digital texts. Lantern applies this framework to the practice of publishing open textbooks.  
 
 :::
 
 ### Features
 
-- **Sustainable:** Lantern applies [minimal computing](https://go-dh.github.io/mincomp/about/) techniques to minimize infrastructure, configuration, hosting, and maintenance costs related to digital publishing.
+- **Sustainable:** Lantern minimizes the infrastructure, configuration, hosting, and maintenance costs related to digital publishing.
 
 - **Portable:** Lantern emphasizes the use of plain text, non-prorprietary file formats that can run on any machine or web host. No databases or servers are required. 
 

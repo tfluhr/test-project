@@ -65,12 +65,15 @@
         $include-before$
     $endfor$
 
-    <header>
+    <header role="banner">
+        <div class="skip-link" >
+            Skip to <a href='#nav'>table of contents</a> or <a href='#main'>first chapter</a>
+        </div>
         <div class="uk-container">
             <nav id="navbar" class="uk-navbar uk-background-default" uk-sticky>
                 <div class="nav-overlay uk-navbar-left">
-                    <a class="uk-navbar-item" href="#">
-                        <h1>$title$</h1>
+                    <a class="uk-navbar-item uk-text-large" href="#">
+                        $title$
                     </a>
                 </div>
                 <div class="nav-overlay uk-navbar-right">
@@ -82,46 +85,57 @@
         </div>
     </header>
 
-    <div id="toc" uk-offcanvas="mode: slide">
+    <nav aria-label="Table of Contents" role="navigation" id="toc" uk-offcanvas="mode: slide">
         <div class="uk-offcanvas-bar">
             <button class="uk-offcanvas-close" type="button" uk-close></button>
             $if(toc)$
-                <nav id="$idprefix$TOC" role="doc-toc">
                 $if(toc-title)$
-                <h2 id="$idprefix$toc-title">$toc_title$</h2>
+                <span class="uk-text-large">$toc-title$</span>
                 $endif$
                 $table-of-contents$
-                </nav>
             $endif$
         </div>
-    </div>
+    </nav>
 
     <section class="uk-section uk-section-small">
         <div class="uk-container uk-container-small">
             <div class="uk-grid uk-grid-medium uk-flex uk-flex-middle">
-                <div class="uk-background-primary uk-light uk-padding uk-panel uk-text-large">
-                    <h2>$title$</h2>
+                <div class="uk-background-secondary uk-light uk-padding uk-text-large">
+                    <img data-src="images/cover.png" width="330" height="auto" alt="Book cover" uk-img offsetLeft="0" class="uk-align-left uk-margin-remove-adjacent">
+                    <h1 class="uk-text-bold">
+                        $title$
+                    </h1>
                     $if(subtitle)$
-                    <h3>$subtitle$</h3>
+                    <p class="uk-text-lead uk-text-italic">$subtitle$</p>
                     $endif$
-                    <p class="uk-text-bold">$for(author)$$author$$sep$, $endfor$</p>
-                    <p>$description$</p>
+                    <p class="uk-text-small">$for(author)$$author$$sep$, $endfor$</p>
+                    $description$
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="uk-section uk-article">
+    <main class="uk-section uk-article">
         <div class="uk-container uk-container-small uk-text-large">
             $body$
         </div>
-    </div>
+    </main>
+
     $for(include-after)$
         $include-after$
     $endfor$
+    
+    <footer class="uk-container" role="contentinfo">
+        &copy; 
+        <script>document.write(new Date().ge
+        tFullYear())</script>
+        $copyright$
+    </footer>
+    
     <script>
         /* AnchorJS docs: https://www.bryanbraun.com/anchorjs/ */
         anchors.add();
     </script>
+    
     </body>
 </html>
