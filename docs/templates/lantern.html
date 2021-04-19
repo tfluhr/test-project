@@ -67,7 +67,7 @@
 
     <header role="banner">
         <div class="skip-link" >
-            Skip to <a href='#nav'>table of contents</a> or <a href='#main'>first chapter</a>
+            Skip to <a href="#toc">table of contents</a>, <a href="#info">book information</a>, or <a href="#begin">first chapter</a>
         </div>
         <div class="uk-container">
             <nav id="navbar" class="uk-navbar uk-background-default" uk-sticky>
@@ -96,29 +96,32 @@
             $endif$
         </div>
     </nav>
+   
+    <main>
 
-    <section class="uk-section uk-section-small">
-        <div class="uk-container uk-container-small">
-            <div class="uk-grid uk-grid-medium uk-flex uk-flex-middle">
-                <div class="uk-background-secondary uk-light uk-padding uk-text-large">
-                    <img data-src="images/cover.png" width="330" height="auto" alt="Book cover" uk-img offsetLeft="0" class="uk-align-left uk-margin-remove-adjacent">
-                    <h1 class="uk-text-bold">
-                        $title$
-                    </h1>
-                    $if(subtitle)$
-                    <p class="uk-text-lead uk-text-italic">$subtitle$</p>
-                    $endif$
-                    <p class="uk-text-small">$for(author)$$author$$sep$, $endfor$</p>
-                    $description$
+        <section id="info" class="uk-section uk-section-small">
+            <div class="uk-container uk-container-small">
+                <div class="uk-grid uk-grid-medium uk-flex uk-flex-middle">
+                    <div class="uk-background-secondary uk-light uk-padding uk-text-large">
+                        <img data-src="images/cover.png" width="330" height="auto" alt="Book cover" uk-img offsetLeft="0" class="uk-align-left uk-margin-remove-adjacent">
+                        <h1 class="uk-text-bold">
+                            $title$
+                        </h1>
+                        $if(subtitle)$
+                        <p class="uk-text-lead uk-text-italic">$subtitle$</p>
+                        $endif$
+                        <p class="uk-text-small">$for(author)$$author$$sep$, $endfor$</p>
+                        $description$
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <main class="uk-section uk-article">
-        <div class="uk-container uk-container-small uk-text-large">
+        </section>
+
+
+        <div id="begin" class="uk-container uk-container-small uk-text-large">
             $body$
         </div>
+
     </main>
 
     $for(include-after)$
