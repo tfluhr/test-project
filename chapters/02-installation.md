@@ -1,11 +1,35 @@
-# Installation
+## More Elements
 
-This is the installation chapter.
+### Math
 
-For further information, check the [Introduction] chapter.
+Formula example: $\mu = \sum_{i=0}^{N} \frac{x_i}{N}$
 
+Now, full size:
 
-For further information, check the [this chapter](#introduction).
+$$\mu = \sum_{i=0}^{N} \frac{x_i}{N}$$
 
+### Code
 
-For further information, check the [this chapter's subsection](#first) section.
+And a code sample:
+
+```rb
+def hello_world
+  puts "hello world!"
+end
+
+hello_world
+```
+
+Check these unicode characters: ǽß¢ð€đŋμ
+
+### Cross references
+
+These cross references are disabled by default. To enable them, check the
+_[Cross references](https://github.com/wikiti/pandoc-book-template#cross-references)_
+section on the README.md file.
+
+Here's a list of cross references:
+
+- Check @fig:seagull.
+- Check @tbl:table.
+- Check @eq:equation.
