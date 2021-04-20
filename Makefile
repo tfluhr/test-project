@@ -6,15 +6,15 @@
 
 BUILD = build
 MAKEFILE = Makefile
-OUTPUT_FILENAME = book
+OUTPUT_FILENAME = textbook
 METADATA = metadata.yml
-CHAPTERS = chapters/*.md
-TOC = --toc --toc-depth 2
+TOC = --toc --toc-depth 3
 METADATA_ARGS = --metadata-file $(METADATA)
 IMAGES = $(shell find images -type f)
-TEMPLATES = $(shell find templates/ -type f)
+TEMPLATES = $(shell find docs/templates/ -type f)
 COVER_IMAGE = images/cover.png
-MATH_FORMULAS = --webtex
+MATH_FORMULAS = --mathjax
+CHAPTERS = chapters/*.md
 
 # Chapters content
 CONTENT = awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $(CHAPTERS)
@@ -22,7 +22,7 @@ CONTENT_FILTERS = tee # Use this to add sed filters or other piped commands
 
 # Debugging
 
-# DEBUG_ARGS = --verbose
+DEBUG_ARGS = --verbose
 
 # Pandoc filtes - uncomment the following variable to enable cross references filter. For more
 # information, check the "Cross references" section on the README.md file.
@@ -37,10 +37,10 @@ PANDOC_COMMAND = pandoc
 
 # Per-format options
 
-DOCX_ARGS = --standalone --reference-doc templates/docx.docx
-EPUB_ARGS = --template templates/epub.html --epub-cover-image $(COVER_IMAGE)
-HTML_ARGS = --template templates/html.html --standalone --to html5
-PDF_ARGS = --template templates/pdf.latex --pdf-engine xelatex
+DOCX_ARGS = --standalone --reference-doc docs/templates/docx.docx
+EPUB_ARGS = --template docs/templates/epub.html --epub-cover-image $(COVER_IMAGE)
+HTML_ARGS = --template docs/templates/lantern.html --standalone --to html5 --section-divs
+PDF_ARGS = --template docs/templates/lantern.tex --pdf-engine xelatex
 
 # Per-format file dependencies
 
@@ -65,31 +65,33 @@ clean:
 # File builders
 ####################################################################################################
 
-epub:	$(BUILD)/epub/$(OUTPUT_FILENAME).epub
+epub:	$(BUILD)/$(OUTPUT_FILENAME).epub
 
-html:	$(BUILD)/html/$(OUTPUT_FILENAME).html
+html:	$(BUILD)/$(OUTPUT_FILENAME).html
 
-pdf:	$(BUILD)/pdf/$(OUTPUT_FILENAME).pdf
+pdf:	$(BUILD)/$(OUTPUT_FILENAME).pdf
 
-docx:	$(BUILD)/docx/$(OUTPUT_FILENAME).docx
+docx:	$(BUILD)/$(OUTPUT_FILENAME).docx
 
-$(BUILD)/epub/$(OUTPUT_FILENAME).epub:	$(EPUB_DEPENDENCIES)
-	mkdir -p $(BUILD)/epub
+$(BUILD)/$(OUTPUT_FILENAME).epub:	$(EPUB_DEPENDENCIES)
+	mkdir -p $(BUILD)
 	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(ARGS) $(EPUB_ARGS) -o $@
 	@echo "$@ was built"
 
-$(BUILD)/html/$(OUTPUT_FILENAME).html:	$(HTML_DEPENDENCIES)
-	mkdir -p $(BUILD)/html
+$(BUILD)/$(OUTPUT_FILENAME).html:	$(HTML_DEPENDENCIES)
+	mkdir -p $(BUILD)
 	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(ARGS) $(HTML_ARGS) -o $@
-	cp --parent $(IMAGES) $(BUILD)/html/
+	cp --parents $(IMAGES) $(BUILD)
+	cp docs/assets/* $(BUILD)
+	mv build/textbook.html build/index.html
 	@echo "$@ was built"
 
-$(BUILD)/pdf/$(OUTPUT_FILENAME).pdf:	$(PDF_DEPENDENCIES)
-	mkdir -p $(BUILD)/pdf
+$(BUILD)/$(OUTPUT_FILENAME).pdf:	$(PDF_DEPENDENCIES)
+	mkdir -p $(BUILD)
 	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(ARGS) $(PDF_ARGS) -o $@
 	@echo "$@ was built"
 
-$(BUILD)/docx/$(OUTPUT_FILENAME).docx:	$(DOCX_DEPENDENCIES)
-	mkdir -p $(BUILD)/docx
+$(BUILD)/$(OUTPUT_FILENAME).docx:	$(DOCX_DEPENDENCIES)
+	mkdir -p $(BUILD)
 	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(ARGS) $(DOCX_ARGS) -o $@
 	@echo "$@ was built"
