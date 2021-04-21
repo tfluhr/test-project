@@ -14,7 +14,7 @@ Lantern is an open source textbook publishing toolkit that simplifies the proces
 
 Copyright to all of the content within this repository is waived via [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/), **except for the following files:**
 
-- `Makefile` is a modified version of [Pandoc Book Template](https://github.com/wikiti/pandoc-book-template/blob/master/Makefile) and is distributed [The MIT License](https://github.com/wikiti/pandoc-book-template/blob/master/LICENSE.md), copied here:
+- `[Makefile](https://github.com/nulib-oer/lantern/blob/main/Makefile)` is a modified version of [Pandoc Book Template](https://github.com/wikiti/pandoc-book-template/blob/master/Makefile) and is distributed [The MIT License](https://github.com/wikiti/pandoc-book-template/blob/master/LICENSE.md), copied here:
 
 > Copyright © `2019` `Daniel Herzog`
 > 
@@ -39,4 +39,4 @@ Copyright to all of the content within this repository is waived via [CC0 1.0 Un
 > FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 > OTHER DEALINGS IN THE SOFTWARE.
 
-- `assets/css/uikit.css`, `assets/js/uikit.min.js`, and `assets/js/uikit-icons.min.js` are (c) 2014 - 2021 [YOOtheme](https://yootheme.com/) and distributed under [The MIT License](https://opensource.org/licenses/MIT). 
+- `[assets/css/uikit.css](https://github.com/nulib-oer/lantern/blob/main/assets/css/uikit.css)`, `[assets/js/uikit.min.js](https://github.com/nulib-oer/lantern/blob/main/assets/js/uikit.min.js`, and `[assets/js/uikit-icons.min.js](https://github.com/nulib-oer/lantern/blob/main/assets/js/uikit-icons.min.js)` are (c) 2014 - 2021 [YOOtheme](https://yootheme.com/) and distributed under [The MIT License](https://opensource.org/licenses/MIT). 
