@@ -23,10 +23,10 @@ jobs:
       - name: Build Documentation Site
         run: |
           make docs
-          touch ./build/docs/.nojekyll
+          touch ./public/docs/.nojekyll
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/docs/
+          publish_dir: ./public/docs/

@@ -1,6 +1,8 @@
-# CONFIGURATION OPTIONS
+################################
+# CONFIGURATION OPTIONS 
+################################
 
-BUILD = build
+BUILD = public
 MAKEFILE = Makefile
 OUTPUT_FILENAME = textbook
 METADATA = metadata.yml
@@ -31,9 +33,11 @@ EPUB_DEPENDENCIES = $(BASE_DEPENDENCIES)
 HTML_DEPENDENCIES = $(BASE_DEPENDENCIES)
 PDF_DEPENDENCIES = $(BASE_DEPENDENCIES)
 
-all:	book
+################################
+# BUILD COMMANDS FOR TEXTBOOK
+################################
 
-book:	epub html pdf docx
+textbook:	epub html pdf docx
 
 clean:
 	rm -r $(BUILD)
@@ -57,7 +61,6 @@ $(BUILD)/$(OUTPUT_FILENAME).html:	$(HTML_DEPENDENCIES)
 	cp --parents $(IMAGES) $(BUILD)
 	cp assets/css/* $(BUILD)
 	cp assets/js/* $(BUILD)
-	#purgecss --css assets/uikit.css --content build/book.html --safelist uk-open uk-offcanvas-bar-animation uk-offcanvas-slide --output build/styles.css
 	mv build/textbook.html build/index.html
 	@echo "$@ was built"
 
@@ -71,11 +74,11 @@ $(BUILD)/docx/$(OUTPUT_FILENAME).docx:	$(DOCX_DEPENDENCIES)
 	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(ARGS) $(DOCX_ARGS) -o $@
 	@echo "$@ was built"
 
-####################################################################################################
-# CONFIGURATION OPTIONS FOR LANTERN DOCUMENTATION
-####################################################################################################
+################################
+# CONFIGURATION OPTIONS FOR DOCS
+################################
 
-DOCS_BUILD = build/docs
+DOCS_BUILD = public/docs
 DOCS_OUTPUT_FILENAME = lantern
 DOCS_METADATA = assets/docs/metadata.yml
 DOCS_METADATA_ARGS = --metadata-file $(DOCS_METADATA)
@@ -91,9 +94,11 @@ HTML_ARGS = --template assets/templates/lantern.html --standalone --to html5 --s
 PDF_ARGS = --template assets/templates/lantern.tex --pdf-engine xelatex
 DOCS_DEPENDENCIES = $(MAKEFILE) $(DOCS_CHAPTERS) $(DOCS_METADATA) $(DOCS_IMAGES) $(TEMPLATES)
 
-docs:	docs_html
+################################
+# BUILD COMMANDS FOR TEXTBOOK
+################################
 
-documentation:	docs_html
+docs:	docs_html
 
 clean_docs:
 	rm -r $(DOCS_BUILD)
