@@ -14,7 +14,7 @@ Lantern is an open source textbook publishing toolkit that simplifies the proces
 
 Copyright to all of the content within this repository is waived via [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/), **except for the following files:**
 
-- `[Makefile](https://github.com/nulib-oer/lantern/blob/main/Makefile)` is a modified version of [Pandoc Book Template](https://github.com/wikiti/pandoc-book-template/blob/master/Makefile) and is distributed [The MIT License](https://github.com/wikiti/pandoc-book-template/blob/master/LICENSE.md), copied here:
+- [`Makefile`](https://github.com/nulib-oer/lantern/blob/main/Makefile) is a modified version of [Pandoc Book Template](https://github.com/wikiti/pandoc-book-template/blob/master/Makefile) and is distributed [The MIT License](https://github.com/wikiti/pandoc-book-template/blob/master/LICENSE.md), copied here:
 
 > Copyright © `2019` `Daniel Herzog`
 > 
