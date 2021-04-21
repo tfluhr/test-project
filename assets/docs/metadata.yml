@@ -2,30 +2,35 @@
 ######################################################### 
 # TEXTBOOK INFORMATION
 ######################################################### 
-title: Title
-subtitle: Subtitle
+title: Lantern
+subtitle: A Digital Publishing Toolkit for Open Textbooks
 author:
-  - First Author
-  - Second Author
+  - Chris Diaz
+  - Lauren McKeen McDonald
 contributor:
-  - Research Assistant
-  - Research Assistant
+  - Sherry Wang
+  - Maria Cortez
 publication_date:
 doi:
 isbn_p:
 isbn_e:
 lang: 
-keywords:
-  - keyword
-  - keyword
+keywords: 
+  - pandoc
+  - minimal computing
+  - oer
 subjects: 
-  - Subject
-  - Subject
+  - OER
+  - Digital Publishing
+  - Open Textbooks
+  - Pandoc
 description: |
-  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+  This guide introduces and demonstrates a minimal computing approach to producing open textbooks using free and open source software.
+cover: images/cover.png
 
 ######################################################### 
 # COPYRIGHT AND LICENSING
+#########################################################
 # Select a Creative Commons License (4.0 International)
 # See: https://creativecommons.org/ licenses/
 # by = Attribution (CC BY)
@@ -39,7 +44,7 @@ license: # by, nc, sa, nc-sa, cc0
 ######################################################### 
 # PUBLISHER INFORMATION
 ######################################################### 
-publisher: Publishing Organization
+publisher: Northwestern University Libraries
 publisher_location: Evanston, IL # City, State
 publisher_url: https://www.library.northwestern.edu
 editors:

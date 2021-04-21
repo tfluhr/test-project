@@ -3,7 +3,7 @@ name: Update Documentation
 on:
   push:
     paths:
-      - 'docs/**'
+      - 'assets/docs/**'
       - '.github/workflows/documentation.yml'
     branches:
       - main  # Set a branch name to trigger deployment
@@ -22,12 +22,11 @@ jobs:
 
       - name: Build Documentation Site
         run: |
-          cd docs
-          make html
-          touch ./build/.nojekyll
+          make docs
+          touch ./build/docs/.nojekyll
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/build
+          publish_dir: ./build/docs/
