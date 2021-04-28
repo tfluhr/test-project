@@ -1,4 +1,4 @@
-## Bibliographic Citations
+# Bibliographic Citations
 
 Lantern supports the automatic generation of citations and bibliographies. Citations are rendered using the [Citation Style Language](https://docs.citationstyles.org/en/stable/specification.html) specification. By default, Lantern uses the [Chicago Manual of Style](https://chicagomanualofstyle.org/) author-date format. 
 
@@ -8,7 +8,7 @@ Lantern supports the automatic generation of citations and bibliographies. Citat
 - A bibliographic data file
 - 
 
-### In-text Citations
+## In-text Citations
 
 Within the markdown chapter files (`/chapters/`), citations go inside square brackets and are separated by semicolons. Each citation must have a unique identifier that is composed of `@` + the citation identifier from the bibliographic data file. The citation key must begin with a letter, digit, or `_`, and may contain alphanumerics, `_`, and internal punctuation characters (`:.#$%&-+?<>~/`). Here are some examples:
 
@@ -22,7 +22,7 @@ Blah blah [@smith04; @doe99].
 
 For more information about in-text citation formatting, see [Pandoc's citation syntax documentation](https://pandoc.org/MANUAL.html#extension-citations). 
 
-### Bibliographic Data Files
+## Bibliographic Data Files
 
 We recommend storing bibliographic references in separate files stored in the root of your project's directory. Lantern provides `references.bib` for you to add your textbook's bibliographic data. You can add to this file manually or supply your own file. A bibliography may have any of these machine-readable formats:
 
@@ -33,7 +33,7 @@ We recommend storing bibliographic references in separate files stored in the ro
 | CSL JSON | `.json` |
 | CSL YAML | `.yaml` |
 
-#### Creating Your Bibiliography
+### Creating Your Bibiliography
 
 The easiest way to format a citation for machine-readability is to search for the item in [Google Scholar](https://scholar.google.com/), click on the citation button, then select the `BibTeX` option. This will render the `BibTeX` citation in your web browser for you to copy and paste into `references.bibtex` file. 
 

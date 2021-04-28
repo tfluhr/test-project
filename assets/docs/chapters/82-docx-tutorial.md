@@ -1,1 +1,1 @@
-## Appendix: Microsoft Word Styles
+# Appendix: Microsoft Word Styles

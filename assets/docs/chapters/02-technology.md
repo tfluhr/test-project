@@ -1,4 +1,4 @@
-## The Technology
+# The Technology
 
 ::: summary :::
 
@@ -12,7 +12,7 @@ Lantern teaches two production workflows that use [Markdown](https://en.wikipedi
 
 :::
 
-### Selecting a Production Workflow
+## Selecting a Production Workflow
 
 We recommend the online workflow to first-time users of Lantern and the Desktop workflow to advanced users looking for more customizations.
 
@@ -22,7 +22,7 @@ We recommend the online workflow to first-time users of Lantern and the Desktop 
 
 Both workflows use [GitHub](https://github.com/) as a web hosting service, but you will be free to use any other web hosting service. 
 
-### Processing Software
+## Processing Software
 
 Lantern uses a few open source software programs to build the web, PDF, and DOCX outputs, but you won't interact with these programs if you're using the online workflow:
 
@@ -51,7 +51,7 @@ Lantern will help you convert Microsoft Word files to Markdown. Markdown is the 
 
 :::
 
-### Markdown: Adding Structure to Documents
+## Markdown: Adding Structure to Documents
 
 > The idea is to identify logical structures in your document (a title, sections, subsections, footnotes, etc.), mark them with some unobtrusive characters, and then “compile” the resulting text with a typesetting interpreter which will format the document consistently, according to a specified style. [@tenen_sustainable_2014]
 
@@ -64,7 +64,7 @@ Markdown provides big benefits to open textbook publishers:
 
 You can create and edit Markdown files using a text editor. Every operating system includes a default plain text editor. On Windows, the default editor is [Notepad](https://www.microsoft.com/en-us/p/windows-notepad/9msmlrh6lzf3?activetab=pivot:overviewtab); on macOS, the default editor is [TextEdit](https://support.apple.com/guide/textedit/welcome/mac). Both of these options will work, as well as any other text editor, but we recommend installing [Visual Studio Code (VS Code)](https://code.visualstudio.com/), which is free for Windows, macOS, and Linux.
 
-### Pandoc: Building Textbook Editions
+## Pandoc: Building Textbook Editions
 
 [Pandoc](https://pandoc.org/) is the primary document processing software that Lantern uses to convert manuscript files into textbook editions. Pandoc was designed to be a "universal document converter" that works between markup formats. 
 

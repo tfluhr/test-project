@@ -109,7 +109,7 @@ DOCS_CONTENT_FILTERS = tee # Use this to add sed filters or other piped commands
 DOCS_ARGS = $(TOC) $(MATH_FORMULAS) $(DOCS_METADATA_ARGS) $(FILTER_ARGS)
 DOCX_ARGS = --standalone --reference-doc assets/templates/docx.docx
 EPUB_ARGS = --template assets/templates/epub.html --epub-cover-image $(DOCS_COVER_IMAGE)
-HTML_ARGS = --template assets/templates/lantern.html --standalone --to html5 --section-divs
+HTML_ARGS = --template assets/templates/lantern.html --standalone --to html5 --section-divs --shift-heading-level-by=1
 PDF_ARGS = --template assets/templates/lantern.tex --pdf-engine xelatex
 DOCS_DEPENDENCIES = $(MAKEFILE) $(DOCS_CHAPTERS) $(DOCS_METADATA) $(DOCS_IMAGES) $(TEMPLATES)
 
