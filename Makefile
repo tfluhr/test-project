@@ -6,6 +6,7 @@ BUILD = public
 MAKEFILE = Makefile
 OUTPUT_FILENAME = textbook
 METADATA = metadata.yml
+BIBLIOGRAPHY = --citeproc references.bibtex
 TOC = --toc --toc-depth 3
 METADATA_ARGS = --metadata-file $(METADATA)
 IMAGES = $(shell find assets/images -type f)
@@ -17,7 +18,6 @@ CONTENT = awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $(CHAPTERS)
 CONTENT_FILTERS = tee 
 
 # DEBUG_ARGS = --verbose
-# FILTER_ARGS = --filter pandoc-crossref
 
 ################################
 # CUSTOM LUA FILTERS LIST
@@ -99,6 +99,8 @@ DOCS_BUILD = public/docs
 DOCS_OUTPUT_FILENAME = lantern
 DOCS_METADATA = assets/docs/metadata.yml
 DOCS_METADATA_ARGS = --metadata-file $(DOCS_METADATA)
+DOCS_BIBLIOGRAPHY = assets/docs/lantern.bib
+DOCS_BIBILIOGRAPHY_ARGS = --citeproc --bibliography $(DOCS_BIBLIOGRAPHY)
 DOCS_IMAGES = $(shell find assets/docs/images -type f)
 DOCS_COVER_IMAGE = assets/docs/images/cover.png
 DOCS_CHAPTERS = assets/docs/chapters/*.md
@@ -132,7 +134,7 @@ $(DOCS_BUILD)/$(DOCS_OUTPUT_FILENAME).epub:	$(DOCS_DEPENDENCIES)
 
 $(DOCS_BUILD)/$(DOCS_OUTPUT_FILENAME).html:	$(DOCS_DEPENDENCIES)
 	mkdir -p $(DOCS_BUILD)
-	$(DOCS_CONTENT) | $(DOCS_CONTENT_FILTERS) | $(PANDOC_COMMAND) $(LUA_FILTERS) $(DOCS_ARGS) $(HTML_ARGS) -o $@
+	$(DOCS_CONTENT) | $(DOCS_CONTENT_FILTERS) | $(PANDOC_COMMAND) $(DOCS_BIBILIOGRAPHY_ARGS) $(LUA_FILTERS) $(DOCS_ARGS) $(HTML_ARGS) -o $@
 	cp $(DOCS_IMAGES) $(DOCS_BUILD)
 	cp assets/css/* $(DOCS_BUILD)
 	cp assets/js/* $(DOCS_BUILD)

@@ -2,7 +2,7 @@
 
 ::: summary :::
 
-"[Minimal computing](https://go-dh.github.io/mincomp/about/)" is a critical framework for producing digital texts. Lantern applies this framework to the practice of publishing open textbooks.  
+"[Minimal computing](https://go-dh.github.io/mincomp/about/)" is a critical framework for producing digital texts. Lantern applies this framework to the practice of publishing open textbooks.
 
 :::
 

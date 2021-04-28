@@ -53,14 +53,14 @@ Lantern will help you convert Microsoft Word files to Markdown. Markdown is the 
 
 ### Markdown: Adding Structure to Documents
 
-> The idea is to identify logical structures in your document (a title, sections, subsections, footnotes, etc.), mark them with some unobtrusive characters, and then “compile” the resulting text with a typesetting interpreter which will format the document consistently, according to a specified style. _-- Dennis Tenen and Grant Wythoff, "[Sustainable Authorship in Plain Text using Pandoc and Markdown](https://doi.org/10.46430/phen0041)," The Programming Historian 3 (2014)._ 
+> The idea is to identify logical structures in your document (a title, sections, subsections, footnotes, etc.), mark them with some unobtrusive characters, and then “compile” the resulting text with a typesetting interpreter which will format the document consistently, according to a specified style. [@tenen_sustainable_2014]
 
 Markdown provides big benefits to open textbook publishers:
 
 1. It was designed as an "[easy-to-read, easy-to-write](https://daringfireball.net/projects/markdown/)" plain text formatting syntax
 2. Markdown files can be opened on any device with any operating system, providing more stability and longevity than proprietary file formats
 
-> Plain text files have many advantages over other formats. For one, they are readable on virtually all devices. They have also withstood the test of time better than other file types – if you’ve ever tried to open a document saved in a legacy word processor format, you’ll be familiar with the compatibility challenges involved. _-- Sarah Simpkin, "[Getting Started with Markdown](https://doi.org/10.46430/phen0046)," The Programming Historian 4 (2015)._
+> Plain text files have many advantages over other formats. For one, they are readable on virtually all devices. They have also withstood the test of time better than other file types – if you’ve ever tried to open a document saved in a legacy word processor format, you’ll be familiar with the compatibility challenges involved.[@simpkin_getting_2015]
 
 You can create and edit Markdown files using a text editor. Every operating system includes a default plain text editor. On Windows, the default editor is [Notepad](https://www.microsoft.com/en-us/p/windows-notepad/9msmlrh6lzf3?activetab=pivot:overviewtab); on macOS, the default editor is [TextEdit](https://support.apple.com/guide/textedit/welcome/mac). Both of these options will work, as well as any other text editor, but we recommend installing [Visual Studio Code (VS Code)](https://code.visualstudio.com/), which is free for Windows, macOS, and Linux.
 

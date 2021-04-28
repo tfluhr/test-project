@@ -14,7 +14,7 @@ publication_date:
 doi:
 isbn_p:
 isbn_e:
-lang: 
+lang: en-US
 keywords: 
   - pandoc
   - minimal computing
@@ -27,6 +27,8 @@ subjects:
 description: |
   This guide introduces and demonstrates a minimal computing approach to producing open textbooks using free and open source software.
 cover: images/cover.png
+reference-section-title: References
+link-citations: true
 
 ######################################################### 
 # COPYRIGHT AND LICENSING
