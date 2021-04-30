@@ -40,7 +40,7 @@ Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi *
 
 This is the first subsection. Please, admire the gloriousnes of this graph:
 
-![A cool graph](images/graph.png)
+![A cool graph](graph.png){#fig:graph}
 
 ### Tables
 
@@ -52,7 +52,7 @@ Tables need to be finalized _before_ they are formatted in Markdown. It is recom
 | 1     | BBB  |
 | ...   | ...  |
 
-Table: This is an example table.
+Table: This is an example table. {#tbl:table}
 
 ## More Elements
 
@@ -62,7 +62,7 @@ Formula example: $\mu = \sum_{i=0}^{N} \frac{x_i}{N}$
 
 Now, full size:
 
-$$\mu = \sum_{i=0}^{N} \frac{x_i}{N}$$
+$$\mu = \sum_{i=0}^{N} \frac{x_i}{N}$$ {#eq:equation}
 
 ### Code
 
@@ -86,6 +86,6 @@ section on the README.md file.
 
 Here's a list of cross references:
 
-- Check @fig:seagull.
+- Check @fig:graph.
 - Check @tbl:table.
 - Check @eq:equation.
