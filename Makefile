@@ -40,15 +40,15 @@ $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).epub:	$(BASE_DEPENDENCIES)
 	@echo "$@ was built"
 
 $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).html:	$(BASE_DEPENDENCIES)
-	mkdir -p $(OUTPUT_DIRECTORY)
+	mkdir $(OUTPUT_DIRECTORY)
 	$(CONTENT) | tee | $(PANDOC_COMMAND) $(HTML) -o $@
-	cp --parents $(IMAGES) $(OUTPUT_DIRECTORY)
+	cp $(IMAGES) $(OUTPUT_DIRECTORY)
 	cp assets/css/* $(OUTPUT_DIRECTORY) && cp assets/js/* $(OUTPUT_DIRECTORY)
 	mv $(OUTPUT_DIRECTORY)/textbook.html $(OUTPUT_DIRECTORY)/index.html
 	@echo "$@ was built"
 
 $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).pdf:	$(BASE_DEPENDENCIES)
-	mkdir -p $(OUTPUT_DIRECTORY)/pdf
+	mkdir $(OUTPUT_DIRECTORY)
 	$(CONTENT) | tee | $(PANDOC_COMMAND) $(LATEX) -o $@
 	@echo "$@ was built"
 
