@@ -53,12 +53,12 @@ $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).pdf:	$(BASE_DEPENDENCIES)
 	@echo "$@ was built"
 
 $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).tex:	$(BASE_DEPENDENCIES)
-	mkdir -p $(OUTPUT_DIRECTORY)/tex
+	mkdir -p $(OUTPUT_DIRECTORY)
 	$(CONTENT) | tee | $(PANDOC_COMMAND) $(LATEX) -o $@
 	@echo "$@ was built"
 
 $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).docx:	$(BASE_DEPENDENCIES)
-	mkdir -p $(OUTPUT_DIRECTORY)/docx
+	mkdir -p $(OUTPUT_DIRECTORY)
 	$(CONTENT) | tee | $(PANDOC_COMMAND) $(DOCX) -o $@
 	@echo "$@ was built"
 
