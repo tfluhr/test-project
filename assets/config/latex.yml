@@ -1,0 +1,47 @@
+# pandoc settings for html output format
+# for all available options, see 
+# https://pandoc.org/MANUAL.html#default-files
+
+metadata-file: metadata.yml
+
+from: markdown
+to: latex
+
+template: assets/templates/lantern.tex
+standalone: true
+
+# table of contents
+table-of-contents: true
+toc-depth: 3
+
+# section numbers
+number-sections: false
+number-offset: [0,0,0,0,0,0]
+
+# citations
+cite-method: biblatex
+bibliography:
+  - references.bib
+
+# code blocks
+highlight-style: pygments
+preserve-tabs: true
+
+# pdf/LaTeX settings
+pdf-engine: xelatex
+pdf-engine-opts:
+  - "-shell-escape"
+documentclass: book # book, report, article, proc
+classoption: openany # openright, openany
+fontfamily: libertinus
+fontfamilyoptions:
+  - osf
+  - p
+fontsize: 11pt # 10pt (default), 11pt, 12pt
+column_number: onecolumn # onecolumn, twocolumn
+wrap: auto
+columns: 78
+dpi: 72
+
+# set to true if you want a preservation copy of the html output
+self-contained: false 

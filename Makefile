@@ -1,152 +1,87 @@
-################################
-# CONFIGURATION OPTIONS 
-################################
-
-BUILD = public
-MAKEFILE = Makefile
+# textbook content settings
 OUTPUT_FILENAME = textbook
-METADATA = metadata.yml
-BIBLIOGRAPHY = --citeproc references.bibtex
-TOC = --toc --toc-depth 3
-METADATA_ARGS = --metadata-file $(METADATA)
-IMAGES = $(shell find assets/images -type f)
-TEMPLATES = $(shell find assets/templates/ -type f)
+OUTPUT_DIRECTORY = public
 COVER_IMAGE = assets/images/cover.png
-MATH_FORMULAS = --mathjax
+IMAGES = $(shell find assets/images -type f)
 CHAPTERS = chapters/*.md
 CONTENT = awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $(CHAPTERS)
-CONTENT_FILTERS = tee 
 
-# DEBUG_ARGS = --verbose
+# output configuration files
+HTML = --defaults assets/config/html.yml
+DOCX = --defaults assets/config/docx.yml
+LATEX = --defaults assets/config/latex.yml
+EPUB = --defaults assets/config/epub.yml
 
-################################
-# CUSTOM LUA FILTERS LIST
-################################
-
-LUA_FILTERS += $(addprefix --lua-filter=assets/lua/,\
- latex-divs.lua\
-)
-
-ARGS = $(TOC) $(MATH_FORMULAS) $(METADATA_ARGS) $(FILTER_ARGS) $(DEBUG_ARGS)
+# utilities
+MAKEFILE = Makefile
 PANDOC_COMMAND = pandoc
+BASE_DEPENDENCIES = $(MAKEFILE) $(CHAPTERS) $(IMAGES) 
 
-DOCX_ARGS = --standalone --reference-doc assets/templates/docx.docx
-EPUB_ARGS = --template assets/templates/epub.html --epub-cover-image $(COVER_IMAGE)
-HTML_ARGS = --template assets/templates/lantern.html --standalone --to html5 --section-divs
-PDF_ARGS = --template assets/templates/lantern.tex --pdf-engine xelatex
-LATEX_ARGS = --template assets/templates/lantern.tex
-
-BASE_DEPENDENCIES = $(MAKEFILE) $(CHAPTERS) $(METADATA) $(IMAGES) $(TEMPLATES)
-DOCX_DEPENDENCIES = $(BASE_DEPENDENCIES)
-EPUB_DEPENDENCIES = $(BASE_DEPENDENCIES)
-HTML_DEPENDENCIES = $(BASE_DEPENDENCIES)
-PDF_DEPENDENCIES = $(BASE_DEPENDENCIES)
-LATEX_DEPENDENCIES = $(BASE_DEPENDENCIES)
-
-################################
-# BUILD COMMANDS FOR TEXTBOOK
-################################
-
+# build commands
 textbook:	epub html pdf docx latex
 
+epub:	$(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).epub
+
+html:	$(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).html
+
+pdf:	$(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).pdf
+
+docx:	$(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).docx
+
+latex:	$(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).tex
+
 clean:
-	rm -r $(BUILD)
+	rm -r $(OUTPUT_DIRECTORY)
 
-epub:	$(BUILD)/$(OUTPUT_FILENAME).epub
-
-html:	$(BUILD)/$(OUTPUT_FILENAME).html
-
-pdf:	$(BUILD)/$(OUTPUT_FILENAME).pdf
-
-docx:	$(BUILD)/$(OUTPUT_FILENAME).docx
-
-latex:	$(BUILD)/$(OUTPUT_FILENAME).tex
-
-$(BUILD)/epub/$(OUTPUT_FILENAME).epub:	$(EPUB_DEPENDENCIES)
-	mkdir -p $(BUILD)/epub
-	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(LUA_FILTERS) $(ARGS) $(EPUB_ARGS) -o $@
+# recipes for outputs
+$(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).epub:	$(BASE_DEPENDENCIES)
+	mkdir -p $(OUTPUT_DIRECTORY)/epub
+	$(CONTENT) | tee | $(PANDOC_COMMAND) $(EPUB) -o $@
 	@echo "$@ was built"
 
-$(BUILD)/$(OUTPUT_FILENAME).html:	$(HTML_DEPENDENCIES)
-	mkdir -p $(BUILD)
-	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(LUA_FILTERS) $(ARGS) $(HTML_ARGS) -o $@
-	cp --parents $(IMAGES) $(BUILD)
-	cp assets/css/* $(BUILD)
-	cp assets/js/* $(BUILD)
-	mv $(BUILD)/textbook.html $(BUILD)/index.html
+$(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).html:	$(BASE_DEPENDENCIES)
+	mkdir -p $(OUTPUT_DIRECTORY)
+	$(CONTENT) | tee | $(PANDOC_COMMAND) $(HTML) -o $@
+	cp --parents $(IMAGES) $(OUTPUT_DIRECTORY)
+	cp assets/css/* $(OUTPUT_DIRECTORY) && cp assets/js/* $(OUTPUT_DIRECTORY)
+	mv $(OUTPUT_DIRECTORY)/textbook.html $(OUTPUT_DIRECTORY)/index.html
 	@echo "$@ was built"
 
-$(BUILD)/$(OUTPUT_FILENAME).pdf:	$(PDF_DEPENDENCIES)
-	mkdir -p $(BUILD)/pdf
-	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(LUA_FILTERS) $(ARGS) $(PDF_ARGS) -o $@
+$(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).pdf:	$(BASE_DEPENDENCIES)
+	mkdir -p $(OUTPUT_DIRECTORY)/pdf
+	$(CONTENT) | tee | $(PANDOC_COMMAND) $(LATEX) -o $@
 	@echo "$@ was built"
 
-$(BUILD)/$(OUTPUT_FILENAME).docx:	$(DOCX_DEPENDENCIES)
-	mkdir -p $(BUILD)/docx
-	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(LUA_FILTERS) $(ARGS) $(DOCX_ARGS) -o $@
+$(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).tex:	$(BASE_DEPENDENCIES)
+	mkdir -p $(OUTPUT_DIRECTORY)/tex
+	$(CONTENT) | tee | $(PANDOC_COMMAND) $(LATEX) -o $@
 	@echo "$@ was built"
 
-$(BUILD)/$(OUTPUT_FILENAME).tex:	$(LATEX_DEPENDENCIES)
-	mkdir -p $(BUILD)/tex
-	$(CONTENT) | $(CONTENT_FILTERS) |$(PANDOC_COMMAND) $(LUA_FILTERS) $(ARGS) $(LATEX_ARGS) -o $@
+$(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).docx:	$(BASE_DEPENDENCIES)
+	mkdir -p $(OUTPUT_DIRECTORY)/docx
+	$(CONTENT) | tee | $(PANDOC_COMMAND) $(DOCX) -o $@
 	@echo "$@ was built"
 
-################################
-# CONFIGURATION OPTIONS FOR DOCS
-################################
-
-DOCS_BUILD = public/docs
+# lantern documentation content settings 
 DOCS_OUTPUT_FILENAME = lantern
-DOCS_METADATA = assets/docs/metadata.yml
-DOCS_METADATA_ARGS = --metadata-file $(DOCS_METADATA)
-DOCS_BIBLIOGRAPHY = assets/docs/lantern.bib
-DOCS_BIBILIOGRAPHY_ARGS = --citeproc --bibliography $(DOCS_BIBLIOGRAPHY)
+DOCS_OUTPUT_DIRECTORY = public/docs
 DOCS_IMAGES = $(shell find assets/docs/images -type f)
-DOCS_COVER_IMAGE = assets/docs/images/cover.png
 DOCS_CHAPTERS = assets/docs/chapters/*.md
 DOCS_CONTENT = awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $(DOCS_CHAPTERS)
-DOCS_CONTENT_FILTERS = tee # Use this to add sed filters or other piped commands
-DOCS_ARGS = $(TOC) $(MATH_FORMULAS) $(DOCS_METADATA_ARGS) $(FILTER_ARGS)
-DOCX_ARGS = --standalone --reference-doc assets/templates/docx.docx
-EPUB_ARGS = --template assets/templates/epub.html --epub-cover-image $(DOCS_COVER_IMAGE)
-HTML_ARGS = --template assets/templates/lantern.html --standalone --to html5 --section-divs --shift-heading-level-by=1
-PDF_ARGS = --template assets/templates/lantern.tex --pdf-engine xelatex
-DOCS_DEPENDENCIES = $(MAKEFILE) $(DOCS_CHAPTERS) $(DOCS_METADATA) $(DOCS_IMAGES) $(TEMPLATES)
+DOCS_DEPENDENCIES = $(MAKEFILE) $(DOCS_CHAPTERS) $(DOCS_IMAGES) 
+DOCS = --defaults assets/config/docs.yml
 
-################################
-# BUILD COMMANDS FOR TEXTBOOK
-################################
-
+# documentation build commands
 docs:	docs_html
 
-clean_docs:
-	rm -r $(DOCS_BUILD)
+docs_html:	$(DOCS_OUTPUT_DIRECTORY)/$(DOCS_OUTPUT_FILENAME).html
 
-docs_epub:	$(DOCS_BUILD)/$(DOCS_OUTPUT_FILENAME).epub
-docs_html:	$(DOCS_BUILD)/$(DOCS_OUTPUT_FILENAME).html
-docs_pdf:	$(DOCS_BUILD)/$(DOCS_OUTPUT_FILENAME).pdf
-docs_docx:	$(DOCS_BUILD)/$(DOCS_OUTPUT_FILENAME).docx
-
-$(DOCS_BUILD)/$(DOCS_OUTPUT_FILENAME).epub:	$(DOCS_DEPENDENCIES)
-	mkdir -p $(DOCS_BUILD)
-	$(DOCS_CONTENT) | $(DOCS_CONTENT_FILTERS) | $(PANDOC_COMMAND) $(LUA_FILTERS) $(ARGS) $(EPUB_ARGS) -o $@
-	@echo "$@ was built"
-
-$(DOCS_BUILD)/$(DOCS_OUTPUT_FILENAME).html:	$(DOCS_DEPENDENCIES)
-	mkdir -p $(DOCS_BUILD)
-	$(DOCS_CONTENT) | $(DOCS_CONTENT_FILTERS) | $(PANDOC_COMMAND) $(DOCS_BIBILIOGRAPHY_ARGS) $(LUA_FILTERS) $(DOCS_ARGS) $(HTML_ARGS) -o $@
-	cp $(DOCS_IMAGES) $(DOCS_BUILD)
-	cp assets/css/* $(DOCS_BUILD)
-	cp assets/js/* $(DOCS_BUILD)
-	mv $(DOCS_BUILD)/$(DOCS_OUTPUT_FILENAME).html $(DOCS_BUILD)/index.html
-	@echo "$@ was built"
-
-$(DOCS_BUILD)/$(DOCS_OUTPUT_FILENAME).pdf:	$(DOCS_DEPENDENCIES)
-	mkdir -p $(BUILD)
-	$(DOCS_CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(LUA_FILTERS) $(ARGS) $(PDF_ARGS) -o $@
-	@echo "$@ was built"
-
-$(DOCS_BUILD)/$(DOCS_OUTPUT_FILENAME).docx:	$(DOCS_DEPENDENCIES)
-	mkdir -p $(BUILD)
-	$(DOCS_CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(LUA_FILTERS) $(ARGS) $(DOCX_ARGS) -o $@
+# lantern documenation build recipes
+$(DOCS_OUTPUT_DIRECTORY)/$(DOCS_OUTPUT_FILENAME).html:	$(DOCS_DEPENDENCIES)
+	mkdir -p $(DOCS_OUTPUT_DIRECTORY)
+	$(DOCS_CONTENT) | tee | $(PANDOC_COMMAND) $(DOCS) -o $@
+	cp $(DOCS_IMAGES) $(DOCS_OUTPUT_DIRECTORY)
+	cp assets/css/* $(DOCS_OUTPUT_DIRECTORY)
+	cp assets/js/* $(DOCS_OUTPUT_DIRECTORY)
+	mv $(DOCS_OUTPUT_DIRECTORY)/$(DOCS_OUTPUT_FILENAME).html $(DOCS_OUTPUT_DIRECTORY)/index.html
 	@echo "$@ was built"
