@@ -7,6 +7,7 @@ metadata-file: metadata.yml
 from: markdown
 to: latex
 
+resource-path: ["assets/images/"]
 template: assets/templates/lantern.tex
 standalone: true
 
@@ -19,7 +20,7 @@ number-sections: false
 number-offset: [0,0,0,0,0,0]
 
 # citations
-cite-method: biblatex
+citeproc: true
 bibliography:
   - references.bib
 
@@ -31,17 +32,24 @@ preserve-tabs: true
 pdf-engine: xelatex
 pdf-engine-opts:
   - "-shell-escape"
-documentclass: book # book, report, article, proc
-classoption: openany # openright, openany
-fontfamily: libertinus
-fontfamilyoptions:
-  - osf
-  - p
-fontsize: 11pt # 10pt (default), 11pt, 12pt
-column_number: onecolumn # onecolumn, twocolumn
+variables:
+  documentclass: book # book, report, article, proc
+  classoption: openany # openright, openany
+  fontfamily: libertinus
+  fontfamilyoptions:
+    - osf
+    - p
+  fontsize: 11pt # 10pt (default), 11pt, 12pt
+  column_number: onecolumn # onecolumn, twocolumn
+
 wrap: auto
 columns: 78
 dpi: 72
+
+# lua filters for adds new environments
+filters:
+  - pandoc-crossref
+  - assets/lua/latex-divs.lua
 
 # set to true if you want a preservation copy of the html output
 self-contained: false 
