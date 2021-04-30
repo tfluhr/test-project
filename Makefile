@@ -64,26 +64,26 @@ latex:	$(BUILD)/$(OUTPUT_FILENAME).tex
 
 $(BUILD)/epub/$(OUTPUT_FILENAME).epub:	$(EPUB_DEPENDENCIES)
 	mkdir -p $(BUILD)/epub
-	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(LUA_FILTERS) $(ARGS) $(EPUB_ARGS) | $(LUA_FILTERS) -o $@
+	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(LUA_FILTERS) $(ARGS) $(EPUB_ARGS) -o $@
 	@echo "$@ was built"
 
 $(BUILD)/$(OUTPUT_FILENAME).html:	$(HTML_DEPENDENCIES)
 	mkdir -p $(BUILD)
-	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(LUA_FILTERS) $(ARGS) $(HTML_ARGS) | $(LUA_FILTERS) -o $@
+	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(LUA_FILTERS) $(ARGS) $(HTML_ARGS) -o $@
 	cp --parents $(IMAGES) $(BUILD)
 	cp assets/css/* $(BUILD)
 	cp assets/js/* $(BUILD)
-	mv build/textbook.html build/index.html
+	mv $(BUILD)/textbook.html $(BUILD)/index.html
 	@echo "$@ was built"
 
 $(BUILD)/$(OUTPUT_FILENAME).pdf:	$(PDF_DEPENDENCIES)
 	mkdir -p $(BUILD)/pdf
-	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(LUA_FILTERS) $(ARGS) $(PDF_ARGS) | $(LUA_FILTERS) -o $@
+	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(LUA_FILTERS) $(ARGS) $(PDF_ARGS) -o $@
 	@echo "$@ was built"
 
 $(BUILD)/$(OUTPUT_FILENAME).docx:	$(DOCX_DEPENDENCIES)
 	mkdir -p $(BUILD)/docx
-	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(LUA_FILTERS) $(ARGS) $(DOCX_ARGS) | $(LUA_FILTERS) -o $@
+	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(LUA_FILTERS) $(ARGS) $(DOCX_ARGS) -o $@
 	@echo "$@ was built"
 
 $(BUILD)/$(OUTPUT_FILENAME).tex:	$(LATEX_DEPENDENCIES)
