@@ -44,5 +44,8 @@ default-image-extension: ".jpg"
 email-obfuscation: javascript
 html-q-tags: false
 
+filters:
+  - pandoc-crossref
+
 # set to true if you want a preservation copy of the html output
 self-contained: false 
