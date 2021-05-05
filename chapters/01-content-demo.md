@@ -1,8 +1,6 @@
-## Basic Chapter Elements
+# Basic Chapter Elements
 
-Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
-
-### Learning Objectives
+## Learning Objectives
 
 Unnumbered:
 
@@ -24,25 +22,27 @@ Numbered:
 
 ::: 
 
-### Media 
+## Media 
 
 [![Markdown Tutorial](http://img.youtube.com/vi/2JE66WFpaII/0.jpg)](http://www.youtube.com/watch?v=2JE66WFpaII "Markdown Tutorial")
 
-### Paragraphs
+## Paragraphs
 
 Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.
 
-#### Subsections
+Soup cranberry spritzer edamame hummus figs tomato and basil Bolivian rainbow pepper chili pepper vine tomatoes ultimate avocado dressing drizzle summer fruit salad. Peanut butter crunch coconut dill plums morning smoothie bowl strawberries spiced peppermint blast crunchy seaweed mangos green tea. Eating together dark chocolate pine nuts red curry tofu noodles lychee chocolate cookie red amazon pepper orange mediterranean luxury bowl hearts of palm Italian linguine puttanesca lemon tahini dressing picnic salad walnut mushroom tart almonds pumpkin.
+
+### Subsections
 
 Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi **amaranth water spinach** avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin _onion chickpea gram_ corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.
 
-### Figure Images
+## Figure Images
 
 This is the first subsection. Please, admire the gloriousnes of this graph:
 
 ![A cool graph](graph.png){#fig:graph}
 
-### Tables
+## Tables
 
 Tables need to be finalized _before_ they are formatted in Markdown. It is recommended to use a [Markdown table generator](https://www.tablesgenerator.com/markdown_tables), rather than formatting tables in Markdown by hand. Some Markdown table generators will allow you to [import tables created in Excel or CSV formats](https://jakebathman.github.io/Markdown-Table-Generator/). 
 
