@@ -31,6 +31,14 @@ function Div(el)
       el.content,
       pandoc.RawBlock("latex", "\\end{learning-objectives}"))
   end
+  if el.classes[1] == "authors" then
+    table.insert(
+      el.content, 1,
+      pandoc.RawBlock("latex", "\\begin{authors}"))
+    table.insert(
+      el.content,
+      pandoc.RawBlock("latex", "\\end{authors}"))
+  end
   return el
   -- return the Div element with modifications made
 end

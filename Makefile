@@ -9,8 +9,8 @@ CONTENT = awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $(CHAPTERS)
 # output configuration files
 HTML = --verbose --filter pandoc-crossref --defaults assets/config/html.yml
 DOCX = --defaults assets/config/docx.yml
-LATEX = --defaults assets/config/latex.yml
-EPUB = --defaults assets/config/epub.yml
+LATEX = --filter pandoc-crossref --defaults assets/config/latex.yml
+EPUB = --verbose --defaults assets/config/epub.yml --mathml
 
 # utilities
 MAKEFILE = Makefile
@@ -18,7 +18,7 @@ PANDOC_COMMAND = pandoc
 BASE_DEPENDENCIES = $(MAKEFILE) $(CHAPTERS) $(IMAGES) 
 
 # build commands
-textbook:	epub html pdf docx latex
+textbook:	epub html latex
 
 epub:	$(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).epub
 
@@ -35,12 +35,12 @@ clean:
 
 # recipes for outputs
 $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).epub:	$(BASE_DEPENDENCIES)
-	mkdir -p $(OUTPUT_DIRECTORY)/epub
+	mkdir -p $(OUTPUT_DIRECTORY)
 	$(CONTENT) | tee | $(PANDOC_COMMAND) $(EPUB) -o $@
 	@echo "$@ was built"
 
 $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).html:	$(BASE_DEPENDENCIES)
-	mkdir $(OUTPUT_DIRECTORY)
+	mkdir -p $(OUTPUT_DIRECTORY)
 	$(CONTENT) | tee | $(PANDOC_COMMAND) $(HTML) -o $@
 	cp $(IMAGES) $(OUTPUT_DIRECTORY)
 	cp assets/css/* $(OUTPUT_DIRECTORY) && cp assets/js/* $(OUTPUT_DIRECTORY)
@@ -48,7 +48,7 @@ $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).html:	$(BASE_DEPENDENCIES)
 	@echo "$@ was built"
 
 $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).pdf:	$(BASE_DEPENDENCIES)
-	mkdir $(OUTPUT_DIRECTORY)
+	mkdir -p $(OUTPUT_DIRECTORY)
 	$(CONTENT) | tee | $(PANDOC_COMMAND) $(LATEX) -o $@
 	@echo "$@ was built"
 

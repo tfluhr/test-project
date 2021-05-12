@@ -3,7 +3,7 @@
 # https://pandoc.org/MANUAL.html#default-files
 
 metadata-file: metadata.yml
-epub-cover-image: assets/images/cover.jpg
+epub-cover-image: assets/images/cover.png
 
 from: markdown
 to: epub3
