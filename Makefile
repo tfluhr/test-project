@@ -7,7 +7,7 @@ CHAPTERS = chapters/*.md
 CONTENT = awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $(CHAPTERS)
 
 # output configuration files
-HTML = --defaults assets/config/html.yml
+HTML = --verbose --filter pandoc-crossref --defaults assets/config/html.yml
 DOCX = --defaults assets/config/docx.yml
 LATEX = --defaults assets/config/latex.yml
 EPUB = --defaults assets/config/epub.yml

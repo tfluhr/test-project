@@ -38,3 +38,6 @@ editors:
 git_url: https://github.com/nulib-oer/lantern
 
 toc-title: "Contents" # text label for table of contents
+reference-section-title: "References"
+
+linkReferences: true
