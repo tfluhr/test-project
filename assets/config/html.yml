@@ -18,6 +18,9 @@ toc-depth: 3
 number-sections: false
 number-offset: [0,0,0,0,0,0]
 
+#filters:
+#  - pandoc-crossref
+
 # citations
 citeproc: true
 bibliography:
@@ -43,9 +46,6 @@ strip-comments: true
 default-image-extension: ".jpg"
 email-obfuscation: javascript
 html-q-tags: false
-
-filters:
-  - pandoc-crossref
 
 # set to true if you want a preservation copy of the html output
 self-contained: false 
