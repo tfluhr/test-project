@@ -30,6 +30,9 @@ docx:	$(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).docx
 
 latex:	$(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).tex
 
+markdown:
+	sh ./assets/scripts/word-formats.sh
+
 clean:
 	rm -r $(OUTPUT_DIRECTORY)
 
