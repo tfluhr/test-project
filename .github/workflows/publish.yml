@@ -1,0 +1,43 @@
+name: Publish Open Textbook
+
+on:
+  push:
+    paths:
+      - 'chapters/**'
+      - 'metadata.yml'
+      - 'references.bib'
+      - 'assets/config/**'
+      - 'assets/images/**'
+    branches-ignore:
+      - main  # Set a branch name to trigger deployment
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Setup Pandoc and LaTeX
+        run: brew install pandoc pandoc-crossref
+
+      - name: Installs TinyTex
+        uses: r-lib/actions/setup-tinytex@v1
+
+      - name: Checks Installations
+        run: |
+          tlmgr --version
+          pandoc --version
+          pandoc-crossref --version
+
+      - name: Build Documentation Site
+        run: |
+          make textbook
+          touch ./public/docs/.nojekyll
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public/
