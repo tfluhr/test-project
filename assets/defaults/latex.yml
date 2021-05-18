@@ -7,7 +7,7 @@ metadata-file: metadata.yml
 from: markdown
 to: latex
 
-resource-path: ["assets/images/"]
+resource-path: ["source/images/"]
 template: assets/templates/lantern.tex
 standalone: true
 
@@ -22,7 +22,7 @@ number-offset: [0,0,0,0,0,0]
 # citations
 citeproc: true
 bibliography:
-  - references.bib
+  - source/references.bib
 
 # code blocks
 highlight-style: pygments
@@ -48,7 +48,7 @@ dpi: 72
 
 # lua filters for adds new environments
 filters:
-  - assets/lua/latex-divs.lua
+  - assets/scripts/latex-divs.lua
 
 # set to true if you want a preservation copy of the html output
 self-contained: false 

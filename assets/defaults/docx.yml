@@ -21,7 +21,7 @@ number-offset: [0,0,0,0,0,0]
 # citations
 citeproc: true
 bibliography:
-  - references.bib
+  - source/references.bib
 
 # code blocks
 highlight-style: pygments

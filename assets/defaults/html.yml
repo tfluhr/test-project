@@ -3,12 +3,11 @@
 # https://pandoc.org/MANUAL.html#default-files
 
 metadata-file: metadata.yml
-epub-cover-image: assets/images/cover.png
 
 from: markdown
-to: epub3
+to: html5
 
-template: assets/templates/epub.html
+template: assets/templates/lantern.html
 standalone: true
 
 # table of contents
@@ -19,10 +18,18 @@ toc-depth: 3
 number-sections: false
 number-offset: [0,0,0,0,0,0]
 
+#filters:
+#  - pandoc-crossref
+
 # citations
 citeproc: true
 bibliography:
-  - references.bib
+  - source/references.bib
+
+# math, see https://pandoc.org/MANUAL.html#math-rendering-in-html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 
 # code blocks
 highlight-style: pygments
@@ -40,11 +47,5 @@ default-image-extension: ".jpg"
 email-obfuscation: javascript
 html-q-tags: false
 
-self-contained: true
-
-# part, chapter, section, or default:
-top-level-division: chapter
-abbreviations:
-
-epub-subdirectory: EPUB
-epub-chapter-level: 1
+# set to true if you want a preservation copy of the html output
+self-contained: false 

@@ -22,6 +22,8 @@ Lantern uses [Pandoc](https://pandoc.org/) as it's processing engine and provide
 
 - **Sustainable:** Lantern minimizes the infrastructure, configuration, hosting, and maintenance costs related to traditional digital publishing systems.
 
+> Plain text files have many advantages over other formats. For one, they are readable on virtually all devices. They have also withstood the test of time better than other file types – if you’ve ever tried to open a document saved in a legacy word processor format, you’ll be familiar with the compatibility challenges involved.[@simpkin_getting_2015]
+
 ## Credits
 
 Lantern is a project by Chris Diaz (Digital Publishing Librarian) and Lauren McKeen McDonald (Open Education Librarian) of Northwestern University with support from the [Association of Research Libraries](https://www.arl.org/). Lantern is based on [Pandoc Book Template](https://github.com/wikiti/pandoc-book-template), and was inspired by numerous publishing tools, including [Bookdown](https://bookdown.org/), [Course-in-a-Box](https://course-in-a-box.p2pu.org/), [CollectionBuilder](https://collectionbuilder.github.io/), and [Wax](https://minicomp.github.io/wax/).

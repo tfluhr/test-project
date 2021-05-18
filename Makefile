@@ -1,16 +1,15 @@
 # textbook content settings
 OUTPUT_FILENAME = textbook
 OUTPUT_DIRECTORY = public
-COVER_IMAGE = assets/images/cover.png
-IMAGES = $(shell find assets/images -type f)
-CHAPTERS = chapters/*.md
+IMAGES = $(shell find source/images -type f)
+CHAPTERS = source/chapters/*.md
 CONTENT = awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $(CHAPTERS)
 
 # output configuration files
-HTML = --verbose --filter pandoc-crossref --defaults assets/config/html.yml
-DOCX = --defaults assets/config/docx.yml
-LATEX = --filter pandoc-crossref --defaults assets/config/latex.yml
-EPUB = --verbose --defaults assets/config/epub.yml --mathml
+HTML = --verbose --filter pandoc-crossref --defaults assets/defaults/html.yml
+DOCX = --defaults assets/defaults/docx.yml
+LATEX = --filter pandoc-crossref --defaults assets/defaults/latex.yml
+EPUB = --verbose --defaults assets/defaults/epub.yml --mathml
 
 # utilities
 MAKEFILE = Makefile
@@ -46,8 +45,9 @@ $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).html:	$(BASE_DEPENDENCIES)
 	mkdir -p $(OUTPUT_DIRECTORY)
 	$(CONTENT) | tee | $(PANDOC_COMMAND) $(HTML) -o $@
 	cp $(IMAGES) $(OUTPUT_DIRECTORY)
-	cp assets/css/* $(OUTPUT_DIRECTORY) && cp assets/js/* $(OUTPUT_DIRECTORY)
-	mv $(OUTPUT_DIRECTORY)/textbook.html $(OUTPUT_DIRECTORY)/index.html
+	cp assets/lib/* $(OUTPUT_DIRECTORY)
+	cp assets/styles/* $(OUTPUT_DIRECTORY)
+	mv $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).html $(OUTPUT_DIRECTORY)/index.html
 	@echo "$@ was built"
 
 $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).pdf:	$(BASE_DEPENDENCIES)
@@ -66,25 +66,23 @@ $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).docx:	$(BASE_DEPENDENCIES)
 	@echo "$@ was built"
 
 # lantern documentation content settings 
-DOCS_OUTPUT_FILENAME = lantern
 DOCS_OUTPUT_DIRECTORY = public/docs
-DOCS_IMAGES = $(shell find assets/docs/images -type f)
-DOCS_CHAPTERS = assets/docs/chapters/*.md
+DOCS_IMAGES = $(shell find docs/images -type f)
+DOCS_CHAPTERS = docs/chapters/*.md
 DOCS_CONTENT = awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $(DOCS_CHAPTERS)
 DOCS_DEPENDENCIES = $(MAKEFILE) $(DOCS_CHAPTERS) $(DOCS_IMAGES) 
-DOCS = --defaults assets/config/docs.yml
+DOCS = --defaults assets/defaults/docs.yml
 
 # documentation build commands
 docs:	docs_html
 
-docs_html:	$(DOCS_OUTPUT_DIRECTORY)/$(DOCS_OUTPUT_FILENAME).html
+docs_html:	$(DOCS_OUTPUT_DIRECTORY)/index.html
 
 # lantern documenation build recipes
-$(DOCS_OUTPUT_DIRECTORY)/$(DOCS_OUTPUT_FILENAME).html:	$(DOCS_DEPENDENCIES)
+$(DOCS_OUTPUT_DIRECTORY)/index.html:	$(DOCS_DEPENDENCIES)
 	mkdir -p $(DOCS_OUTPUT_DIRECTORY)
 	$(DOCS_CONTENT) | tee | $(PANDOC_COMMAND) $(DOCS) -o $@
 	cp $(DOCS_IMAGES) $(DOCS_OUTPUT_DIRECTORY)
-	cp assets/css/* $(DOCS_OUTPUT_DIRECTORY)
-	cp assets/js/* $(DOCS_OUTPUT_DIRECTORY)
-	mv $(DOCS_OUTPUT_DIRECTORY)/$(DOCS_OUTPUT_FILENAME).html $(DOCS_OUTPUT_DIRECTORY)/index.html
+	cp assets/lib/* $(DOCS_OUTPUT_DIRECTORY)
+	cp assets/styles/* $(DOCS_OUTPUT_DIRECTORY)
 	@echo "$@ was built"
