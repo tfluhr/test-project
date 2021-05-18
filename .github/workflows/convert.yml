@@ -3,7 +3,7 @@ name: Convert Word Processing Formats to Markdown
 on:
   push:
     paths:
-      - 'word-formats/**'
+      - 'source/word-formats/**'
     branches-ignore:
       - main  # Set a branch name to trigger deployment
 
@@ -20,7 +20,7 @@ jobs:
 
       - uses: EndBug/add-and-commit@v7 # You can change this to use a specific version
         with:
-          add: 'chapters/*.md'
+          add: 'source/chapters/*.md'
           default_author: github_actor
           message: 'New Markdown Chapters'
           pull_strategy: '--no-rebase'

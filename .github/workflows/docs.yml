@@ -3,8 +3,7 @@ name: Update Documentation
 on:
   push:
     paths:
-      - 'assets/docs/**'
-      - '.github/workflows/documentation.yml'
+      - 'docs/**'
     branches:
       - main  # Set a branch name to trigger deployment
 

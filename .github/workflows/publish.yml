@@ -3,11 +3,7 @@ name: Publish Open Textbook
 on:
   push:
     paths:
-      - 'chapters/**'
-      - 'metadata.yml'
-      - 'references.bib'
-      - 'assets/config/**'
-      - 'assets/images/**'
+      - 'source/**'
     branches-ignore:
       - main  # Set a branch name to trigger deployment
 
@@ -34,7 +30,7 @@ jobs:
       - name: Build Documentation Site
         run: |
           make textbook
-          touch ./public/docs/.nojekyll
+          touch ./public/.nojekyll
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
