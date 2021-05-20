@@ -1,4 +1,6 @@
-# Bibliographic Citations
+# Markdown Formatting 
+
+## Bibliographic Citations
 
 Lantern supports the automatic generation of citations and bibliographies. Citations are rendered using the [Citation Style Language](https://docs.citationstyles.org/en/stable/specification.html) specification. By default, Lantern uses the [Chicago Manual of Style](https://chicagomanualofstyle.org/) author-date format. 
 
@@ -6,7 +8,6 @@ Lantern supports the automatic generation of citations and bibliographies. Citat
 
 - Textbook chapters containing in-text citations
 - A bibliographic data file
-- 
 
 ## In-text Citations
 
