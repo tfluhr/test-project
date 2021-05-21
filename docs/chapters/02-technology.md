@@ -57,6 +57,18 @@ Lantern requires manuscript files to be formatted as Markdown (`.md`) files. Mar
 
 > The idea is to identify logical structures in your document (a title, sections, subsections, footnotes, etc.), mark them with some unobtrusive characters, and then “compile” the resulting text with a typesetting interpreter which will format the document consistently, according to a specified style. [@tenen_sustainable_2014]
 
+::: aside :::
+
+### Markdown Tutorial
+
+This video explains the basics of Markdown syntax. While it is true that Markdown was designed as a simplified alternative to writing content for HTML, Lantern uses Markdown to write several additional output formats.  
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/2JE66WFpaII" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+One downside to Markdown is that is it not a markup language that has been standardized. There are a few specifications that aim to standardize Markdown, but generally the Markdown syntax rules are set by the Markdown processor, or engine. Since Lantern uses Pandoc as it's Markdown processor, we'll be using [Pandoc's Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown) to format our textbooks.
+
+:::
+
 Lantern provides guidance and tools to simplify the conversion process from common word processing formats (`.docx`, `.odt`, or `.rtf`) to Markdown. The conversions won't be perfect, but they'll save you a lot of time.
 
 If you're starting with Microsoft Word files, you'll need the ability to open the files and apply styles to chapter contents, such as headings. We recommend [Microsoft Word](https://www.microsoft.com/en-us/microsoft-365/word?rtc=1) as your word processor, but [Libre Office](https://www.libreoffice.org/) or [Google Docs](https://www.google.com/docs/about/) will also work. 
