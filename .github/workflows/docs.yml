@@ -39,4 +39,4 @@ jobs:
 
       - name: Deploy Documentation Website to AWS
         run: |
-          aws s3 sync ./public/docs/* s3://${{ secrets.AWS_S3_BUCKET_ID }}
+          aws s3 sync ./public/docs/* ${{ secrets.AWS_S3_BUCKET_ID }}
