@@ -12,13 +12,13 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       
-      - name: Checkout Repo
+      - name: Download Source Files
         uses: actions/checkout@v2
 
-      - name: Setup Pandoc and LaTeX
+      - name: Setup Pandoc
         run: brew install pandoc pandoc-crossref
 
-      - name: Installs TinyTex
+      - name: Install LaTeX via TinyTex
         uses: r-lib/actions/setup-tinytex@v1
 
       - name: Checks Installations
