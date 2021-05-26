@@ -2,7 +2,7 @@
 # for all available options, see 
 # https://pandoc.org/MANUAL.html#default-files
 
-metadata-file: metadata.yml
+metadata-file: source/metadata.yml
 epub-cover-image: source/images/cover.png
 
 from: markdown
