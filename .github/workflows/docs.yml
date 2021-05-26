@@ -2,11 +2,10 @@ name: Update Documentation
 
 on:
   push:
-    paths:
-      - 'docs/**'
-      - '.github/workflows/docs.yml'
     branches:
       - main  # Set a branch name to trigger deployment
+    paths:
+      - 'docs/**'
 
 jobs:
   deploy:
@@ -24,12 +23,6 @@ jobs:
         run: |
           make docs
           touch ./public/docs/.nojekyll
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public/docs/
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1

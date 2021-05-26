@@ -2,10 +2,10 @@ name: Publish Open Textbook
 
 on:
   push:
-    paths:
-      - 'source/**'
-    branches-ignore:
+    branches:
       - main  # Set a branch name to trigger deployment
+    paths-ignore:
+      - 'docs/**'
 
 jobs:
   deploy:
