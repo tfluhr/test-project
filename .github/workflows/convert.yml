@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'source/word-formats/**'
-    branches-ignore:
+    branches:
       - main  # Set a branch name to trigger deployment
 
 jobs:
@@ -14,6 +14,9 @@ jobs:
       
       - name: Checkout Repo
         uses: actions/checkout@v2
+        
+      - name: Install Pandoc
+        run: brew install pandoc
 
       - name: Run Convert Script
         run: make markdown
