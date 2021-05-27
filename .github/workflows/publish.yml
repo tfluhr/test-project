@@ -6,9 +6,10 @@ on:
       - main  # Set a branch name to trigger deployment
     paths-ignore:
       - 'docs/**'
+      - 'README.md'
 
 jobs:
-  deploy:
+  publish_textbook:
     runs-on: ubuntu-20.04
     steps:
       

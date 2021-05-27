@@ -2,13 +2,13 @@ name: Convert Word Processing Formats to Markdown
 
 on:
   push:
-    paths:
-      - 'source/word-formats/**'
     branches:
       - main  # Set a branch name to trigger deployment
+    paths:
+      - 'source/word-formats/**'
 
 jobs:
-  deploy:
+  convert_to_markdown:
     runs-on: ubuntu-20.04
     steps:
       
