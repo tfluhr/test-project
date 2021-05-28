@@ -35,7 +35,7 @@ license:
 
 download:
   - format: PDF
-    link: textbook.tex
+    link: textbook.pdf
   - format: EPUB
     link: textbook.epub
   - format: LaTeX

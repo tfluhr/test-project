@@ -29,7 +29,7 @@ highlight-style: pygments
 preserve-tabs: true
 
 # pdf/LaTeX settings
-pdf-engine: pdflatex
+pdf-engine: xelatex
 pdf-engine-opts:
   - "-shell-escape"
 variables:
@@ -47,8 +47,8 @@ columns: 78
 dpi: 72
 
 # lua filters for adds new environments
-filters:
-  - assets/scripts/latex-divs.lua
+#filters:
+#  - assets/scripts/latex-divs.lua
 
 # set to true if you want a preservation copy of the html output
 self-contained: false 
