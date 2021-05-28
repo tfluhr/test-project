@@ -17,7 +17,7 @@ PANDOC_COMMAND = pandoc
 BASE_DEPENDENCIES = $(MAKEFILE) $(CHAPTERS) $(IMAGES) 
 
 # build commands
-textbook:	html docx latex epub pdf
+textbook:	html docx latex epub
 
 epub:	$(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).epub
 
