@@ -30,7 +30,9 @@ jobs:
           pandoc-crossref --version
       
       - name: Install LaTeX Packages
-        run: tlmgr install ntheorem
+        run: |
+          tlmgr install ntheorem
+          tlmgr install mdframed
 
       - name: Build Documentation Site
         run: |
