@@ -165,7 +165,7 @@ The conversion process between word processing formats and markdown won't be per
 
 ![Screenshot of the Probabilities example chapter on GitHub](probability.png)
 
-GitHub will render the raw markdown as formatted HTML in order to give you a preview of how the content will look in its final state.
+GitHub will render the raw markdown as formatted HTML (without any styles) in order to give you a preview of how the content will look in its final state.
 
 - Click on the pencil icon labelled "Edit this File" near the right side of the screen
 
@@ -180,5 +180,8 @@ The title of this particular chapter is not formatted properly. Instead of marki
 All chapter files using Lantern must begin must begin with the title of the chapter formatted as a "Heading 1" or a first-level heading using the hashtag symbol (`#`). The number of hashtags corresponds to the level that heading represents (for example, one hashtag converts to a `<h1>` tag when the output is HTML). There are typically between 1 and 6 heading level options. 
 
 - Now click on the "Preview" tab to see how that syntax change affected the output of the heading
+
+![Screenshot of the HTML preview for the Probabilities chapter](preview.png)
+
 - There is another heading error in the file. Change `**Introduction to Probability Standard**` in line 19 to `## Introduction to Probability Standard` so that it represents a "Heading 2", or section heading.
 - Scroll down to the bottom of the page and click on the "Commit changes" button to save these changes to your textbook
