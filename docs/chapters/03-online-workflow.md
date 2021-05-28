@@ -5,7 +5,7 @@ The Online Workflow is entirely web-based and uses [GitHub](https://github.com) 
 ## Prerequisites
 
 - Create a [GitHub](https://github.com) account
-- Download the [starter files](https://drive.google.com/drive/folders/1Fl__DhDXDFyoPmwX0CHpfj10qhOY3t0k?usp=sharing)
+- Download the [example chapters](https://drive.google.com/drive/folders/1Fl__DhDXDFyoPmwX0CHpfj10qhOY3t0k?usp=sharing) as `.docx` or `.odt` files
 
 ## Create Your Online Workspace
 
@@ -25,7 +25,9 @@ A repository is a project folder that uses [Git](https://git-scm.com/) for versi
 
 ![Screenshot of the "Use this Template" button](use-this-template.png)
 
-1. Enter your new repository name for your textbook project. Use a lowercase name without spaces or odd characters. This name will become part of your site URL, so think through how it will look as a link 
+1. Enter your new repository name for your textbook project. Use a lowercase name without spaces. This name will become part of your site URL. 
+
+![Screenshot of the web form for creating a new repository](new-repository.png)
 
 ::: aside :::
 
@@ -35,7 +37,7 @@ _Example: `https://USERNAME.github.io/REPOSITORY-NAME` where `USERNAME` is your 
 
 5. Most users should choose "Public" repository. If you are hosting on GitHub Pages it must be public unless you upgrade to a paid account.
 
-1. Leave the "Include all branches" option Unchecked! (you do not want all branches, only the `main` branch)
+1. Leave the "Include all branches" option unchecked; you only want the `main` branch
    
 1. Click on the green button "Create repository from template." This will take you to your new repository.
 
@@ -106,6 +108,32 @@ This form will help you create a _commit_ in your repository. A commmit is a sna
 - When you're ready to make the commit, you can keep the default setting for committing directly to the `main` branch. 
 
 - Click on the "Commit changes" button.
+
+This action will trigger a few things for your new textbook:
+
+- Your textbook is built as a website as well as several additional output formats: PDF, LaTeX, EPUB, and DOCX
+- These files are saved to a new "branch" in your repository called `gh-pages`
+
+The `gh-pages` branch of your repository acts as your web server, where every file in this branch can be made accessible via the URL of your textbook. The URL for your textbook is created, by default, using this pattern: `https://USERNAME.github.io/REPOSITORY-NAME`
+
+![Screenshot highlighting the number of branches, latest commit, and settings tab](new-branch-settings.png)
+
+While your website is ready to go live, it is not live yet. You'll have to make a change to the settings in your repository. 
+
+- Click on the "Settings" tab from the home page of your repository
+- In the left sidebar, click on the "Pages" link
+
+![Screenshot highlighting the Pages link from the settings tab](pages.png)
+
+[GitHub Pages](https://pages.github.com) is a free static website hosting service from GitHub. In order to use this service for our textbook project, we'll need to point the web host to the source of our textbook's website files, which is the `gh-pages` branch of our repository.
+
+- In the "Source" drop-down menu, select `gh-pages`
+- Keep the section drop-down menu option as: `/(root)`
+- Click save
+
+After about one minute or so, your website will be live at: `https://USERNAME.github.io/REPOSITORY-NAME`
+
+Each time you add, edit, or delete files in the `source` directory by committing changes to your repository, your textbook's website will refresh with the new content.
 
 ::: exercise :::
 
