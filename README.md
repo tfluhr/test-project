@@ -12,5 +12,5 @@ Lantern was developed as an experiment to create a [minimal computing](https://g
 
 - Build, deploy, and host textbooks as static HTML files for any web server
 - Produce HTML, PDF, EPUB, and DOCX versions of textbooks from a single source
-- Keep the source files and software away from any proprietary system
-- Learn the value of plain text documents for preservation and accessibility
+- Keep the source files and software out of proprietary systems
+- Learn how document markup affects preservation and accessibility
