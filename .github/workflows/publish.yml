@@ -28,13 +28,6 @@ jobs:
           tlmgr --version
           pandoc --version
           pandoc-crossref --version
-      
-      - name: Install LaTeX Packages
-        run: |
-          tlmgr install ntheorem
-          tlmgr install mdframed
-          tlmgr install zref-abspage
-          tlmgr install lmodern
 
       - name: Build Documentation Site
         run: |
