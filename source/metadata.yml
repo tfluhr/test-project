@@ -10,7 +10,7 @@ contributor:
   - Research Assistant
   - Research Assistant
 
-publication_date:
+publication_year: 2021
 doi: 10.1000/xyz123
 isbn_p:
 isbn_e:
@@ -28,8 +28,23 @@ description: |
 
 lang: en-us
 
-copyright:
-license: cc0 # by, nc, sa, nc-sa, cc0
+#copyright: 
+license:
+  label: Creative Commons Attribution 4.0 International (CC BY 4.0)
+  url: https://creativecommons.org/licenses/by/4.0/
+
+download:
+  - format: PDF
+    link: textbook.tex
+  - format: EPUB
+    link: textbook.epub
+  - format: LaTeX
+    link: textbook.tex
+  - format: DOCX
+    link: textbook.docx
+  - format: Source
+    link: https://github.com/nulib-oer/lantern
+
 
 publisher: Publishing Organization
 publisher_location: Evanston, IL # City, State
