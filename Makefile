@@ -30,7 +30,7 @@ docx:	$(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).docx
 latex:	$(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).tex
 
 markdown:
-	bash ./assets/scripts/word-formats.sh
+	bash ./assets/scripts/preprocess.sh
 
 clean:
 	rm -r $(OUTPUT_DIRECTORY)

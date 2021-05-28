@@ -57,18 +57,6 @@ Your new repository comes with a few files and folders you'll be using to add an
 
 - `references.bib`: This file contains the bibliography for your textbook in [BibTex format](http://www.bibtex.org/Format/)
 
-::: exercise :::
-
-### Further Customization
-
-If you'd like to edit the default configurations, styles, production tasks, or templates, you can do so by editing these files:
-
-- `assets/`: This folder contains the files for configurations (`defaults/`), styles (`styles/`), dependencies (`lib/`), scripts (`scripts/`,), and templates (`templates/`) Lantern uses to produce the output formats. 
-
-- `Makefile`: This file defines the core commands Lantern uses to produce your output files.
-
-:::
-
 ## Metadata
 
 Textbooks need bibliographic metadata in order to be indexed by search engines and library catalogs. Lantern stores metadata about the textbook in a YAML file. The information stored in the YAML file will be used to fill the templates for each of the publication formats. 
@@ -135,14 +123,6 @@ After about one minute or so, your website will be live at: `https://USERNAME.gi
 
 Each time you add, edit, or delete files in the `source` directory by committing changes to your repository, your textbook's website will refresh with the new content.
 
-::: exercise :::
-
-### Custom Metadata
-
-You can define new metadata fields in the `metadata.yml` file by creates new [YAML keys](https://learnxinyminutes.com/docs/yaml/) and referencing those keys in the [output templates](https://github.com/nulib-oer/lantern/tree/main/assets/templates). The Pandoc manual has more information about customizing [templates](https://pandoc.org/MANUAL.html#templates) and [metadata](https://pandoc.org/MANUAL.html#metadata-variables).  
-
-:::
-
 ## Chapters
 
 The `chapters/` folder includes two sample chapters formatted in Markdown for your reference: `01-introduction.md` and `02-chapter-example.md`. Lantern looks for files in this folder to build out the chapters of the textbook. 
@@ -154,3 +134,51 @@ By default, Lantern sets the order of the chapters using the file name. You can 
 1. Chapter Two = `02-chapter-example.md`
 1. Chapter Three = `03-probability.md`
 1. Chapter Four = `04-binomial-distribution.md`
+
+### Converting to Markdown
+
+Most OER authors are not writing their manuscripts in Markdown (yet!), so we'll need to convert from more common file formats. The [example chapters](https://drive.google.com/drive/folders/1Fl__DhDXDFyoPmwX0CHpfj10qhOY3t0k?usp=sharing) are Google Docs that can be downloaded as `.docx` or `.odt` files, which are the file types that most word processing software use. 
+
+Lantern has includes a micro-workflow that will help you convert raw manuscript files from `.docx` or `.odt` to Markdown (`.md`).
+
+- Download the example chapter files from the Google Drive, ignoring the README file, which we don't need
+- Save the files to your computer.
+- In your GitHub repository, click on the "source" folder, then click on the "preprocess" folder. The "preprocess" folder is intended for you to upload `.docx` or `.odt` files.
+
+![Screenshot of the preprocess folder on GitHub](preprocess.png)
+
+- Click on the "Add file" drop-down menu and select "upload files"
+- Upload one or more of the `.docx` or `.odt` files
+- Click on the "Commit changes" button and (optionally) add a message about the uploads
+
+This action will trigger the GitHub repository to convert your `.docx` or `.odt` chapter files to markdown, then add the markdown files to the `source/chapters/` folder. This folder should now look something like this:
+
+![Screenshot of the chapters folder on GitHub](chapters.png)
+
+You can now edit any of these files using GitHub's online text editor. 
+
+### Editing Chapter Files
+
+The conversion process between word processing formats and markdown won't be perfect, so you may need to spend some time correcting any formatting errors or removing any unnecessary markup. 
+
+- Click on the "03-probability.md" file
+
+![Screenshot of the Probabilities example chapter on GitHub](probability.png)
+
+GitHub will render the raw markdown as formatted HTML in order to give you a preview of how the content will look in its final state.
+
+- Click on the pencil icon labelled "Edit this File" near the right side of the screen
+
+The editor view of the file will allow you to edit the raw markdown contents as well as the file name itself (including the extension). We'll need to edit this file because there's a problem with the title of the chapter. 
+
+![Screenshot of the Editor view for the Probabilities chapter](edit.png)
+
+The title of this particular chapter is not formatted properly. Instead of marking the title as a heading, the title is formatted as `**bold**`. This is a common problem with word processing formats, wherein headings are representing _visually_ but not _semantically_. Markdown uses specific syntax to mark contents as headings.
+
+- Change the `**Probabilities**` heading to a proper markdown heading: `# Probabilities`
+
+All chapter files using Lantern must begin must begin with the title of the chapter formatted as a "Heading 1" or a first-level heading using the hashtag symbol (`#`). The number of hashtags corresponds to the level that heading represents (for example, one hashtag converts to a `<h1>` tag when the output is HTML). There are typically between 1 and 6 heading level options. 
+
+- Now click on the "Preview" tab to see how that syntax change affected the output of the heading
+- There is another heading error in the file. Change `**Introduction to Probability Standard**` in line 19 to `## Introduction to Probability Standard` so that it represents a "Heading 2", or section heading.
+- Scroll down to the bottom of the page and click on the "Commit changes" button to save these changes to your textbook
