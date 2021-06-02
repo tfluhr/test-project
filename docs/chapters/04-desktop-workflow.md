@@ -224,46 +224,27 @@ Most OER authors are not writing their manuscripts in Markdown (yet!), so we'll 
 Lantern has includes a micro-workflow that will help you convert raw manuscript files from `.docx` or `.odt` to Markdown (`.md`).
 
 - Download the example chapter files from the Google Drive, ignoring the README file, which we don't need
-- Save the files to your computer.
-- In your GitHub repository, click on the "source" folder, then click on the "preprocess" folder. The "preprocess" folder is intended for you to upload `.docx` or `.odt` files.
+- Save the files to the `source/preprocess/` folder in your Lantern project directory
 
-![Screenshot of the preprocess folder on GitHub](preprocess.png)
+- In your terminal window, run this command:
 
-- Click on the "Add file" drop-down menu and select "upload files"
-- Upload one or more of the `.docx` or `.odt` files
-- Click on the "Commit changes" button and (optionally) add a message about the uploads
+```
+make markdown
+```
 
-This action will trigger the GitHub repository to convert your `.docx` or `.odt` chapter files to markdown, then add the markdown files to the `source/chapters/` folder. This folder should now look something like this:
+This command will run a script that will use Pandoc to convert the `.docx` or `.odt` files in the `source/preprocess/` folder to Markdown files that will be saved in the `source/chapters/` folder. 
 
-![Screenshot of the chapters folder on GitHub](chapters.png)
-
-You can now edit any of these files using GitHub's online text editor. 
+You can now edit any of these files using your text editor. 
 
 ### Editing Chapter Files
 
 The conversion process between word processing formats and markdown won't be perfect, so you may need to spend some time correcting any formatting errors or removing any unnecessary markup. 
 
-- Click on the "03-probability.md" file
-
-![Screenshot of the Probabilities example chapter on GitHub](probability.png)
-
-GitHub will render the raw markdown as formatted HTML (without any styles) in order to give you a preview of how the content will look in its final state.
-
-- Click on the pencil icon labelled "Edit this File" near the right side of the screen
-
-The editor view of the file will allow you to edit the raw markdown contents as well as the file name itself (including the extension). We'll need to edit this file because there's a problem with the title of the chapter. 
-
-![Screenshot of the Editor view for the Probabilities chapter](edit.png)
+- Open on the "03-probability.md" file in the `source/chapters/` folder with VS Code. We'll need to edit this file because there's a problem with the title of the chapter. 
 
 The title of this particular chapter is not formatted properly. Instead of marking the title as a heading, the title is formatted as `**bold**`. This is a common problem with word processing formats, wherein headings are representing _visually_ but not _semantically_. Markdown uses specific syntax to mark contents as headings.
 
 - Change the `**Probabilities**` heading to a proper markdown heading: `# Probabilities`
-
-All chapter files using Lantern must begin must begin with the title of the chapter formatted as a "Heading 1" or a first-level heading using the hashtag symbol (`#`). The number of hashtags corresponds to the level that heading represents (for example, one hashtag converts to a `<h1>` tag when the output is HTML). There are typically between 1 and 6 heading level options. 
-
-- Now click on the "Preview" tab to see how that syntax change affected the output of the heading
-
-![Screenshot of the HTML preview for the Probabilities chapter](preview.png)
 
 - There is another heading error in the file. Change `**Introduction to Probability Standard**` in line 19 to `## Introduction to Probability Standard` so that it represents a "Heading 2", or section heading.
 - Scroll down to the bottom of the page and click on the "Commit changes" button to save these changes to your textbook
