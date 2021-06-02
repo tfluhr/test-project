@@ -109,9 +109,49 @@ Most of us are trained to use rich text editors: emails, word documents, content
 
 > Plain text both ensures transparency and answers the standards of long-term preservation. MS Word may go the way of [Word Perfect](https://en.wikipedia.org/wiki/WordPerfect) in the future, but plain text will always remain easy to read, catalog, mine, and transform. Furthermore, plain text enables easy and powerful versioning of the document, which is useful in collaboration and organizing drafts. Your plain text files will be accessible on cell phones, tablets, or, perhaps, on a low-powered terminal in some remote library. Plain text is backwards compatible and future-proof. Whatever software or hardware comes along next, it will be able to understand your plain text files.
 
-We recommend installing [Visual Studio Code (VS Code)](https://code.visualstudio.com/) as your text editor, but you're welcome to use any other text editor you prefer. Visit the website to [download](https://code.visualstudio.com/) and [install](https://code.visualstudio.com/docs/setup/setup-overview) VS Code. 
+We recommend installing [Visual Studio Code (VS Code)](https://code.visualstudio.com/) as your text editor, but you're welcome to use any other text editor you prefer. Visit the website to [download](https://code.visualstudio.com/) and [install](https://code.visualstudio.com/docs/setup/setup-overview) VS Code. When prompted to "Select Additional Tasks" during installation, be sure to check the Add to PATH option so you can easily open a folder in WSL using the `code` command from your terminal.
+
+::: example :::
+
+**Windows Users**
+
+VS Code can be set up to work with your Windows Subsytem for Linux (WSL) setup. [Follow these instructions](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode#:~:text=Visit%20the%20VS%20Code%20install,WSL%20using%20the%20code%20command.) on configuring youre VS Code editor with your WSL instance. You can skip the Git and Windows Terminal sections as those are optional.  
 
 ### Download Lantern
+
+Now that you have all of the required software for the desktop workflow, you're ready to download the Lantern files to your computer. [Lantern](https://github.com/nulib-oer/lantern) is a Git repository hosted on [GitHub](https://github.com). You don't need to know anything about Git or GitHub to download the files. Visit the Lantern git repository on GitHub to download the ZIP file or clone the repository (if you're using Git): [https://github.com/nulib-oer/lantern](https://github.com/nulib-oer/lantern)
+
+::: example :::
+
+- **Windows users:** WSL has it's own file system that you can access from a terminal window. Follow these steps to setup your Lantern projects from the command line:
+
+1 _Open an Ubuntu/Linux Terminal window_
+
+1. _Create a folder to contain your Lantern projects_ 
+
+```sh
+mkdir lantern-projects
+```
+
+1. _Download the Lantern files from GitHub_
+
+```sh
+wget -q -O tmp.zip https://github.com/nulib-oer/lantern/archive/refs/heads/main.zip && unzip tmp.zip && rm tmp.zip
+```
+
+1. _Navigate to the new folder containing Lantern files_
+
+```sh
+cd lantern-main
+```
+
+1. _Open this folder in VS Code_
+
+```sh
+code .
+```
+
+:::
 
 ### Lantern Files and Folders
 
@@ -121,7 +161,7 @@ Lantern comes with a few files and folders you'll be using to add and edit your 
 
 - `images/`: This folder contains the textbook images for figures, logos, covers, etc.
 
-- `preprocess/`: If you add `.docx`, `.odt`, or `.tex` files to this folder, Lantern will convert these files to Markdown and add them to the `chapters/` folder with the `make markdown` command
+- `preprocess/`: If you add `.docx`, `.odt`, or `.tex` files to this folder, Lantern will convert these files to Markdown and add them to the `chapters/` folder with the `make markdown` command (more on this below)
 
 - `metadata.yml`: This file defines the bibliographic metadata for your textbook
 
@@ -145,41 +185,9 @@ YAML needs to be valid, so if you ever hit an error, it's a good idea to check t
 
 - Open the `metadata.yml` file to view the available metadata fields.
 
-- To edit the file with your textbook's information, click on the pencil icon labelled "Edit this File" near the right side of the screen
+- Edit the file by replacing the placeholder metadata values with your textbook's information 
 
-- Use GitHub's online text editor to replace the placeholder metadata values with your textbook's information 
-
-- When you're finished with your edits, scroll to the bottom of the page to the "Commit changes" form. 
-
-- When you're ready to make the commit, you can keep the default setting for committing directly to the `main` branch. 
-
-- Click on the "Commit changes" button.
-
-This action will trigger a few things for your new textbook:
-
-- Your textbook is built as a website as well as several additional output formats: PDF, LaTeX, EPUB, and DOCX
-- These files are saved to a new "branch" in your repository called `gh-pages`
-
-The `gh-pages` branch of your repository acts as your web server, where every file in this branch can be made accessible via the URL of your textbook. The URL for your textbook is created, by default, using this pattern: `https://USERNAME.github.io/REPOSITORY-NAME`
-
-![Screenshot highlighting the number of branches, latest commit, and settings tab](new-branch-settings.png)
-
-While your website is ready to go live, it is not live yet. You'll have to make a change to the settings in your repository. 
-
-- Click on the "Settings" tab from the home page of your repository
-- In the left sidebar, click on the "Pages" link
-
-![Screenshot highlighting the Pages link from the settings tab](pages.png)
-
-[GitHub Pages](https://pages.github.com) is a free static website hosting service from GitHub. In order to use this service for our textbook project, we'll need to point the web host to the source of our textbook's website files, which is the `gh-pages` branch of our repository.
-
-- In the "Source" drop-down menu, select `gh-pages`
-- Keep the section drop-down menu option as: `/(root)`
-- Click save
-
-After about one minute or so, your website will be live at: `https://USERNAME.github.io/REPOSITORY-NAME`
-
-Each time you add, edit, or delete files in the `source` directory by committing changes to your repository, your textbook's website will refresh with the new content.
+- When you're finished with your edits, save the file: Control + S 
 
 ## Chapters
 
@@ -192,6 +200,22 @@ By default, Lantern sets the order of the chapters using the file name. You can 
 1. Chapter Two = `02-chapter-example.md`
 1. Chapter Three = `03-probability.md`
 1. Chapter Four = `04-binomial-distribution.md`
+
+The title of the chapter as it displays in the final textbook is set by the first line of the chapter file. The first line of each chapter file must begin with one hashtag symbol (`#`) to represent a first-level heading (or `<h1>` if you're familiar with [HTML headings](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements)). For example, the chapter file `01-introduction.md` contains the first line: `# Introduction to Vegetable Lasagna`, which renders thusly:
+
+**HTML:**
+
+# Introduction to Vegetable Lasagna
+
+**PDF:**
+
+![](chapter-title.png)
+
+**LaTeX:**
+
+```
+\chapter{Introduction to Vegetable Lasagna}
+```
 
 ### Converting to Markdown
 

@@ -81,6 +81,7 @@ You can create and edit Markdown files using a text editor. Every operating syst
 
 [VS Code](https://code.visualstudio.com/) can be customized to your workflow with [Extensions](https://marketplace.visualstudio.com/). You might be interested in trying a few extensions to help with formatting Markdown documents. Here are a few popular options:
 
+- [VS Code Icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons): Nice set of icons to help distinguish between file types and folders
 - [Markdown+Math](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath): Preview LaTeX math equation rendering
 - [Markdown Table Prettifier](https://marketplace.visualstudio.com/items?itemName=darkriszty.markdown-table-prettify): Auto-format markdown tables for easier readability
 - [Excel to Markdown Table](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table): Copy tables from [Microsoft Excel](https://www.microsoft.com/en-us/microsoft-365/excel) and paste as Markdown tables

@@ -1,4 +1,4 @@
-# Introduction
+# Introduction to Vegetable Lasagna
 
 ::: authors
 
