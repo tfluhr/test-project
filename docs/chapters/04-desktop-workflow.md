@@ -12,52 +12,17 @@ Lantern depends on [GNU Bash](https://www.gnu.org/software/bash/) and [GNU Make]
 
 :::
 
-## Setup on macOS or Linux
-
-### Install Homebrew
-
-Both macOS and Linux can use the [Homebrew](brew.sh) to install all of the required software you need. Homebrew is a software package manager that simplifies the process for installing, uninstalling, and upgrading software from the command line. Visit [https://brew.sh/](https://brew.sh/) for instructions on installing Homebrew. 
-
-### Install Pandoc
-
-We can use Homebrew to install [Pandoc](https://pandoc.org) and [Pandoc Crossref](https://github.com/lierdakil/pandoc-crossref). 
-
-Pandoc is our main document converter. We use Pandoc to convert manuscript files from Word processing formats to Markdown, then Markdown to our publishing output formats (e.g. HTML, LaTeX, DOCX, etc.). Pandoc Crossref is a filter that helps us label and number equations, figures, and images in order to produce links within our textbook projects. 
-
-We can install both of these with Homebrew by executing the following command: 
-
-```sh
-brew install pandoc pandoc-crossref
-```
-
-### Install BasicTeX
-
-_You can skip this section if you already have LaTeX installed on your system._
-
-Lantern uses [$LaTeX$](https://www.latex-project.org/) to make PDFs. $Latex$ is a document production system that is commonly used for formatting mathematical notation and advanced typesetting. 
-
-Lantern uses a minimal LaTeX distribution called [BasicTeX](https://yihui.org/tinytex/). You can install BasciTeX with Homebrew using this command:
-
-```sh
-brew install --cask basictex
-```
-
 ## Setup on Windows
 
-_You can skip this section if you are using macOS or Linux._
+_You can skip to the next section if you are using macOS or Linux._
 
 Lantern depends on two programs that require a [Unix-like](https://en.wikipedia.org/wiki/Unix-like) operating system. Since Windows does not behave like a Unix system, we'll need to install one before working with Lantern. Luckily, recent versions of Windows 10 support the [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/about), which allows you to install and run a full [Linux distribution](https://en.wikipedia.org/wiki/Linux_distribution) within your normal Windows environment. 
 
-Follow the instructions provided by Microsoft in order to install WSL 2 on your machine. [You can find those instructions here](https://docs.microsoft.com/en-us/windows/wsl/install-win10) and additional some tips to help you with the process below. 
-
-**Recommendation: Install the latest stable release of Ubuntu when selecting a Linux Distribution. At the time of this writing, the [latest Ubuntu version is 20.04 LTS](https://www.microsoft.com/en-us/p/ubuntu-2004-lts/9n6svws3rx71?rtc=1&activetab=pivot:overviewtab).** 
-
-_Add an estimate for the time it takes to install and setup WSL on Windows 10._
+Microsoft maintains [instructions on how to install WSL on a Windows 10 computer](https://docs.microsoft.com/en-us/windows/wsl/install-win10). We recommend installing WSL 2 with the [latest Ubuntu version is 20.04 LTS](https://www.microsoft.com/en-us/p/ubuntu-2004-lts/9n6svws3rx71?rtc=1&activetab=pivot:overviewtab), but WSL 1 and any other Linux distribution might work too. The instructions assume you will have some familiarity with the Windows command line interface, specifically [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1). Here are some tips that might help with the WSL installation process:
 
 ::: example :::
 
 **Running PowerShell as an Administrator**
-_Installing WSL 2 on your computer requires you to copy and paste a few commands into PowerShell, a command-line interface for Windows computers. Some of these commands require you to run them **as Administrator**. Here's how to do that:_
 
 - Hit the Windows Key
 - Type "PowerShell"
@@ -66,10 +31,10 @@ _Installing WSL 2 on your computer requires you to copy and paste a few commands
 
 :::
 
+
 ::: example :::
 
-**Checking Your System Type**
-_Most Windows computers have either x64 or ARM64 systems. If you're not sure which one you're using, follow these steps:_
+**Checking Your System Type:** Most Windows computers have either x64 or ARM64 systems. If you're not sure which one you're using, follow these steps:
 
 - Hit the Windows Key
 - Type "PowerShell"
@@ -95,6 +60,128 @@ _There are several **versions** and **builds** of Windows 10. If you're not sure
 _The pop-up message will include both version and build numbers for your Windows 10 software._
 
 :::
+
+### Windows Subsystem for Linux (WSL) Installation
+
+**Open PowerShell as an Administrator**
+
+- Hit the Windows Key
+- Type "PowerShell"
+- Select "Run as Administrator"
+- Login with an Administrator username and password
+
+**Enable WSL on Your Computer**
+
+In PowerShell, run:
+
+```
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+```
+
+**Enable Virtual Machine Features**
+
+In PowerShell, run:
+
+```
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+
+**Restart your computer**
+
+**Download the latest Linux kernel update package [from Microsoft](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package)**
+
+**Set WSL 2 as your default version**
+
+In PowerShell, run:
+
+```
+wsl --set-default-version 2
+```
+
+**Download Ubuntu 20.04 LTS from the [Microsoft Store](https://www.microsoft.com/store/apps/9n6svws3rx71)**
+
+- From the Store page, click on "Get"
+- Wait for the download to finish; it will take a few minutes
+- Click on the Launch button when the download finishes
+
+**Congrats! You now have an Ubuntu Operating System within your Windows computer!**
+
+This will launch a new terminal window for Ubuntu. In the task bar, we recommend you right-click the Ubuntu icon and pin the program to your task bar (or Start menu) for easy access to it. 
+
+**Create a User for Ubuntu**
+
+The first time you open the Ubuntu terminal, you will be prompted to create a new user profile. This user is separate from the user profile you use to log in to your Windows computer. You can set this to whatever you want; just be sure to remember the password!
+
+**Update Your Ubuntu System Packages**
+
+It's usually a good idea to keep your system packages up to date with the latest versions. Since you have a clean install of Ubuntu 20.04 LTS, it's worth checking to make sure all software dependences are current with their latest release. We can do this with a few commands:
+
+In the terminal, run (you may be prompted to enter the password you set for your Ubuntu user):
+
+```
+sudo apt update
+```
+
+In the terminal, run (you will be asked to confirm the installation of new versions of software; enter `Y` and press enter):
+
+```
+sudo apt upgrade
+```
+
+**Enable Easy Copying and Pasting in the Ubuntu Terminal**
+
+- Right-click the top bar of the Ubuntu terminal
+- Select "Properties"
+- In the Edit options, check the box for "Use Ctrl+Shift+C/V as Copy/Paste"
+
+This will let you copy text from the terminal with `Ctrl+Shift+C` and paste text into the Terminal prompt with `Ctrl+Shift+V`. This will be very helpful during the Homebrew installation process. 
+
+## Install Homebrew
+
+[Homebrew](brew.sh) is a software package manager that simplifies the process for installing, uninstalling, and upgrading software from the command line. Visit [https://brew.sh/](https://brew.sh/) for instructions on installing Homebrew. 
+
+Be sure to read through the "Next Steps:" prompt in your terminal after the initial Homebrew install is complete. Run the commands that Homebrew provides to "Add Homebrew to your PATH" and "Install the Homebrew dependences". Check your terminal for the exact commands.
+
+## Install Pandoc
+
+We can use Homebrew to install [Pandoc](https://pandoc.org) and [Pandoc Crossref](https://github.com/lierdakil/pandoc-crossref). 
+
+Pandoc is our main document converter. We use Pandoc to convert manuscript files from Word processing formats to Markdown, then Markdown to our publishing output formats (e.g. HTML, LaTeX, DOCX, etc.). Pandoc Crossref is a filter that helps us label and number equations, figures, and images in order to produce links within our textbook projects. 
+
+We can install both of these with Homebrew by executing the following command: 
+
+```sh
+brew install pandoc pandoc-crossref
+```
+
+## Install TinyTeX
+
+_You can skip this section if you already have LaTeX installed on your system._
+
+Lantern uses [$LaTeX$](https://www.latex-project.org/) to make PDFs. $Latex$ is a document production system that is commonly used for formatting mathematical notation and advanced typesetting. 
+
+Lantern uses a minimal LaTeX distribution called [TinyTeX](https://yihui.org/tinytex/). Follow the installation instructions on the TinyTeX homepage for your system:
+
+### Windows WSL with Ubuntu:
+
+```sh
+wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh
+```
+
+Now reload the terminal session with:
+
+```
+source ~/.profile
+```
+
+You now have have a minimal version of LaTeX installed. You can now use common LaTeX commands, including `tlmgr`, `pdflatex`, and `xelatex` (You won't need to know these commands to use Lantern, but just letting you know that they are available). 
+
+## macOS:
+
+```
+sudo chown -R $(whoami) /usr/local/bin
+curl -sL "https://yihui.org/tinytex/install-bin-unix.sh" | sh
+```
 
 ### Text Editing
 
