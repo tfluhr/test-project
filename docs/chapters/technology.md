@@ -2,7 +2,7 @@
 
 ::: summary :::
 
-Lantern teaches two production workflows that use [Markdown](https://en.wikipedia.org/wiki/Markdown) to format chapter content and [Pandoc](https://pandoc.org/) to produce open textbooks in multiple formats from a single source. Specifically, Lantern will help you...
+Lantern teaches two production workflows that use plain text to format chapter content and produce open textbooks in multiple formats from a single source. Specifically, Lantern will help you...
 
 1. Convert textbook manuscripts from common word processing formats to Markdown
 2. Format chapter content using Markdown syntax with a text editor
@@ -94,7 +94,7 @@ You can create and edit Markdown files using a text editor. Every operating syst
 
 ### Lantern supported file formats
 
-Lantern provides [conversion scripts](https://github.com/nulib-oer/lantern/blob/main/assets/scripts/word-formats.sh) for a subset of file formats that Pandoc is able to convert. 
+Lantern provides [conversion scripts](https://github.com/nulib-oer/lantern/blob/main/assets/scripts/preprocess.sh) for a subset of file formats that Pandoc is able to convert. 
 
 | File Extensions | Format             | Related Applications                     |
 |-----------------|--------------------|------------------------------------------|

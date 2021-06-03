@@ -5,7 +5,7 @@ The Online Workflow is entirely web-based and uses [GitHub](https://github.com) 
 ## Prerequisites
 
 - Create a [GitHub](https://github.com) account
-- Download the [example chapters](https://drive.google.com/drive/folders/1Fl__DhDXDFyoPmwX0CHpfj10qhOY3t0k?usp=sharing) as `.docx` or `.odt` files
+- Download the [example chapters](https://drive.google.com/drive/folders/1Fl__DhDXDFyoPmwX0CHpfj10qhOY3t0k?usp=sharing) as `.docx` or `.odt` files to your computer
 
 ## Create Your Online Workspace
 
