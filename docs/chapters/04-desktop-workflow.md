@@ -1,10 +1,10 @@
 # Desktop Workflow
 
-The desktop workflow brings all of the required processing software to your computer. It's designed to remove [GitHub](https://github.com) as a dependency so that you can use any web hosting platform for publishing your open textbooks. In this tutorial, we'll walk you through the process of setting up your computer and running basic Lantern commands. 
+The desktop workflow brings all of the required processing software to your computer. It's designed to remove [GitHub](https://github.com) as a dependency so that you can use any web hosting platform for publishing your open textbooks. In this tutorial, we'll walk you through the process of setting up your computer and running basic processing commands. 
 
 **Prerequisites**
 
-You'll need a Windows, macOS, or Linux computer with the ability to install open source software packages. For example, on a Windows computer, you'll need the ability to login as an administrator to install certain programs and enable new features. 
+You'll need a Windows, macOS, or Linux computer with the ability to install open source software packages from the command line (we'll teach you how!). For example, on a Windows computer, you'll need the ability to login as an administrator to install certain programs and enable advanced operating system features. 
 
 ::: aside :::
 
@@ -16,25 +16,17 @@ Lantern depends on [GNU Bash](https://www.gnu.org/software/bash/) and [GNU Make]
 
 _You can skip to the next section if you are using macOS or Linux._
 
-Lantern depends on two programs that require a [Unix-like](https://en.wikipedia.org/wiki/Unix-like) operating system. Since Windows does not behave like a Unix system, we'll need to install one before working with Lantern. Luckily, recent versions of Windows 10 support the [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/about), which allows you to install and run a full [Linux distribution](https://en.wikipedia.org/wiki/Linux_distribution) within your normal Windows environment. 
+Lantern uses software that requires a [Unix-like](https://en.wikipedia.org/wiki/Unix-like) operating system. Since Windows does not behave like a Unix system, we'll need to install one before working with Lantern. Luckily, recent versions of Windows 10 support the [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/about), which allows you to install and run a full [Linux distribution](https://en.wikipedia.org/wiki/Linux_distribution) within your normal Windows environment. 
 
-Microsoft maintains [instructions on how to install WSL on a Windows 10 computer](https://docs.microsoft.com/en-us/windows/wsl/install-win10). We recommend installing WSL 2 with the [latest Ubuntu version is 20.04 LTS](https://www.microsoft.com/en-us/p/ubuntu-2004-lts/9n6svws3rx71?rtc=1&activetab=pivot:overviewtab), but WSL 1 and any other Linux distribution might work too. The instructions assume you will have some familiarity with the Windows command line interface, specifically [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1). Here are some tips that might help with the WSL installation process:
+Microsoft maintains [instructions on how to install WSL on a Windows 10 computer](https://docs.microsoft.com/en-us/windows/wsl/install-win10). We recommend installing WSL 2 with the [latest Ubuntu version is 20.04 LTS](https://www.microsoft.com/en-us/p/ubuntu-2004-lts/9n6svws3rx71?rtc=1&activetab=pivot:overviewtab), but WSL 1 and any other Linux distribution might work too. The instructions assume you will have some familiarity with the Windows command line interface, specifically [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1). 
 
-::: example :::
+We highly recommend following [Microsoft's instructions for a manual installation](https://docs.microsoft.com/en-us/windows/wsl/install-win10) as written, but we also provide an opinionated set of instructions below. 
 
-**Running PowerShell as an Administrator**
+### Installing Windows Subsystem for Linux (WSL) with Ubuntu
 
-- Hit the Windows Key
-- Type "PowerShell"
-- Select "Run as Administrator"
-- Login with an Administrator username and password
+WSL is a feature in Windows that lets you run a Linux operating system _within_ your normal Windows computing environment. Linux operating systems are available in a [variety of _distributions_](https://en.wikipedia.org/wiki/Linux_distribution#Widely_used_GNU-based_or_GNU-compatible_distributions). Each distribution is a collection of software packages that use the Linux kernel. This set of instructions will install WSL with [Ubuntu](https://ubuntu.com/) 20.04 LTS as the Linux distribution.   
 
-:::
-
-
-::: example :::
-
-**Checking Your System Type:** Most Windows computers have either x64 or ARM64 systems. If you're not sure which one you're using, follow these steps:
+1. Checking Your System Type: Most Windows computers have either x64 or ARM64 systems. If you're not sure which one you're using, follow these steps:
 
 - Hit the Windows Key
 - Type "PowerShell"
@@ -44,12 +36,7 @@ Microsoft maintains [instructions on how to install WSL on a Windows 10 computer
 
 _You should see a message that says something like: ` x64-based PC`_. 
 
-::: 
-
-::: example :::
-
-**Checking Your Windows 10 Version**
-_There are several **versions** and **builds** of Windows 10. If you're not sure which version and build you have, follow these steps:_
+1. Checking Your Windows 10 Version: There are several **versions** and **builds** of Windows 10. If you're not sure which version and build you have, follow these steps:_
 
 - Hit the Windows Key
 - Hit the "R" key
@@ -57,20 +44,22 @@ _There are several **versions** and **builds** of Windows 10. If you're not sure
 - Type "winver"
 - Press Enter
 
-_The pop-up message will include both version and build numbers for your Windows 10 software._
+_The pop-up message will include both version and build numbers for your Windows 10 software._ 
 
-:::
+- For x64 systems: you need version 1903 or higher, with Build 18362 or higher.
+- For ARM64 systems: you need version 2004 or higher, with Build 19041 or higher.
+- Builds lower than 18362 do not support WSL 2. See if you can update your version of Windows.
 
-### Windows Subsystem for Linux (WSL) Installation
+**If you meet the system requirements, you can move ahead to the next steps. If you don't, try using the online workflow instead.**
 
-**Open PowerShell as an Administrator**
+1. Open PowerShell as an Administrator
 
 - Hit the Windows Key
 - Type "PowerShell"
 - Select "Run as Administrator"
 - Login with an Administrator username and password
 
-**Enable WSL on Your Computer**
+1. Enable WSL on Your Computer
 
 In PowerShell, run:
 
@@ -78,7 +67,7 @@ In PowerShell, run:
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 ```
 
-**Enable Virtual Machine Features**
+1. Enable Virtual Machine Features
 
 In PowerShell, run:
 
@@ -86,11 +75,11 @@ In PowerShell, run:
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 
-**Restart your computer**
+1. Restart your computer
 
-**Download the latest Linux kernel update package [from Microsoft](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package)**
+1. Based on your system type (e.g. x64), Download the latest Linux kernel update package [from Microsoft](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package)
 
-**Set WSL 2 as your default version**
+1. Set WSL 2 as your default version
 
 In PowerShell, run:
 
@@ -98,21 +87,21 @@ In PowerShell, run:
 wsl --set-default-version 2
 ```
 
-**Download Ubuntu 20.04 LTS from the [Microsoft Store](https://www.microsoft.com/store/apps/9n6svws3rx71)**
+1. Download Ubuntu 20.04 LTS from the [Microsoft Store](https://www.microsoft.com/store/apps/9n6svws3rx71)
 
 - From the Store page, click on "Get"
 - Wait for the download to finish; it will take a few minutes
 - Click on the Launch button when the download finishes
 
-**Congrats! You now have an Ubuntu Operating System within your Windows computer!**
+1. Congrats! You now have an Ubuntu Operating System within your Windows computer!
 
 This will launch a new terminal window for Ubuntu. In the task bar, we recommend you right-click the Ubuntu icon and pin the program to your task bar (or Start menu) for easy access to it. 
 
-**Create a User for Ubuntu**
+1. Create a User for Ubuntu
 
 The first time you open the Ubuntu terminal, you will be prompted to create a new user profile. This user is separate from the user profile you use to log in to your Windows computer. You can set this to whatever you want; just be sure to remember the password!
 
-**Update Your Ubuntu System Packages**
+1. Update Your Ubuntu System Packages
 
 It's usually a good idea to keep your system packages up to date with the latest versions. Since you have a clean install of Ubuntu 20.04 LTS, it's worth checking to make sure all software dependences are current with their latest release. We can do this with a few commands:
 
@@ -128,13 +117,13 @@ In the terminal, run (you will be asked to confirm the installation of new versi
 sudo apt upgrade
 ```
 
-**Enable Easy Copying and Pasting in the Ubuntu Terminal**
+1. Enable Easy Copying and Pasting in the Ubuntu Terminal
 
 - Right-click the top bar of the Ubuntu terminal
 - Select "Properties"
 - In the Edit options, check the box for "Use Ctrl+Shift+C/V as Copy/Paste"
 
-This will let you copy text from the terminal with `Ctrl+Shift+C` and paste text into the Terminal prompt with `Ctrl+Shift+V`. This will be very helpful during the Homebrew installation process. 
+This will let you copy text from the terminal with `Ctrl+Shift+C` and paste text into the Terminal prompt with `Ctrl+Shift+V`. This will be very helpful during the Homebrew installation process.
 
 ## Install Homebrew
 
@@ -176,14 +165,14 @@ source ~/.profile
 
 You now have have a minimal version of LaTeX installed. You can now use common LaTeX commands, including `tlmgr`, `pdflatex`, and `xelatex` (You won't need to know these commands to use Lantern, but just letting you know that they are available). 
 
-## macOS:
+### macOS:
 
 ```
 sudo chown -R $(whoami) /usr/local/bin
 curl -sL "https://yihui.org/tinytex/install-bin-unix.sh" | sh
 ```
 
-### Text Editing
+## Text Editing
 
 There are two main types of documents we use to write and edit text: [plain-text](https://en.wikipedia.org/wiki/Plain_text) and [rich text](https://en.wikipedia.org/wiki/Formatted_text). Plain text exposes the characters within a document, whereas rich text displays the formatting features and styles. 
 
@@ -196,53 +185,76 @@ Most of us are trained to use rich text editors: emails, word documents, content
 
 > Plain text both ensures transparency and answers the standards of long-term preservation. MS Word may go the way of [Word Perfect](https://en.wikipedia.org/wiki/WordPerfect) in the future, but plain text will always remain easy to read, catalog, mine, and transform. Furthermore, plain text enables easy and powerful versioning of the document, which is useful in collaboration and organizing drafts. Your plain text files will be accessible on cell phones, tablets, or, perhaps, on a low-powered terminal in some remote library. Plain text is backwards compatible and future-proof. Whatever software or hardware comes along next, it will be able to understand your plain text files.
 
-We recommend installing [Visual Studio Code (VS Code)](https://code.visualstudio.com/) as your text editor, but you're welcome to use any other text editor you prefer. Visit the website to [download](https://code.visualstudio.com/) and [install](https://code.visualstudio.com/docs/setup/setup-overview) VS Code. When prompted to "Select Additional Tasks" during installation, be sure to check the Add to PATH option so you can easily open a folder in WSL using the `code` command from your terminal.
+### Installing Visual Studio Code
 
-::: example :::
+We recommend installing [Visual Studio Code (VS Code)](https://code.visualstudio.com/) as your text editor, but you're welcome to use any other text editor you prefer. Visit the website to [download](https://code.visualstudio.com/) and [install](https://code.visualstudio.com/docs/setup/setup-overview) VS Code. When prompted to "Select Additional Tasks" during installation, double-check that the Add to PATH option is checked so you can easily open a folder in WSL using the `code` command from your terminal. We also think it's helpful to check the box for the other Additional Tasks, including:
+
+- Add "Open with Code" action to Windows Explorer file context menu
+- Add "Open with Code" action to Windows Explore directory context menu
+- Register Code as an editor for supported file types
 
 **Windows Users**
 
-VS Code can be set up to work with your Windows Subsytem for Linux (WSL) setup. [Follow these instructions](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode#:~:text=Visit%20the%20VS%20Code%20install,WSL%20using%20the%20code%20command.) on configuring youre VS Code editor with your WSL instance. You can skip the Git and Windows Terminal sections as those are optional.  
+VS Code can be set up to work with your Windows Subsytem for Linux (WSL) setup. The first time you launch VS Code, it will likely detect your WSL setup and ask if you'd like to install recommended extensions. Click the "Install" button when prompted.
 
-### Download Lantern
+![](#)
 
-Now that you have all of the required software for the desktop workflow, you're ready to download the Lantern files to your computer. [Lantern](https://github.com/nulib-oer/lantern) is a Git repository hosted on [GitHub](https://github.com). You don't need to know anything about Git or GitHub to download the files. Visit the Lantern git repository on GitHub to download the ZIP file or clone the repository (if you're using Git): [https://github.com/nulib-oer/lantern](https://github.com/nulib-oer/lantern)
+If you didn't see that prompt when opening VS Code, [follow these instructions](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode#:~:text=Visit%20the%20VS%20Code%20install,WSL%20using%20the%20code%20command.) on configuring youre VS Code editor with your WSL instance. You can skip the Git and Windows Terminal sections as those are optional.  
 
-::: example :::
+## Creating Your Desktop Workspace
 
-- **Windows users:** WSL has it's own file system that you can access from a terminal window. Follow these steps to setup your Lantern projects from the command line:
+We'll need a place on our computers to store our textbook files. Let's create a folder to contain our Lantern projects. For these steps, open your terminal:
 
-1 _Open an Ubuntu/Linux Terminal window_
+Check your current directory:
 
-1. _Create a folder to contain your Lantern projects_ 
+```
+pwd
+```
 
-```sh
+_This will return the full path to your prompt's current directory._
+
+Create a new directory:
+
+```
 mkdir lantern-projects
 ```
 
-1. _Download the Lantern files from GitHub_
+Change into that directory:
 
-```sh
-wget -q -O tmp.zip https://github.com/nulib-oer/lantern/archive/refs/heads/main.zip && unzip tmp.zip && rm tmp.zip
+```
+cd lantern-projects
 ```
 
-1. _Navigate to the new folder containing Lantern files_
+## Download Lantern
 
-```sh
-cd lantern-main
+Now that you have all of the required software for the desktop workflow, you're ready to download the Lantern files to your computer. [Lantern](https://github.com/nulib-oer/lantern) is a Git repository hosted on [GitHub](https://github.com). We won't get too much into Git or Github, but we will use it to download the files. Git is pre-installed with Ubuntu and macOS (if it's not on your macOS, run `brew install git` in your terminal). You can download Lantern by running this command:
+
+```
+git clone https://github.com/nulib-oer/lantern.git
 ```
 
-1. _Open this folder in VS Code_
+_Navigate to the new folder containing Lantern files_
+
+```sh
+cd lantern
+```
+
+_Open this folder in VS Code_
 
 ```sh
 code .
 ```
 
-:::
+![Screenshot of VS Code open to the Lantern folder]()
+_These icons are generated by the [vscode-icons extension](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons), which is highly recommended!_
 
-### Lantern Files and Folders
+**You have now set up your desktop workspace for using Lantern!**
+
+## Lantern Files and Folders
 
 Lantern comes with a few files and folders you'll be using to add and edit your manuscript content. All of these files and folders are contained in the `source` directory. These are the **only** files and folders you will need to edit to use Lantern for your textbook project.
+
+![Screenshot of the `source` directory](source-dir.png)
 
 - `chapters/`: This folder contains the textbook chapter files
 
@@ -272,9 +284,13 @@ YAML needs to be valid, so if you ever hit an error, it's a good idea to check t
 
 - Open the `metadata.yml` file to view the available metadata fields.
 
+![Screenshot of the Metadata file in VS Code](metadata.png)
+
 - Edit the file by replacing the placeholder metadata values with your textbook's information 
 
 - When you're finished with your edits, save the file: Control + S 
+
+You can fill out the this file using [all available metadata fields](#).
 
 ## Chapters
 
@@ -292,7 +308,17 @@ The title of the chapter as it displays in the final textbook is set by the firs
 
 **HTML:**
 
-# Introduction to Vegetable Lasagna
+# Introduction to Vegetable Lasagna {.unlisted}
+
+::: summary :::
+
+You can preview the HTML rendering of the Markdown within VS Code by pressing `Ctrl+Shift+V` with your keyboard. Lantern provides some special syntax for specific chapter components, but basic Markdown will render properly, such as headings, paragraphs, emphasis, italics, lists, links, tables, and images. 
+
+![Screenshot of Markdown Preview (with Math)](dw_markdown-preview.png)
+
+_The Math rendering in the preview screen is handled by the VS Code [Markdown+Math extension](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath)._
+
+:::
 
 **PDF:**
 
@@ -304,7 +330,7 @@ The title of the chapter as it displays in the final textbook is set by the firs
 \chapter{Introduction to Vegetable Lasagna}
 ```
 
-### Converting to Markdown
+### Converting Word Processing Formats to Markdown
 
 Most OER authors are not writing their manuscripts in Markdown (yet!), so we'll need to convert from more common file formats. The [example chapters](https://drive.google.com/drive/folders/1Fl__DhDXDFyoPmwX0CHpfj10qhOY3t0k?usp=sharing) are Google Docs that can be downloaded as `.docx` or `.odt` files, which are the file types that most word processing software use. 
 
@@ -335,3 +361,14 @@ The title of this particular chapter is not formatted properly. Instead of marki
 
 - There is another heading error in the file. Change `**Introduction to Probability Standard**` in line 19 to `## Introduction to Probability Standard` so that it represents a "Heading 2", or section heading.
 - Scroll down to the bottom of the page and click on the "Commit changes" button to save these changes to your textbook
+
+## Building Publication Outputs
+
+```
+make textbook
+```
+
+You will now have a new directory in your project folder called `public`. In it, you will find all of your textbook files in HTML, PDF, LaTeX, and DOCX formats. You can share these files however you'd like, including by uploading these files to any web hosting services as they are. 
+
+## Uploading to a Web Server
+
