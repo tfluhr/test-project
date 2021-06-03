@@ -434,3 +434,25 @@ iframe {
 #metadata dd {
   font-size: 0.875rem;
 }
+
+dl > dt {
+  color: #333;
+  font-size: 0.875rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+dl > dt:nth-child(n+2) {
+  margin-top: 20px;
+}
+
+dl > dt {
+  margin-left: 0;
+}
+
+dl > dt:nth-child(n+2) {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e5e5;
+}
