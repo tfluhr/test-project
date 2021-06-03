@@ -35,9 +35,9 @@ The online workflow provides a GitHub repository that is preconfigured to run al
 
 | Requirements | Online | Desktop |
 |-|-|-|
-| Text Editor | Yes | Yes |
 | Word Processor | Yes | Yes |
 | GitHub Account | Yes | No |
+| Text Editor | No | Yes |
 | Pandoc | No | Yes |
 | LaTeX | No | Yes |
 | Bash | No | Yes |
