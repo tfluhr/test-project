@@ -68,10 +68,16 @@ $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).docx:	$(BASE_DEPENDENCIES)
 # lantern documentation content settings 
 DOCS_OUTPUT_DIRECTORY = public/docs
 DOCS_IMAGES = $(shell find docs/images -type f)
-DOCS_CHAPTERS = docs/chapters/*.md
 DOCS_CONTENT = awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $(DOCS_CHAPTERS)
 DOCS_DEPENDENCIES = $(MAKEFILE) $(DOCS_CHAPTERS) $(DOCS_IMAGES) 
 DOCS = --defaults assets/defaults/docs.yml
+DOCS_CHAPTERS += $(addprefix ./docs/chapters/,\
+ introduction.md\
+ technology.md\
+ formatting.md\
+ online-workflow.md\
+ desktop-workflow.md\
+)
 
 # documentation build commands
 docs:	docs_html
