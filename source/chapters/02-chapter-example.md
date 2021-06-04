@@ -1,6 +1,6 @@
 # Example Chapter
 
-::: authors
+::: box
 
 **Author**
 *Affiliation*
@@ -10,7 +10,7 @@ Email: [email@domain.edu](mailto:email@domain.edu)
 
 ---
 
-::: learning-objectives 
+::: box 
 
 **Learning Objectives**
 
@@ -34,7 +34,7 @@ Cumin blueberry chia seed jam raspberry fizz banana bread blueberries red pepper
 
 Bananas casserole macadamia nut cookies sweet potato black bean burrito sandwiches balsamic vinaigrette picnic vitamin glow parsley winter crumbled lentils lemon red lentil soup Thai curry açai. Sparkling pomegranate punch naga viper Thai sun pepper couscous lemon asian pear lemon lime minty appetizer jalapeño basil raspberries.
 
-::: definitions
+::: box
 
 Term 1
 

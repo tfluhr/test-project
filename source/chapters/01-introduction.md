@@ -1,6 +1,6 @@
 # Introduction to Vegetable Lasagna
 
-::: authors
+::: box
 
 - **First Author**, _Affiliation_
 - **Second Author**, _Affiliation_
@@ -9,7 +9,7 @@
 
 ---
 
-::: learning-objectives
+::: box
 
 **Learning Objectives**
 

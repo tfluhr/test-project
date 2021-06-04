@@ -35,10 +35,10 @@ pdf-engine-opts:
 variables:
   documentclass: book # book, report, article, proc
   classoption: openany # openright, openany
-  fontfamily: libertinus
-  fontfamilyoptions:
-    - osf
-    - p
+#  fontfamily: libertinus
+#  fontfamilyoptions:
+#    - osf
+#    - p
   fontsize: 11pt # 10pt (default), 11pt, 12pt
   column_number: onecolumn # onecolumn, twocolumn
 
@@ -46,9 +46,9 @@ wrap: auto
 columns: 78
 dpi: 72
 
-# lua filters for adds new environments
-#filters:
-#  - assets/scripts/latex-divs.lua
+# lua filters for adding new environments
+filters:
+  - assets/scripts/latex-divs.lua
 
 # set to true if you want a preservation copy of the html output
 self-contained: false 
