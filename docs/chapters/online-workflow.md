@@ -11,7 +11,7 @@ The Online Workflow is entirely web-based and uses [GitHub](https://github.com) 
 
 Your online workspace will be a repository on GitHub. Your repository will contain all of the source files for your textbook. Lantern provides a template repository that you can copy to your GitHub account.
 
-::: aside :::
+::: box :::
 
 A repository is a project folder that uses [Git](https://git-scm.com/) for version control. [GitHub](https://github.com) is a website for hosting Git repositories.
 
@@ -29,7 +29,7 @@ A repository is a project folder that uses [Git](https://git-scm.com/) for versi
 
 ![Screenshot of the web form for creating a new repository](new-repository.png)
 
-::: aside :::
+::: box :::
 
 _Example: `https://USERNAME.github.io/REPOSITORY-NAME` where `USERNAME` is your GitHub username._
 
@@ -61,7 +61,7 @@ Your new repository comes with a few files and folders you'll be using to add an
 
 Textbooks need bibliographic metadata in order to be indexed by search engines and library catalogs. Lantern stores metadata about the textbook in a YAML file. The information stored in the YAML file will be used to fill the templates for each of the publication formats. 
 
-::: aside :::
+::: box :::
 
 ### YAML Primer
 
@@ -87,7 +87,7 @@ YAML needs to be valid, so if you ever hit an error, it's a good idea to check t
 
 ![Screenshot of the commit changes form](commit.png)
 
-::: aside :::
+::: box :::
 
 This form will help you create a _commit_ in your repository. A commmit is a snapshot of a repository. Each commit is an opportunity to briefly log the purpose of your changes to the repository, which is helpful for keeping track of the project's development.
 

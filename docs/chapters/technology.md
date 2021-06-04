@@ -1,6 +1,6 @@
 # Technology Overview
 
-::: summary :::
+::: box :::
 
 Lantern teaches two production workflows that use plain text to format chapter content and produce open textbooks in multiple formats from a single source. Specifically, Lantern will help you...
 
@@ -57,7 +57,7 @@ Lantern requires manuscript files to be formatted as Markdown (`.md`) files. Mar
 
 > The idea is to identify logical structures in your document (a title, sections, subsections, footnotes, etc.), mark them with some unobtrusive characters, and then “compile” the resulting text with a typesetting interpreter which will format the document consistently, according to a specified style. [@tenen_sustainable_2014]
 
-::: aside :::
+::: box :::
 
 ### Markdown Tutorial
 
@@ -77,7 +77,7 @@ If you're starting with Microsoft Word files, you'll need the ability to open th
 
 You can create and edit Markdown files using a text editor. Every operating system includes a default plain text editor. On Windows, the default editor is [Notepad](https://www.microsoft.com/en-us/p/windows-notepad/9msmlrh6lzf3?activetab=pivot:overviewtab); on macOS, the default editor is [TextEdit](https://support.apple.com/guide/textedit/welcome/mac). Both of these options will work, as well as any other text editor, but we recommend installing [Visual Studio Code (VS Code)](https://code.visualstudio.com/), which is free for Windows, macOS, and Linux.
 
-::: aside :::
+::: box :::
 
 [VS Code](https://code.visualstudio.com/) can be customized to your workflow with [Extensions](https://marketplace.visualstudio.com/). You might be interested in trying a few extensions to help with formatting Markdown documents. Here are a few popular options:
 

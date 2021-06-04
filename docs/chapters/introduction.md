@@ -1,6 +1,6 @@
 # Introduction
 
-::: summary :::
+::: box :::
 
 "[Minimal computing](https://go-dh.github.io/mincomp/about/)" is a critical framework that places limits on hardware and software choices in order to prioritize the longevity of digital texts, the mitigation of technological obscolescence, and the maintenance of publishing systems. Lantern applies this framework to the production the open textbooks.
 
@@ -24,7 +24,7 @@ Lantern uses [Pandoc](https://pandoc.org/) as it's processing engine and provide
 
 > Plain text files have many advantages over other formats. For one, they are readable on virtually all devices. They have also withstood the test of time better than other file types – if you’ve ever tried to open a document saved in a legacy word processor format, you’ll be familiar with the compatibility challenges involved.[@simpkin_getting_2015]
 
-::: summary :::
+::: box :::
 
 **What does Lantern mean?**
 

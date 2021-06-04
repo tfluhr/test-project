@@ -6,7 +6,7 @@ The desktop workflow brings all of the required processing software to your comp
 
 You'll need a Windows, macOS, or Linux computer with the ability to install open source software packages from the command line (we'll teach you how!). For example, on a Windows computer, you'll need the ability to login as an administrator to install certain programs and enable advanced operating system features. 
 
-::: aside :::
+::: box :::
 
 Lantern depends on [GNU Bash](https://www.gnu.org/software/bash/) and [GNU Make](https://www.gnu.org/software/make/). These programs work fine on macOS and Linux computers, but they require some extra programs in order to run on Windows computers. We recommend the [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/about) for which we provide some guidance below.   
 
@@ -270,7 +270,7 @@ Lantern comes with a few files and folders you'll be using to add and edit your 
 
 Textbooks need bibliographic metadata in order to be indexed by search engines and library catalogs. Lantern stores metadata about the textbook in a YAML file. The information stored in the YAML file will be used to fill the templates for each of the publication formats. 
 
-::: aside :::
+::: box :::
 
 ### YAML Primer
 
@@ -310,7 +310,7 @@ The title of the chapter as it displays in the final textbook is set by the firs
 
 # Introduction to Vegetable Lasagna {.unlisted}
 
-::: summary :::
+::: box :::
 
 You can preview the HTML rendering of the Markdown within VS Code by pressing `Ctrl+Shift+V` with your keyboard. Lantern provides some special syntax for specific chapter components, but basic Markdown will render properly, such as headings, paragraphs, emphasis, italics, lists, links, tables, and images. 
 
