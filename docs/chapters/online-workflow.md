@@ -23,11 +23,11 @@ A repository is a project folder that uses [Git](https://git-scm.com/) for versi
 
 1. Click the green "Use This Template" button. This brings you to a "Create a new repository" form. 
 
-![Screenshot of the "Use this Template" button](use-this-template.png)
+![Screenshot of the "Use this Template" button](ow_use-this-template.png)
 
 1. Enter your new repository name for your textbook project. Use a lowercase name without spaces. This name will become part of your site URL. 
 
-![Screenshot of the web form for creating a new repository](new-repository.png)
+![Screenshot of the web form for creating a new repository](ow_new-repository.png)
 
 ::: box :::
 
@@ -45,7 +45,7 @@ _Example: `https://USERNAME.github.io/REPOSITORY-NAME` where `USERNAME` is your 
 
 Your new repository comes with a few files and folders you'll be using to add and edit your manuscript content. All of these files and folders are contained in the `source` directory. These are the **only** files and folders you will need to edit to use Lantern for your textbook project.
 
-![Screenshot of the "source" folder contents](source-directory.png)
+![Screenshot of the "source" folder contents](ow_source-directory.png)
 
 - `chapters/`: This folder contains the textbook chapter files
 
@@ -75,17 +75,17 @@ YAML needs to be valid, so if you ever hit an error, it's a good idea to check t
 
 - Open the `metadata.yml` file to view the available metadata fields.
 
-![Screenshot of the first few lines of the "metadata.yml" file](metadata.png)
+![Screenshot of the first few lines of the "metadata.yml" file](ow_metadata.png)
 
 - To edit the file with your textbook's information, click on the pencil icon labelled "Edit this File" near the right side of the screen
 
-![Screenshot of the editing icon](edit-this-file.png)
+![Screenshot of the editing icon](ow_edit-this-file.png)
 
 - Use GitHub's online text editor to replace the placeholder metadata values with your textbook's information 
 
 - When you're finished with your edits, scroll to the bottom of the page to the "Commit changes" form. 
 
-![Screenshot of the commit changes form](commit.png)
+![Screenshot of the commit changes form](ow_commit.png)
 
 ::: box :::
 
@@ -104,14 +104,14 @@ This action will trigger a few things for your new textbook:
 
 The `gh-pages` branch of your repository acts as your web server, where every file in this branch can be made accessible via the URL of your textbook. The URL for your textbook is created, by default, using this pattern: `https://USERNAME.github.io/REPOSITORY-NAME`
 
-![Screenshot highlighting the number of branches, latest commit, and settings tab](new-branch-settings.png)
+![Screenshot highlighting the number of branches, latest commit, and settings tab](ow_new-branch-settings.png)
 
 While your website is ready to go live, it is not live yet. You'll have to make a change to the settings in your repository. 
 
 - Click on the "Settings" tab from the home page of your repository
 - In the left sidebar, click on the "Pages" link
 
-![Screenshot highlighting the Pages link from the settings tab](pages.png)
+![Screenshot highlighting the Pages link from the settings tab](ow_pages.png)
 
 [GitHub Pages](https://pages.github.com) is a free static website hosting service from GitHub. In order to use this service for our textbook project, we'll need to point the web host to the source of our textbook's website files, which is the `gh-pages` branch of our repository.
 
@@ -145,7 +145,7 @@ Lantern has includes a micro-workflow that will help you convert raw manuscript 
 - Save the files to your computer.
 - In your GitHub repository, click on the "source" folder, then click on the "preprocess" folder. The "preprocess" folder is intended for you to upload `.docx` or `.odt` files.
 
-![Screenshot of the preprocess folder on GitHub](preprocess.png)
+![Screenshot of the preprocess folder on GitHub](ow_preprocess.png)
 
 - Click on the "Add file" drop-down menu and select "upload files"
 - Upload one or more of the `.docx` or `.odt` files
@@ -153,7 +153,7 @@ Lantern has includes a micro-workflow that will help you convert raw manuscript 
 
 This action will trigger the GitHub repository to convert your `.docx` or `.odt` chapter files to markdown, then add the markdown files to the `source/chapters/` folder. This folder should now look something like this:
 
-![Screenshot of the chapters folder on GitHub](chapters.png)
+![Screenshot of the chapters folder on GitHub](ow_chapters.png)
 
 You can now edit any of these files using GitHub's online text editor. 
 
@@ -163,7 +163,7 @@ The conversion process between word processing formats and markdown won't be per
 
 - Click on the "03-probability.md" file
 
-![Screenshot of the Probabilities example chapter on GitHub](probability.png)
+![Screenshot of the Probabilities example chapter on GitHub](ow_probability.png)
 
 GitHub will render the raw markdown as formatted HTML (without any styles) in order to give you a preview of how the content will look in its final state.
 
@@ -171,7 +171,7 @@ GitHub will render the raw markdown as formatted HTML (without any styles) in or
 
 The editor view of the file will allow you to edit the raw markdown contents as well as the file name itself (including the extension). We'll need to edit this file because there's a problem with the title of the chapter. 
 
-![Screenshot of the Editor view for the Probabilities chapter](edit.png)
+![Screenshot of the Editor view for the Probabilities chapter](ow_edit.png)
 
 The title of this particular chapter is not formatted properly. Instead of marking the title as a heading, the title is formatted as `**bold**`. This is a common problem with word processing formats, wherein headings are representing _visually_ but not _semantically_. Markdown uses specific syntax to mark contents as headings.
 
@@ -181,7 +181,7 @@ All chapter files using Lantern must begin must begin with the title of the chap
 
 - Now click on the "Preview" tab to see how that syntax change affected the output of the heading
 
-![Screenshot of the HTML preview for the Probabilities chapter](preview.png)
+![Screenshot of the HTML preview for the Probabilities chapter](ow_preview.png)
 
 - There is another heading error in the file. Change `**Introduction to Probability Standard**` in line 19 to `## Introduction to Probability Standard` so that it represents a "Heading 2", or section heading.
 - Scroll down to the bottom of the page and click on the "Commit changes" button to save these changes to your textbook
