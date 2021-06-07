@@ -59,6 +59,8 @@ _The pop-up message will include both version and build numbers for your Windows
 - Select "Run as Administrator"
 - Login with an Administrator username and password
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/u4QVJyWCErI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 1. Enable WSL on Your Computer
 
 In PowerShell, run:
@@ -89,9 +91,11 @@ wsl --set-default-version 2
 
 1. Download Ubuntu 20.04 LTS from the [Microsoft Store](https://www.microsoft.com/store/apps/9n6svws3rx71)
 
-- From the Store page, click on "Get"
+- From the Store page, click on "Get" (you can close the prompts requesting you to login with or create a Microsoft account)
 - Wait for the download to finish; it will take a few minutes
 - Click on the Launch button when the download finishes
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/smc9TTjbygM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 1. Congrats! You now have an Ubuntu Operating System within your Windows computer!
 
@@ -102,6 +106,8 @@ This will launch a new terminal window for Ubuntu. In the task bar, we recommend
 1. Create a User for Ubuntu
 
 The first time you open the Ubuntu terminal, you will be prompted to create a new user profile. This user is separate from the user profile you use to log in to your Windows computer. You can set this to whatever you want; just be sure to remember the password!
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/XYDi64_g9Vk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 1. Update Your Ubuntu System Packages
 
@@ -151,7 +157,7 @@ brew install pandoc pandoc-crossref
 
 ## Install TinyTeX
 
-_You can skip this section if you already have LaTeX installed on your system._
+_You can skip this section if you already have LaTeX installed on your system. If you think you might have LaTeX, but are not sure, open a terminal and run `latex --version`. If you get a version number, you're good! If not, read on..._
 
 Lantern uses [$LaTeX$](https://www.latex-project.org/) to make PDFs. $Latex$ is a document production system that is commonly used for formatting mathematical notation and advanced typesetting. 
 
@@ -332,7 +338,7 @@ _The Math rendering in the preview screen is handled by the VS Code [Markdown+Ma
 
 **PDF:**
 
-![](chapter-title.png)
+![Screenshot of Chapter Title from PDF output](dw_chapter-title.png)
 
 **LaTeX:**
 
@@ -365,7 +371,7 @@ The conversion process between word processing formats and markdown won't be per
 
 - Open on the "03-probability.md" file in the `source/chapters/` folder with VS Code. We'll need to edit this file because there's a problem with the title of the chapter. 
 
-The title of this particular chapter is not formatted properly. Instead of marking the title as a heading, the title is formatted as `**bold**`. This is a common problem with word processing formats, wherein headings are representing _visually_ but not _semantically_. Markdown uses specific syntax to mark contents as headings.
+The title of this particular chapter is not formatted properly. Instead of marking the title as a heading, the title is formatted as `**bold**`. This is a common problem with word processing formats, wherein headings are representing _visually_ but not _semantically_. In other words, the headings are human-readable but not machine-readable. Markdown uses specific syntax to mark contents as headings.
 
 - Change the `**Probabilities**` heading to a proper markdown heading: `# Probabilities`
 
