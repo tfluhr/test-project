@@ -2,6 +2,18 @@
 
 The Online Workflow is entirely web-based and uses [GitHub](https://github.com) as a publishing platform. This tutorial will guide you through the process of setting up your textbook project on GitHub. By the end of this tutorial, you will be able to use Lantern to create and publish open textbooks.
 
+::: box :::
+
+**Learning Objectives**
+
+Following completion of this tutorial, you will be able to:
+
+- Examine the Lantern publishing workflow without installing any software
+- Use GitHub as an online OER workspace and hosting platform
+- Apply basic Markdown formatting for open textbook production
+
+:::
+
 ## Prerequisites
 
 - Create a [GitHub](https://github.com) account

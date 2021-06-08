@@ -28,11 +28,13 @@ Lantern uses [Pandoc](https://pandoc.org/) as it's processing engine and provide
 
 **What does Lantern mean?**
 
+Lantern is the nickname for the atrium entrance to the Main Library at Northwestern, which resembles a giant lantern. It's a rounded tower of windows that opens to the most heavily used study area in the building. In our case, the name represents a starting point for a new way of open textbook production. 
+
 :::
 
 ## Who is Lantern for?
 
-...
+Lantern was developed as a minimal computing toolkit for the open education community. We are librarians who provide publishing services to faculty OER authors. We recognize that OER publishing programs are expensive to operate, so we developed Lantern to help minimize the digital production, hosting, and maintenance costs of multi-format textbook publishing by using open source software, free web services, and [static web technologies](https://lib-static.github.io/). 
 
 ## Credits
 
