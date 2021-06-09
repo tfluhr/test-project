@@ -1,80 +1,65 @@
----
-######################################################### 
-# TEXTBOOK INFORMATION
-######################################################### 
+# textbook information
+
 title: Lantern
-subtitle: A Workflow for Publishing Open Textbooks
+subtitle: Workflows for Publishing Open Textbooks
+
 author:
-  - Chris Diaz
-  - Lauren McKeen McDonald
+  - name: Chris Diaz
+    affiliation: Northwestern University
+    orchid:
+  - name: Lauren McKeen McDonald
+    affiliation: Northwestern University
+    orchid:
+
 contributor:
   - Sherry Wang
   - Maria Cortez
   - Angelina Jaglinski
-publication_date:
-doi:
-isbn_p:
-isbn_e:
-lang: en-US
-keywords: 
+
+publication-year: 2021
+doi: 10.1000/xyz123
+isbn-p:
+isbn-e:
+
+keywords:
+  - digital publishing
   - pandoc
-  - minimal computing
-  - oer
+  - open educational resources
+
 subjects: 
-  - OER
-  - Digital Publishing
-  - Open Textbooks
-  - Pandoc
+  - Academic Libraries
+  - Technology
+
 description: |
-  This guide introduces and demonstrates a minimal computing approach to producing open textbooks using free and open source software.
-cover: images/cover.png
-reference-section-title: References
-link-citations: true
+  Lantern introduces and demonstrates a minimal computing approach to producing open textbooks using free and open source software.
 
-######################################################### 
-# COPYRIGHT AND LICENSING
-#########################################################
-# Select a Creative Commons License (4.0 International)
-# See: https://creativecommons.org/ licenses/
-# by = Attribution (CC BY)
-# nc = Non-commercial (CC BY-NC)
-# sa = ShareAlike (CC BY-SA)
-# nc-sa = NonCommercial-ShareAlike (CC BY-NC-SA)
-######################################################### 
+  This guide includes tutorials and documentation to help you learn the technlogy, format specific manuscript elements, and make your own customizations. 
+
+# this sets the language attribute for html and epub outpus
+# see https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang for more info
+lang: en-us 
+
+# copyright and licensing information
+
 copyright:
-license: # by, nc, sa, nc-sa, cc0
+  holder: Chris Diaz & Lauren McKeen McDonald
+  # see https://rightsstatements.org/ for recommended statement and uri options
+  statement: In Copyright 
+  statement-uri: http://rightsstatements.org/vocab/InC/1.0/
+  # see https://creativecommons.org/licenses/ for recommended license and uri options
+  license: Attribution 4.0 International (CC BY 4.0) 
+  licence-uri: https://creativecommons.org/licenses/by/4.0/
 
-######################################################### 
-# PUBLISHER INFORMATION
-######################################################### 
-publisher: Northwestern University Libraries
-publisher_location: Evanston, IL # City, State
-publisher_url: https://www.library.northwestern.edu
-editors:
-git_url: https://github.com/nulib-oer/lantern
+publisher:
+  name: Northwestern University Libraries
+  location: Evanston, IL # city, state
+  website: https://library.northwestern.edu
 
-######################################################### 
-# BOOK SETTINGS
-######################################################### 
-toc-title: "Contents"
-# Filter preferences:
-# - pandoc-crossref
+# publication settings
+
+cover: true
+
+toc-title: "Contents" # name for the table of contents
+reference-section-title: "References" # name for the references or bibliography section
+
 linkReferences: true
-
-######################################################### 
-# HTML SETTINGS
-######################################################### 
-
-
-######################################################### 
-# LaTeX/PDF SETTINGS
-######################################################### 
-documentclass: book # book, report, article, proc
-classoption: openany # openright, openany
-fontfamily: libertinus
-fontfamilyoptions:
-  - osf
-  - p
-fontsize: 11pt # 10pt (default), 11pt, 12pt
-column_number: onecolumn # onecolumn, twocolumn
----

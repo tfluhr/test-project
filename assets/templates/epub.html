@@ -32,16 +32,16 @@ $if(subtitle)$
   <p class="subtitle">$subtitle$</p>
 $endif$
 $for(author)$
-  <p class="author">$author$</p>
+  <p class="author">$author.name$</p>
 $endfor$
 $for(creator)$
   <p class="$creator.role$">$creator.text$</p>
 $endfor$
 $if(publisher)$
-  <p class="publisher">$publisher$</p>
+  <p class="publisher">$publisher.name$</p>
 $endif$
-$if(date)$
-  <p class="date">$date$</p>
+$if(publication-year)$
+  <p class="date">$publication-year$</p>
 $endif$
 $if(rights)$
   <div class="rights">$rights$</div>
