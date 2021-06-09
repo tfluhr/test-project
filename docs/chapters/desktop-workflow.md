@@ -20,7 +20,7 @@ Lantern uses software that requires a [Unix-like](https://en.wikipedia.org/wiki/
 
 Microsoft maintains [instructions on how to install WSL on a Windows 10 computer](https://docs.microsoft.com/en-us/windows/wsl/install-win10). We recommend installing WSL 2 with the [latest Ubuntu version is 20.04 LTS](https://www.microsoft.com/en-us/p/ubuntu-2004-lts/9n6svws3rx71?rtc=1&activetab=pivot:overviewtab), but WSL 1 and any other Linux distribution might work too. The instructions assume you will have some familiarity with the Windows command line interface, specifically [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1). 
 
-We highly recommend following [Microsoft's instructions for a manual installation](https://docs.microsoft.com/en-us/windows/wsl/install-win10) as written, but we also provide an opinionated set of instructions below. 
+We highly recommend following [Microsoft's instructions for a manual installation](https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps) as written. If you're on an employer-provided computer, you might not have access to Windows Insider Program, so the "Simplified Installation" might not be available to you. We also provide an opinionated set of instructions below. 
 
 ### Installing Windows Subsystem for Linux (WSL) with Ubuntu
 
@@ -188,10 +188,10 @@ curl -sL "https://yihui.org/tinytex/install-bin-unix.sh" | sh
 
 There are two main types of documents we use to write and edit text: [plain-text](https://en.wikipedia.org/wiki/Plain_text) and [rich text](https://en.wikipedia.org/wiki/Formatted_text). Plain text exposes the characters within a document, whereas rich text displays the formatting features and styles. 
 
-| File Contents | File Extension          | Editors                    |
-| ------------- | ----------------------- | -------------------------- |
-|   Plain text  | `.xml`, `.html`, `.md`  | Notepad, TextEdit, VS Code |
-|   Rich text   | `.docx`, `.rtf`, `.odt` | Microsoft Word, Scrivener  |
+| File Contents | File Extension          | Editors                     |
+| ------------- | ----------------------- | --------------------------- |
+|   Plain text  | `.xml`, `.html`, `.md`  | Notepad, TextEdit, VS Code  |
+|   Rich text   | `.docx`, `.rtf`, `.odt` | Microsoft Word, Google Docs |
 
 Most of us are trained to use rich text editors: emails, word documents, content management systems (e.g. WordPress). This is for good reason: they're easy to use and we need them for everyday things. For academic publishing purposes, plain text offers some advantages over rich text, as Tenen and Wythoff ([2014](https://doi.org/10.46430/phen0041)) explain: 
 
@@ -199,7 +199,9 @@ Most of us are trained to use rich text editors: emails, word documents, content
 
 ### Installing Visual Studio Code
 
-We recommend installing [Visual Studio Code (VS Code)](https://code.visualstudio.com/) as your text editor, but you're welcome to use any other text editor you prefer. Visit the website to [download](https://code.visualstudio.com/) and [install](https://code.visualstudio.com/docs/setup/setup-overview) VS Code. When prompted to "Select Additional Tasks" during installation, double-check that the Add to PATH option is checked so you can easily open a folder in WSL using the `code` command from your terminal. We also think it's helpful to check the box for the other Additional Tasks, including:
+We recommend installing [Visual Studio Code (VS Code)](https://code.visualstudio.com/) as your text editor, but you're welcome to use any other text editor you prefer. Visit the website to [download](https://code.visualstudio.com/) and [install](https://code.visualstudio.com/docs/setup/setup-overview) VS Code. 
+
+When prompted to "Select Additional Tasks" during installation, double-check that the Add to PATH option is checked so you can easily open a folder in WSL using the `code` command from your terminal. We also think it's helpful to check the box for the other Additional Tasks, including:
 
 - Add "Open with Code" action to Windows Explorer file context menu
 - Add "Open with Code" action to Windows Explore directory context menu
