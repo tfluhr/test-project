@@ -8,7 +8,7 @@ CONTENT = awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $(CHAPTERS)
 # output configuration files
 HTML = --verbose --filter pandoc-crossref --defaults assets/defaults/html.yml
 DOCX = --defaults assets/defaults/docx.yml
-LATEX = --filter pandoc-crossref --defaults assets/defaults/latex.yml
+LATEX = --filter pandoc-crossref --defaults assets/defaults/latex.yml --no-highlight
 EPUB = --verbose --defaults assets/defaults/epub.yml --mathml
 
 # utilities
