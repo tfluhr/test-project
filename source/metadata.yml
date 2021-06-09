@@ -40,11 +40,11 @@ download:
     link: textbook.pdf
   - format: EPUB
     link: textbook.epub
-  - format: LaTeX
-    link: textbook.tex
   - format: DOCX
     link: textbook.docx
-  - format: Source
+  - format: LATEX
+    link: textbook.tex
+  - format: GITHUB
     link: https://github.com/nulib-oer/lantern
 
 
