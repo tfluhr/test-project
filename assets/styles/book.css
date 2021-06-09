@@ -172,10 +172,6 @@ table caption {
   text-transform: uppercase;
 }
 
-table caption::before {
-    content: "Table: "
-  }
-
 /* Style modifiers
  ========================================================================== */
 /*
