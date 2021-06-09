@@ -37,7 +37,7 @@ A repository is a project folder that uses [Git](https://git-scm.com/) for versi
 
 ![Screenshot of the "Use this Template" button](ow_use-this-template.png)
 
-1. Enter your new repository name for your textbook project. Use a lowercase name without spaces. This name will become part of your site URL. 
+4. Enter your new repository name for your textbook project. Use a lowercase name without spaces. This name will become part of your site URL. 
 
 ![Screenshot of the web form for creating a new repository](ow_new-repository.png)
 
@@ -49,13 +49,13 @@ _Example: `https://USERNAME.github.io/REPOSITORY-NAME` where `USERNAME` is your 
 
 5. Most users should choose "Public" repository. If you are hosting on GitHub Pages it must be public unless you upgrade to a paid account.
 
-1. Leave the "Include all branches" option unchecked; you only want the `main` branch
+1. Leave the "Include all branches" option unchecked; you only want the `main` branch. The other branches include experimental junk or files you won't need.
    
 1. Click on the green button "Create repository from template." This will take you to your new repository.
 
 ## Repository Files and Folders
 
-Your new repository comes with a few files and folders you'll be using to add and edit your manuscript content. All of these files and folders are contained in the `source` directory. These are the **only** files and folders you will need to edit to use Lantern for your textbook project.
+Your new repository comes with a few files and folders you'll be using to add and edit your manuscript content. All of these files and folders are contained in the `source` directory. These are the **only** files and folders you will need to edit to use Lantern for your textbook project. Click on the `source` folder to view its contents.
 
 ![Screenshot of the "source" folder contents](ow_source-directory.png)
 
@@ -93,7 +93,7 @@ YAML needs to be valid, so if you ever hit an error, it's a good idea to check t
 
 ![Screenshot of the editing icon](ow_edit-this-file.png)
 
-- Use GitHub's online text editor to replace the placeholder metadata values with your textbook's information 
+- Use GitHub's online text editor to replace the placeholder metadata values with your textbook's information (or any information to test it out). 
 
 - When you're finished with your edits, scroll to the bottom of the page to the "Commit changes" form. 
 
@@ -151,7 +151,7 @@ By default, Lantern sets the order of the chapters using the file name. You can 
 
 Most OER authors are not writing their manuscripts in Markdown (yet!), so we'll need to convert from more common file formats. The [example chapters](https://drive.google.com/drive/folders/1Fl__DhDXDFyoPmwX0CHpfj10qhOY3t0k?usp=sharing) are Google Docs that can be downloaded as `.docx` or `.odt` files, which are the file types that most word processing software use. 
 
-Lantern has includes a micro-workflow that will help you convert raw manuscript files from `.docx` or `.odt` to Markdown (`.md`).
+Lantern includes a micro-workflow that will help you convert raw manuscript files from `.docx` or `.odt` to Markdown (`.md`).
 
 - Download the example chapter files from the Google Drive, ignoring the README file, which we don't need
 - Save the files to your computer.
@@ -189,7 +189,7 @@ The title of this particular chapter is not formatted properly. Instead of marki
 
 - Change the `**Probabilities**` heading to a proper markdown heading: `# Probabilities`
 
-All chapter files using Lantern must begin must begin with the title of the chapter formatted as a "Heading 1" or a first-level heading using the hashtag symbol (`#`). The number of hashtags corresponds to the level that heading represents (for example, one hashtag converts to a `<h1>` tag when the output is HTML). There are typically between 1 and 6 heading level options. 
+All chapter files using Lantern must begin with the title of the chapter formatted as a "Heading 1" or a first-level heading using the hashtag symbol (`#`). The number of hashtags corresponds to the level that heading represents (for example, one hashtag converts to a `<h1>` tag when the output is HTML). There are typically between 1 and 6 heading level options. 
 
 - Now click on the "Preview" tab to see how that syntax change affected the output of the heading
 
@@ -197,3 +197,5 @@ All chapter files using Lantern must begin must begin with the title of the chap
 
 - There is another heading error in the file. Change `**Introduction to Probability Standard**` in line 19 to `## Introduction to Probability Standard` so that it represents a "Heading 2", or section heading.
 - Scroll down to the bottom of the page and click on the "Commit changes" button to save these changes to your textbook
+
+This completes the tutorial. The tutorial **only** covers setting up your workspace and adding your own content. To create a new project for the real world, you can repeat these steps then read the documentation on formatting, metadata, and customizations. 

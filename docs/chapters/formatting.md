@@ -22,7 +22,7 @@ One downside to Markdown is that is it not a markup language that has been stand
 
 :::
 
-Lantern provides guidance and tools to simplify the conversion process from common word processing formats (`.docx`, `.odt`, or `.rtf`) to Markdown. The conversions won't be perfect, but they'll save you a lot of time.
+Lantern provides guidance and tools to simplify the conversion process from common word processing formats (`.docx`, `.odt`, or `.rtf`) to Markdown. The conversions won't be perfect, but they'll save you a lot of time and make your documents more accessible.
 
 If you're starting with Microsoft Word files, you'll need the ability to open the files and apply styles to chapter contents, such as headings. We recommend [Microsoft Word](https://www.microsoft.com/en-us/microsoft-365/word?rtc=1) as your word processor, but [Libre Office](https://www.libreoffice.org/) or [Google Docs](https://www.google.com/docs/about/) will also work. 
 

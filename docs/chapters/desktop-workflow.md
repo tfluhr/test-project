@@ -1,6 +1,6 @@
 # Desktop Workflow
 
-The desktop workflow brings all of the required processing software to your computer. It's designed to remove [GitHub](https://github.com) as a dependency so that you can use any web hosting platform for publishing your open textbooks. In this tutorial, we'll walk you through the process of setting up your computer and running basic processing commands. 
+The desktop workflow brings all of the required processing software to your computer. It's designed to remove GitHub as a dependency so that you can use any web hosting platform for publishing your open textbooks. In this tutorial, we'll walk you through the process of setting up your computer and running basic processing commands. 
 
 **Prerequisites**
 
@@ -31,7 +31,7 @@ WSL is a feature in Windows that lets you run a Linux operating system _within_ 
 - Hit the Windows Key
 - Type "PowerShell"
 - Press Enter
-- Type in the prompt: `systeminfo | find "System Type"`
+- Type or copy and paste this into the prompt (capitalization is important): `systeminfo | find "System Type"`
 - Press Enter
 
 _You should see a message that says something like: ` x64-based PC`_. 
@@ -39,7 +39,7 @@ _You should see a message that says something like: ` x64-based PC`_.
 1. Checking Your Windows 10 Version: There are several **versions** and **builds** of Windows 10. If you're not sure which version and build you have, follow these steps:_
 
 - Hit the Windows Key
-- Hit the "R" key
+- Type "run" to find the Run app
 - Press Enter
 - Type "winver"
 - Press Enter
@@ -56,7 +56,7 @@ _The pop-up message will include both version and build numbers for your Windows
 
 - Hit the Windows Key
 - Type "PowerShell"
-- Select "Run as Administrator"
+- Use the arrow to see more options; select "Run as Administrator"
 - Login with an Administrator username and password
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/u4QVJyWCErI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

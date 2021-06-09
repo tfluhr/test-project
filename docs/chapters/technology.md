@@ -49,7 +49,7 @@ Word processing formats like `.docx`, `.odt`, or `.rtf` are helpful to authors f
 
 ::: example :::
 
-For example, a Microsoft Word document might visually display a subheading using centered horizontal alignment and a bold typeface. While people may be able to understand this as a heading, screen-readers wouldn't be able to distiguish it from any other paragraph in the document. Document markup identifies semantic elements explicitly through the use of tags. 
+For example, a Microsoft Word document might visually display a subheading using centered horizontal alignment and a bold typeface. While sighted people may be able to understand this as a heading, screen-readers wouldn't be able to distiguish it from any other paragraph in the document. Document markup identifies semantic elements explicitly through the use of tags. 
 
 :::
 
