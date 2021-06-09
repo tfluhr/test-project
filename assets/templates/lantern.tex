@@ -2,7 +2,7 @@
 
 \title{$title$}
 \newcommand{\subtitle}{$subtitle$}
-\newcommand{\booklicense}{$license.label$}
+\newcommand{\booklicense}{\href{$copyright.license-uri$}{$copyright.license$}}
 
 % authors %
 \author{$for(author)$$author.name$$sep$ \and $endfor$}
@@ -20,10 +20,20 @@
 
 \usepackage{amsmath} % Used by equations
 \usepackage{hyperref}
+% link options
+\hypersetup{
+  colorlinks=true,
+  linkcolor=purple,
+  urlcolor=purple,
+  pdftitle={$title$}
+}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{graphicx}
-\setkeys{Gin}{width=\linewidth}
+% sets image width to text body width
+\setkeys{Gin}{width=\linewidth} 
+\usepackage{xcolor}
+\definecolor{purple}{HTML}{663399}
 
 % The following dimensions specify 4.75" X 7.5" content on 6 3/8" by 9 1/4"
 % paper. The paper width and height can be tweaked as required and the content
@@ -32,10 +42,13 @@
 % The (inside) bindingoffset should be larger for books with more pages. Some
 % standard recommended sizes are .375in minimum up to 1in for 600+ page books.
 % Sizes .75in and .875in are also recommended roughly at 150 and 400 pages.
-\usepackage[bindingoffset=1in,
-            left=1in, right=1in,
-            top=1in, bottom=1in,
-            paperwidth=8.27in, paperheight=11.69in]{geometry}
+\usepackage[bindingoffset=$paper.gutter$,
+            left=$paper.margin.left$, 
+            right=$paper.margin.right$,
+            top=$paper.margin.top$, 
+            bottom=$paper.margin.bottom$,
+            paperwidth=$paper.width$, 
+            paperheight=$paper.height$]{geometry}
 % Here is an alternative geometry for reading on letter size paper:
 % \usepackage[margin=.75in, paperwidth=8.5in, paperheight=11in]{geometry}
 
@@ -102,79 +115,90 @@ $endif$
 
 % authors
 \begin{flushright}
-\Large First Edition
+
+  $for(author)$
+    \textbf{$author.name$}, \emph{$author.affiliation$}\\
+  $endfor$
+
 \end{flushright}
 
 % \vspace{\fill}
 \vspace{\fill}
 
 \end{flushleft}
+
+\begin{center}
+  %\includegraphics{booksvg.pdf}\\[4pt]
+  \fontfamily{lmtt}\small{$publisher.name$\\
+  $publisher.location$\\
+  $publisher.website$}
+\end{center}
+  
 \end{titlepage}
 \restoregeometry
 % ---- End of Half Title Page ----
-
-
-% No page numbers on the Frontispiece page
-\thispagestyle{empty}
-
-
-% ---- Title Page ----
-% current geometry will be restored after title page
-\newgeometry{top=1.75in,bottom=.5in}
-\begin{titlepage}
-\begin{flushleft}
-
-% Title
-\textbf{\fontfamily{qcs}\fontsize{48}{54}\selectfont $title$\\}
-
-% Draw a line 4pt high
-\par\noindent\rule{\textwidth}{4pt}\\
-
-% Shaded box from left to right with Subtitle
-% The text node is midway (centered).
-%\begin{tikzpicture}
-%\shade[bottom color=lightgray,top color=white]
-%    (0,0) rectangle (\textwidth, 1.5)
-%    node[midway] {\textbf{\large \textit{\booksubtitle}}};
-%\end{tikzpicture}
-
-% Edition Number
-\begin{flushright}
-\Large First Edition
-\end{flushright}
-
-\vspace{\fill}
-
-% Author and Location
-\textbf{\large \author}\\[3.5pt]
-\textbf{\large \textit{\authoraffiliation}}
-
-\vspace{\fill}
-
-% Self Publishing Logo. Free to use: CC0 license.
-% The source file is book.svg. If you change the svg, you must then convert
-% it to pdf. There are many online and offline tools available to do that.
-\begin{center}
-%\includegraphics{booksvg.pdf}\\[4pt]
-\fontfamily{lmtt}\small{Self Publishers Worldwide\\
-Seattle San Francisco New York\\
-London Paris Rome Beijing Barcelona}
-\end{center}
-
-\end{flushleft}
-\end{titlepage}
-\restoregeometry
-% ---- End of Title Page ----
 
 % Do not show page numbers on colophon page
 \thispagestyle{empty}
 
 \begin{flushleft}
+
+\textbf{Copyright \textcopyright{} $publication-year$  $copyright.holder$\\
+License: \booklicense}\\[11pt] 
+
+$if(copyright.exceptions)$
+\textbf{Exceptions} \\
+
+Except where otherwise noted, this book is licensed under a $copyright.license$. To view a copy of this license, visit $copyright.license-uri$
+
+The following material is excluded from the license: 
+
+\begin{itemize}
+  $for(copyright.exceptions)$
+  \item $copyright.exceptions$
+  $endfor$
+\end{itemize}
+
+$copyright.exceptions$
+$endif$
+
+For permissions beyond the scope of this license, visit $publisher.website$
+
 \vspace*{\fill}
-This book was typeset using \LaTeX{} software.\\
-\vspace{\fill}
-Copyright \textcopyright{} \the\year{}  \author\\
-License: \booklicense
+
+\begin{description}
+  \item[Recommended Citation] \hfill \\ $copyright.attribution$
+  \item[Publisher] \hfill \\ $publisher.name$, $publisher.location$
+  \item[Date] \hfill \\ $publication-year$
+  $if(website)$
+  \item[Website] \hfill \\ $website$
+  $endif$
+  $if(isbn-p)$
+  \item[ISBN] \hfill \\ $isbn-p$ pbk.
+  $endif$
+  $if(isbn-e)$
+  \item[eISBN] \hfill \\ $isbn-e$
+  $endif$
+  $if(doi)$
+  \item[DOI] \hfill \\ \href{https://doi.org/$doi$}{$doi$}
+  $endif$
+  \item[Subjects] \hfill \\ $for(subjects)$$subjects$$sep$, $endfor$
+  \item[keywords] \hfill \\ $for(keywords)$$keywords$$sep$, $endfor$
+  $if(contributor)$
+  \item[Contributors] \hfill \\ $for(contributor)$$contributor$$sep$, $endfor$
+  $endif$
+
+\end{description}
+
+$if(publisher.disclaimer)$
+\textbf{Disclaimer} \\
+  $publisher.disclaimer$
+$endif$
+
+\vspace*{\fill}
+
+This book was typeset using \LaTeX{} software and processed with \href{https://pandoc.org}{Pandoc} using the \href{http://lantern.northwestern.pub}{Lantern} publishing workflow.\\
+
 \end{flushleft}
 
 % A title page resets the page # to 1, but the second title page
@@ -182,11 +206,8 @@ License: \booklicense
 \addtocounter{page}{2}
 
 % The asterisk excludes chapter from the table of contents.
-\newpage
-
+\chapter*{About this Book}
 $description$
-
-\newpage
 
 % Three-level Table of Contents
 \setcounter{tocdepth}{3}
