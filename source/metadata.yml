@@ -8,14 +8,15 @@ author:
     affiliation: College
   - name: Second Author
     affiliation: University
+
 contributor:
   - Research Assistant
-  - Research Assistant
+  - name: Research Assistant
 
-publication_year: 2021
+publication-year: 2021
 doi: 10.1000/xyz123
-isbn_p:
-isbn_e:
+isbn-p:
+isbn-e:
 
 keywords:
   - keyword
@@ -28,12 +29,33 @@ subjects:
 description: |
   Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
 
-lang: en-us
+# this sets the language attribute for html and epub outpus
+# see https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang for more info
+lang: en-us 
 
-#copyright: 
-license:
-  label: Creative Commons Attribution 4.0 International (CC BY 4.0)
-  url: https://creativecommons.org/licenses/by/4.0/
+# copyright and licensing information
+
+copyright:
+  holder: The Authors
+  # see https://rightsstatements.org/ for recommended statement and uri options
+  statement: In Copyright 
+  statement-uri: http://rightsstatements.org/vocab/InC/1.0/
+  # see https://creativecommons.org/licenses/ for recommended license and uri options
+  license: Attribution 4.0 International (CC BY 4.0) 
+  licence-uri: https://creativecommons.org/licenses/by/4.0/
+
+publisher:
+  name: Publishing Organization
+  location: Evanston, IL # city, state
+  website: https://example.com
+
+editor:
+  book: Editor Name # name of book editor
+  series: Editor Name # name of series editor
+
+# publication settings
+
+cover: true # requires a cover.png file within the images folder
 
 download:
   - format: PDF
@@ -47,14 +69,7 @@ download:
   - format: GITHUB
     link: https://github.com/nulib-oer/lantern
 
-
-publisher: Publishing Organization
-publisher_location: Evanston, IL # City, State
-publisher_url: https://www.library.northwestern.edu
-editors:
-git_url: https://github.com/nulib-oer/lantern
-
-toc-title: "Contents" # text label for table of contents
-reference-section-title: "References"
+toc-title: "Contents" # name for the table of contents
+reference-section-title: "References" # name for the references or bibliography section
 
 linkReferences: true
