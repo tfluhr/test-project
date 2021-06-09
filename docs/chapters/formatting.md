@@ -1,4 +1,8 @@
-# Formatting Guide
+# Document Formatting
+
+## Microsoft Word Styles
+
+_Coming soon..._
 
 ## Textbook Information in YAML
 
@@ -6,7 +10,36 @@ _Coming soon.._
 
 ## Chapter Content in Markdown
 
-_Coming soon..._
+::: box :::
+
+### Markdown Tutorial
+
+This video explains the basics of Markdown syntax. While it is true that Markdown was designed as a simplified alternative to writing content for HTML, Lantern uses Markdown to write several additional output formats.  
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/2JE66WFpaII" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+One downside to Markdown is that is it not a markup language that has been standardized. There are a few specifications that aim to standardize Markdown, but generally the Markdown syntax rules are set by the Markdown processor, or engine. Since Lantern uses Pandoc as it's Markdown processor, we'll be using [Pandoc's Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown) to format our textbooks.
+
+:::
+
+Lantern provides guidance and tools to simplify the conversion process from common word processing formats (`.docx`, `.odt`, or `.rtf`) to Markdown. The conversions won't be perfect, but they'll save you a lot of time.
+
+If you're starting with Microsoft Word files, you'll need the ability to open the files and apply styles to chapter contents, such as headings. We recommend [Microsoft Word](https://www.microsoft.com/en-us/microsoft-365/word?rtc=1) as your word processor, but [Libre Office](https://www.libreoffice.org/) or [Google Docs](https://www.google.com/docs/about/) will also work. 
+
+## Markdown: Adding Structure to Documents
+
+You can create and edit Markdown files using a text editor. Every operating system includes a default plain text editor. On Windows, the default editor is [Notepad](https://www.microsoft.com/en-us/p/windows-notepad/9msmlrh6lzf3?activetab=pivot:overviewtab); on macOS, the default editor is [TextEdit](https://support.apple.com/guide/textedit/welcome/mac). Both of these options will work, as well as any other text editor, but we recommend installing [Visual Studio Code (VS Code)](https://code.visualstudio.com/), which is free for Windows, macOS, and Linux.
+
+::: box :::
+
+[VS Code](https://code.visualstudio.com/) can be customized to your workflow with [Extensions](https://marketplace.visualstudio.com/). You might be interested in trying a few extensions to help with formatting Markdown documents. Here are a few popular options:
+
+- [VS Code Icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons): Nice set of icons to help distinguish between file types and folders
+- [Markdown+Math](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath): Preview LaTeX math equation rendering
+- [Markdown Table Prettifier](https://marketplace.visualstudio.com/items?itemName=darkriszty.markdown-table-prettify): Auto-format markdown tables for easier readability
+- [Excel to Markdown Table](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table): Copy tables from [Microsoft Excel](https://www.microsoft.com/en-us/microsoft-365/excel) and paste as Markdown tables
+
+:::
 
 ### Bibliographic Citations
 
