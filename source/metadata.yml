@@ -11,18 +11,21 @@ author:
 
 contributor:
   - Research Assistant
-  - name: Research Assistant
+  - Research Assistant
 
 publication-year: 2021
 doi: 10.1000/xyz123
-isbn-p:
-isbn-e:
+isbn-p: something
+isbn-e: something
+website: seomthing
 
 keywords:
   - keyword
   - keyword
+  - keyword
 
 subjects: 
+  - Subject
   - Subject
   - Subject
 
@@ -42,12 +45,19 @@ copyright:
   statement-uri: http://rightsstatements.org/vocab/InC/1.0/
   # see https://creativecommons.org/licenses/ for recommended license and uri options
   license: Attribution 4.0 International (CC BY 4.0) 
-  licence-uri: https://creativecommons.org/licenses/by/4.0/
+  license-uri: https://creativecommons.org/licenses/by/4.0/
+  attribution: |
+    [Lastname, Firstname. Title of Book. Place of publication: Publisher, Year of publication.]
+  exceptions:    
+    - Chapter written under a different license
+    - Image used with permission of the creator
 
 publisher:
   name: Publishing Organization
-  location: Evanston, IL # city, state
+  location: City, State
   website: https://example.com
+  disclaimer: |
+    Use this space to add any legal disclaimers about the book.
 
 editor:
   book: Editor Name # name of book editor
@@ -73,3 +83,16 @@ toc-title: "Contents" # name for the table of contents
 reference-section-title: "References" # name for the references or bibliography section
 
 linkReferences: true
+
+# print settings
+# you can use in, cm, or mm
+# default creates A4 page size, > 150 pages long
+paper:
+  width: 8.27in
+  height: 11.69in
+  gutter: 1in
+  margin:
+    top: 1in
+    bottom: 1in
+    left: 1in
+    right: 1in
