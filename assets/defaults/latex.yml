@@ -47,8 +47,8 @@ columns: 78
 dpi: 72
 
 # lua filters for adding new environments
-filters:
-  - assets/scripts/latex-divs.lua
+#filters:
+#  - assets/scripts/latex-divs.lua
 
 # set to true if you want a preservation copy of the html output
 self-contained: false 
