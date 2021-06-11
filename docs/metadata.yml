@@ -12,9 +12,9 @@ author:
     orchid:
 
 contributor:
-  - Sherry Wang
   - Maria Cortez
   - Angelina Jaglinski
+  - Sherry Wang
 
 publication-year: 2021
 doi: 10.1000/xyz123
@@ -31,9 +31,9 @@ subjects:
   - Technology
 
 description: |
-  Lantern introduces and demonstrates a minimal computing approach to producing open textbooks using free and open source software.
+  Lantern introduces and demonstrates a minimal computing approach to producing textbooks using free and open source software.
 
-  This guide includes tutorials and documentation to help you learn the technlogy, format specific manuscript elements, and make your own customizations. 
+  This guide includes tutorials and documentation to help you use the technology for your own textbook projects. 
 
 # this sets the language attribute for html and epub outpus
 # see https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang for more info
