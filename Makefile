@@ -74,10 +74,13 @@ DOCS = --defaults assets/defaults/docs.yml
 DOCS_CHAPTERS += $(addprefix ./docs/chapters/,\
  introduction.md\
  technology.md\
- word.md\
+ manuscripts.md\
  formatting.md\
  online-workflow.md\
  desktop-workflow.md\
+ metadata.md\
+ content.md\
+ bibliographies.md\
 )
 
 # documentation build commands

@@ -12,9 +12,49 @@ Lantern depends on [GNU Bash](https://www.gnu.org/software/bash/) and [GNU Make]
 
 :::
 
+## Text Editing
+
+There are two main types of documents we use to write and edit text: [plain-text](https://en.wikipedia.org/wiki/Plain_text) and [rich text](https://en.wikipedia.org/wiki/Formatted_text). Plain text exposes the characters within a document, whereas rich text displays the formatting features and styles. 
+
+| File Contents | File Extension          | Editors                     |
+| ------------- | ----------------------- | --------------------------- |
+|   Plain text  | `.xml`, `.html`, `.md`  | Notepad, TextEdit, VS Code  |
+|   Rich text   | `.docx`, `.rtf`, `.odt` | Microsoft Word, Google Docs |
+
+Most of us are trained to use rich text editors: emails, word documents, content management systems (e.g. WordPress). This is for good reason: they're easy to use and we need them for everyday things. For academic publishing purposes, plain text offers some advantages over rich text, as Tenen and Wythoff ([2014](https://doi.org/10.46430/phen0041)) explain: 
+
+> Plain text both ensures transparency and answers the standards of long-term preservation. MS Word may go the way of [Word Perfect](https://en.wikipedia.org/wiki/WordPerfect) in the future, but plain text will always remain easy to read, catalog, mine, and transform. Furthermore, plain text enables easy and powerful versioning of the document, which is useful in collaboration and organizing drafts. Your plain text files will be accessible on cell phones, tablets, or, perhaps, on a low-powered terminal in some remote library. Plain text is backwards compatible and future-proof. Whatever software or hardware comes along next, it will be able to understand your plain text files.
+
+We'll need a plain text editor to create metadata (in YAML) and format content (in Markdown).
+
+### Installing Visual Studio Code
+
+We recommend installing [Visual Studio Code (VS Code)](https://code.visualstudio.com/) as your text editor, but you're welcome to use any other text editor you prefer. Visit the website to [download](https://code.visualstudio.com/) and [install](https://code.visualstudio.com/docs/setup/setup-overview) VS Code. 
+
+::: box :::
+
+**Installation Tips:**
+
+When prompted to "Select Additional Tasks" during installation, double-check that the Add to `PATH` option is checked so you can easily open a folder using the `code` command from your terminal. We also think it's helpful to check the box for the other Additional Tasks, including (these options might only be applicable to Windows installations):
+
+- Add "Open with Code" action to Windows Explorer file context menu 
+- Add "Open with Code" action to Windows Explore directory context menu
+- Register Code as an editor for supported file types
+
+_If you missed this step, you may have to reinstall VS Code and check the boxes. This is not necessary, but helpful._
+
+:::
+
+[VS Code](https://code.visualstudio.com/) can be customized to your workflow with [Extensions](https://marketplace.visualstudio.com/). You might be interested in trying a few extensions to help with formatting Markdown documents. Here are a few popular options:
+
+- [VS Code Icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons): Nice set of icons to help distinguish between file types and folders
+- [Markdown+Math](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath): Preview LaTeX math equation rendering
+- [Markdown Table Prettifier](https://marketplace.visualstudio.com/items?itemName=darkriszty.markdown-table-prettify): Auto-format markdown tables for easier readability
+- [Excel to Markdown Table](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table): Copy tables from [Microsoft Excel](https://www.microsoft.com/en-us/microsoft-365/excel) and paste as Markdown tables
+
 ## Setup on Windows
 
-_You can skip to the next section if you are using macOS or Linux._
+_You can [skip to the next section](#using-the-terminal) if you are using macOS or Linux._
 
 Lantern uses software that requires a [Unix-like](https://en.wikipedia.org/wiki/Unix-like) operating system. Since Windows does not behave like a Unix system, we'll need to install one before working with Lantern. Luckily, recent versions of Windows 10 support the [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/about), which allows you to install and run a full [Linux distribution](https://en.wikipedia.org/wiki/Linux_distribution) within your normal Windows environment. 
 
@@ -29,6 +69,12 @@ Microsoft maintains [instructions on how to install WSL on a Windows 10 computer
 We highly recommend following [Microsoft's instructions for a manual installation](https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps) as written. If you're on an employer-provided computer, you might not have access to Windows Insider Program, so the "Simplified Installation" might not be available to you. We also provide an opinionated set of instructions below. 
 
 ### Installing Windows Subsystem for Linux (WSL) with Ubuntu
+
+::: box :::
+
+This setup requires about 5GB of disk space.
+
+:::
 
 WSL is a feature in Windows that lets you run a Linux operating system _within_ your normal Windows operating system. Linux operating systems are available in a [variety of _distributions_](https://en.wikipedia.org/wiki/Linux_distribution#Widely_used_GNU-based_or_GNU-compatible_distributions). Each distribution is a collection of software packages that use the Linux kernel. This set of instructions will install WSL with [Ubuntu](https://ubuntu.com/) 20.04 LTS as the Linux distribution.   
 
@@ -99,6 +145,18 @@ wsl --set-default-version 2
 
 **Congrats! You now have an Ubuntu Operating System within your Windows computer!**
 
+::: box :::
+
+**Windows Users**
+
+VS Code can be set up to work with your Windows Subsytem for Linux (WSL) setup. The first time you launch VS Code, it will likely detect your WSL setup and ask if you'd like to install recommended extensions. Click the "Install" button when prompted.
+
+![Screenshot of VS Code Extensions pop-up](dw_wsl-extensions-vs-code.png)
+
+If you didn't see that prompt when opening VS Code, [follow these instructions](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode#:~:text=Visit%20the%20VS%20Code%20install,WSL%20using%20the%20code%20command.) on configuring youre VS Code editor with your WSL instance. You can skip the Git and Windows Terminal sections as those are optional.  
+
+:::
+
 This will launch a new terminal window for Ubuntu. In the task bar, we recommend you right-click the Ubuntu icon and pin the program to your task bar (or Start menu) for easy access to it. 
 
 ![Screenshot of Windows Desktop with "Pin to Task Bar" option displayed](dw_pin-ubuntu-to-taskbar.png)
@@ -127,13 +185,13 @@ sudo apt upgrade
 
 *You will be asked to confirm the installation of new versions of software; enter `Y` and press enter.*
 
-![Screenshot of Ubuntu (WSL) Settings](dw_enable-copy-paste.png)
-
 **Enable Easy Copying and Pasting in the Ubuntu Terminal**
 
 - Right-click the top bar of the Ubuntu terminal
 - Select "Properties"
 - In the Edit options, check the box for "Use Ctrl+Shift+C/V as Copy/Paste"
+
+![Screenshot of Ubuntu (WSL) Settings](dw_enable-copy-paste.png)
 
 This will let you copy text from the terminal with `Ctrl+Shift+C` and paste text into the Terminal prompt with `Ctrl+Shift+V`. This will be very helpful during the Homebrew installation process.
 
@@ -146,6 +204,21 @@ Your WSL/Ubuntu system has its own file system that is separate from your Window
 You can navigate to these files with Windows explorer quickly by typing in `\\wsl$` in the Explorer address bar.
 
 ![Screenshot of WSL path in Windows 10 File Explorer Address Bar](dw_wsl-files-path.png)
+
+## Using the Terminal
+
+::: box :::
+
+**Bash Terminal Cheat Sheet**: We'll use Bash commands to navigate our file system, rather than using a graphical file explorer program.
+
+- `pwd`: will display the full path of the current directory
+- `cd`: will change directories to a target directory
+- `ls`: will list the files and folders within your currect directory
+    - `cd lantern-projects`: will change directories to a directory called `lantern-projects`
+    - `cd ..`: will change directories up one level to the parent directory of the current directory
+    - `cd ~`: will change directories to your "home" directory, which is the default directory that you start with when you open your Terminal app
+
+:::
 
 ## Install Homebrew
 
@@ -196,39 +269,6 @@ sudo chown -R $(whoami) /usr/local/bin
 curl -sL "https://yihui.org/tinytex/install-bin-unix.sh" | sh 
 ```
 
-## Text Editing
-
-There are two main types of documents we use to write and edit text: [plain-text](https://en.wikipedia.org/wiki/Plain_text) and [rich text](https://en.wikipedia.org/wiki/Formatted_text). Plain text exposes the characters within a document, whereas rich text displays the formatting features and styles. 
-
-| File Contents | File Extension          | Editors                     |
-| ------------- | ----------------------- | --------------------------- |
-|   Plain text  | `.xml`, `.html`, `.md`  | Notepad, TextEdit, VS Code  |
-|   Rich text   | `.docx`, `.rtf`, `.odt` | Microsoft Word, Google Docs |
-
-Most of us are trained to use rich text editors: emails, word documents, content management systems (e.g. WordPress). This is for good reason: they're easy to use and we need them for everyday things. For academic publishing purposes, plain text offers some advantages over rich text, as Tenen and Wythoff ([2014](https://doi.org/10.46430/phen0041)) explain: 
-
-> Plain text both ensures transparency and answers the standards of long-term preservation. MS Word may go the way of [Word Perfect](https://en.wikipedia.org/wiki/WordPerfect) in the future, but plain text will always remain easy to read, catalog, mine, and transform. Furthermore, plain text enables easy and powerful versioning of the document, which is useful in collaboration and organizing drafts. Your plain text files will be accessible on cell phones, tablets, or, perhaps, on a low-powered terminal in some remote library. Plain text is backwards compatible and future-proof. Whatever software or hardware comes along next, it will be able to understand your plain text files.
-
-### Installing Visual Studio Code
-
-We recommend installing [Visual Studio Code (VS Code)](https://code.visualstudio.com/) as your text editor, but you're welcome to use any other text editor you prefer. Visit the website to [download](https://code.visualstudio.com/) and [install](https://code.visualstudio.com/docs/setup/setup-overview) VS Code. 
-
-When prompted to "Select Additional Tasks" during installation, double-check that the Add to PATH option is checked so you can easily open a folder in WSL using the `code` command from your terminal. We also think it's helpful to check the box for the other Additional Tasks, including:
-
-- Add "Open with Code" action to Windows Explorer file context menu 
-- Add "Open with Code" action to Windows Explore directory context menu
-- Register Code as an editor for supported file types
-
-_If you missed this step, you may have to reinstall VS Code and check the boxes._
-
-**Windows Users**
-
-VS Code can be set up to work with your Windows Subsytem for Linux (WSL) setup. The first time you launch VS Code, it will likely detect your WSL setup and ask if you'd like to install recommended extensions. Click the "Install" button when prompted.
-
-![Screenshot of VS Code Extensions pop-up](dw_wsl-extensions-vs-code.png)
-
-If you didn't see that prompt when opening VS Code, [follow these instructions](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode#:~:text=Visit%20the%20VS%20Code%20install,WSL%20using%20the%20code%20command.) on configuring youre VS Code editor with your WSL instance. You can skip the Git and Windows Terminal sections as those are optional.  
-
 ## Creating Your Desktop Workspace
 
 ::: box :::
@@ -272,19 +312,6 @@ cd lantern-projects
 ```
 
 ![Screenshot of Ubuntu terminal after running commands to create a workspace folder](dw_pwd-mkdir-cd.png)
-
-::: box :::
-
-**Bash Terminal Cheat Sheet**: We'll use Bash commands to navigate our file system, rather than using a graphical file explorer program.
-
-- `pwd`: will display the full path of the current directory
-- `cd`: will change directories to a target directory
-- `ls`: will list the files and folders within your currect directory
-    - `cd lantern-projects`: will change directories to a directory called `lantern-projects`
-    - `cd ..`: will change directories up one level to the parent directory of the current directory
-    - `cd ~`: will change directories to your "home" directory, which is the default directory that you start with when you open your Terminal app
-
-:::
 
 ## Download Lantern
 
