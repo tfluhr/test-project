@@ -18,15 +18,21 @@ _You can skip to the next section if you are using macOS or Linux._
 
 Lantern uses software that requires a [Unix-like](https://en.wikipedia.org/wiki/Unix-like) operating system. Since Windows does not behave like a Unix system, we'll need to install one before working with Lantern. Luckily, recent versions of Windows 10 support the [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/about), which allows you to install and run a full [Linux distribution](https://en.wikipedia.org/wiki/Linux_distribution) within your normal Windows environment. 
 
+::: box :::
+
+Setting up WSL on Windows 10 could take about an hour and might be a little confusing. That's OK! It's a very new and exciting feature that is opening up a whole new world of possibilities with Windows. If you stick with it, you'll have a powerful, new, and free publishing system on your computer!
+
+:::
+
 Microsoft maintains [instructions on how to install WSL on a Windows 10 computer](https://docs.microsoft.com/en-us/windows/wsl/install-win10). We recommend installing WSL 2 with the [latest Ubuntu version is 20.04 LTS](https://www.microsoft.com/en-us/p/ubuntu-2004-lts/9n6svws3rx71?rtc=1&activetab=pivot:overviewtab), but WSL 1 and any other Linux distribution might work too. The instructions assume you will have some familiarity with the Windows command line interface, specifically [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1). 
 
 We highly recommend following [Microsoft's instructions for a manual installation](https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps) as written. If you're on an employer-provided computer, you might not have access to Windows Insider Program, so the "Simplified Installation" might not be available to you. We also provide an opinionated set of instructions below. 
 
 ### Installing Windows Subsystem for Linux (WSL) with Ubuntu
 
-WSL is a feature in Windows that lets you run a Linux operating system _within_ your normal Windows computing environment. Linux operating systems are available in a [variety of _distributions_](https://en.wikipedia.org/wiki/Linux_distribution#Widely_used_GNU-based_or_GNU-compatible_distributions). Each distribution is a collection of software packages that use the Linux kernel. This set of instructions will install WSL with [Ubuntu](https://ubuntu.com/) 20.04 LTS as the Linux distribution.   
+WSL is a feature in Windows that lets you run a Linux operating system _within_ your normal Windows operating system. Linux operating systems are available in a [variety of _distributions_](https://en.wikipedia.org/wiki/Linux_distribution#Widely_used_GNU-based_or_GNU-compatible_distributions). Each distribution is a collection of software packages that use the Linux kernel. This set of instructions will install WSL with [Ubuntu](https://ubuntu.com/) 20.04 LTS as the Linux distribution.   
 
-1. Checking Your System Type: Most Windows computers have either x64 or ARM64 systems. If you're not sure which one you're using, follow these steps:
+**Checking Your System Type: Most Windows computers have either x64 or ARM64 systems. If you're not sure which one you're using, follow these steps:**
 
 - Hit the Windows Key
 - Type "PowerShell"
@@ -36,7 +42,7 @@ WSL is a feature in Windows that lets you run a Linux operating system _within_ 
 
 _You should see a message that says something like: ` x64-based PC`_. 
 
-1. Checking Your Windows 10 Version: There are several **versions** and **builds** of Windows 10. If you're not sure which version and build you have, follow these steps:_
+**Checking Your Windows 10 Version: There are several **versions** and **builds** of Windows 10. If you're not sure which version and build you have, follow these steps:**
 
 - Hit the Windows Key
 - Type "run" to find the Run app
@@ -52,7 +58,7 @@ _The pop-up message will include both version and build numbers for your Windows
 
 **If you meet the system requirements, you can move ahead to the next steps. If you don't, try using the online workflow instead.**
 
-1. Open PowerShell as an Administrator
+**Open PowerShell as an Administrator**
 
 - Hit the Windows Key
 - Type "PowerShell"
@@ -61,35 +67,29 @@ _The pop-up message will include both version and build numbers for your Windows
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/u4QVJyWCErI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-1. Enable WSL on Your Computer
-
-In PowerShell, run:
+**Enable WSL on Your Computer -- In PowerShell, run:**
 
 ```
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 ```
 
-1. Enable Virtual Machine Features
-
-In PowerShell, run:
+**Enable Virtual Machine Features -- In PowerShell, run:**
 
 ```
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 
-1. Restart your computer
+**Restart your computer**
 
-1. Based on your system type (e.g. x64), Download the latest Linux kernel update package [from Microsoft](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package)
+**Based on your system type (e.g. x64), Download the latest Linux kernel update package [from Microsoft](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package).**
 
-1. Set WSL 2 as your default version
-
-In PowerShell, run:
+**Set WSL 2 as your default version -- In PowerShell, run:**
 
 ```
 wsl --set-default-version 2
 ```
 
-1. Download Ubuntu 20.04 LTS from the [Microsoft Store](https://www.microsoft.com/store/apps/9n6svws3rx71)
+**Download Ubuntu 20.04 LTS from the [Microsoft Store](https://www.microsoft.com/store/apps/9n6svws3rx71)**
 
 - From the Store page, click on "Get" (you can close the prompts requesting you to login with or create a Microsoft account)
 - Wait for the download to finish; it will take a few minutes
@@ -97,19 +97,19 @@ wsl --set-default-version 2
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/smc9TTjbygM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-1. Congrats! You now have an Ubuntu Operating System within your Windows computer!
+**Congrats! You now have an Ubuntu Operating System within your Windows computer!**
 
 This will launch a new terminal window for Ubuntu. In the task bar, we recommend you right-click the Ubuntu icon and pin the program to your task bar (or Start menu) for easy access to it. 
 
 ![Screenshot of Windows Desktop with "Pin to Task Bar" option displayed](dw_pin-ubuntu-to-taskbar.png)
 
-1. Create a User for Ubuntu
+**Create a User for Ubuntu**
 
 The first time you open the Ubuntu terminal, you will be prompted to create a new user profile. This user is separate from the user profile you use to log in to your Windows computer. You can set this to whatever you want; just be sure to remember the password!
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/XYDi64_g9Vk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-1. Update Your Ubuntu System Packages
+**Update Your Ubuntu System Packages**
 
 It's usually a good idea to keep your system packages up to date with the latest versions. Since you have a clean install of Ubuntu 20.04 LTS, it's worth checking to make sure all software dependences are current with their latest release. We can do this with a few commands:
 
@@ -119,15 +119,17 @@ In the terminal, run (you may be prompted to enter the password you set for your
 sudo apt update
 ```
 
-In the terminal, run (you will be asked to confirm the installation of new versions of software; enter `Y` and press enter):
+In the terminal, run:
 
 ```
 sudo apt upgrade
 ```
 
+*You will be asked to confirm the installation of new versions of software; enter `Y` and press enter.*
+
 ![Screenshot of Ubuntu (WSL) Settings](dw_enable-copy-paste.png)
 
-1. Enable Easy Copying and Pasting in the Ubuntu Terminal
+**Enable Easy Copying and Pasting in the Ubuntu Terminal**
 
 - Right-click the top bar of the Ubuntu terminal
 - Select "Properties"
@@ -135,9 +137,19 @@ sudo apt upgrade
 
 This will let you copy text from the terminal with `Ctrl+Shift+C` and paste text into the Terminal prompt with `Ctrl+Shift+V`. This will be very helpful during the Homebrew installation process.
 
+#### Finding Your Ubuntu Files with Windows Explorer
+
+Your WSL/Ubuntu system has its own file system that is separate from your Windows files (e.g. Documents, Pictures, Videos, etc.). Both are accessible by your Windows Explorer program. Windows treats your WSL/Ubuntu system as a Network Drive.
+
+![Screenshot of WSL in Windows 10 File Explorer](dw_wsl-files.png)
+
+You can navigate to these files with Windows explorer quickly by typing in `\\wsl$` in the Explorer address bar.
+
+![Screenshot of WSL path in Windows 10 File Explorer Address Bar](dw_wsl-files-path.png)
+
 ## Install Homebrew
 
-[Homebrew](brew.sh) is a software package manager that simplifies the process for installing, uninstalling, and upgrading software from the command line. Visit [https://brew.sh/](https://brew.sh/) for instructions on installing Homebrew. 
+[Homebrew](https://brew.sh) is a software package manager that simplifies the process for installing, uninstalling, and upgrading software from the command line. Visit [https://brew.sh/](https://brew.sh/) for instructions on installing Homebrew. 
 
 Be sure to read through the "Next Steps:" prompt in your terminal after the initial Homebrew install is complete. Run the commands that Homebrew provides to "Add Homebrew to your PATH" and "Install the Homebrew dependences". Check your terminal for the exact commands.
 
@@ -203,9 +215,11 @@ We recommend installing [Visual Studio Code (VS Code)](https://code.visualstudio
 
 When prompted to "Select Additional Tasks" during installation, double-check that the Add to PATH option is checked so you can easily open a folder in WSL using the `code` command from your terminal. We also think it's helpful to check the box for the other Additional Tasks, including:
 
-- Add "Open with Code" action to Windows Explorer file context menu
+- Add "Open with Code" action to Windows Explorer file context menu 
 - Add "Open with Code" action to Windows Explore directory context menu
 - Register Code as an editor for supported file types
+
+_If you missed this step, you may have to reinstall VS Code and check the boxes._
 
 **Windows Users**
 
@@ -216,6 +230,24 @@ VS Code can be set up to work with your Windows Subsytem for Linux (WSL) setup. 
 If you didn't see that prompt when opening VS Code, [follow these instructions](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode#:~:text=Visit%20the%20VS%20Code%20install,WSL%20using%20the%20code%20command.) on configuring youre VS Code editor with your WSL instance. You can skip the Git and Windows Terminal sections as those are optional.  
 
 ## Creating Your Desktop Workspace
+
+::: box :::
+
+We've just downloaded a few things. Here's what they do:
+
+Bash Terminal
+
+: This will where we run our commands for building the textbook publication formats. 
+
+VS Code
+
+: This is our text editor, where we will be writing YAML metadata about our textbooks and typesetting our manuscript content in Markdown.
+
+TinyTeX
+
+: This is our LaTeX distribution (i.e. the software the runs the LaTeX typesetting system). It runs in the background, but it will handle our PDF formatting, styles, mathematics notation, and page settings. 
+
+:::
 
 We'll need a place on our computers to store our textbook files. Let's create a folder to contain our Lantern projects. For these steps, open your terminal:
 
@@ -241,23 +273,40 @@ cd lantern-projects
 
 ![Screenshot of Ubuntu terminal after running commands to create a workspace folder](dw_pwd-mkdir-cd.png)
 
+::: box :::
+
+**Bash Terminal Cheat Sheet**: We'll use Bash commands to navigate our file system, rather than using a graphical file explorer program.
+
+- `pwd`: will display the full path of the current directory
+- `cd`: will change directories to a target directory
+- `ls`: will list the files and folders within your currect directory
+    - `cd lantern-projects`: will change directories to a directory called `lantern-projects`
+    - `cd ..`: will change directories up one level to the parent directory of the current directory
+    - `cd ~`: will change directories to your "home" directory, which is the default directory that you start with when you open your Terminal app
+
+:::
+
 ## Download Lantern
 
-Now that you have all of the required software for the desktop workflow, you're ready to download the Lantern files to your computer. [Lantern](https://github.com/nulib-oer/lantern) is a Git repository hosted on [GitHub](https://github.com). We won't get too much into Git or Github, but we will use it to download the files. Git is pre-installed with Ubuntu and macOS (if it's not on your macOS, run `brew install git` in your terminal). You can download Lantern by running this command:
+Now that you have all of the required software for the desktop workflow, you're ready to download the Lantern files to your computer. [Lantern](https://github.com/nulib-oer/lantern) is a Git repository hosted on [GitHub](https://github.com). We won't get too much into Git or Github, but we will use it to download the files. Git is pre-installed with Ubuntu and macOS (if it's not on your macOS, run `brew install git` in your terminal). 
 
-```
+**Open your terminal and download Lantern by running this command:**
+
+```sh
 git clone https://github.com/nulib-oer/lantern.git
 ```
 
+_This is a [Git](https://git-scm.com/) command that downloads a copy of git repository to your computer._
+
 ![Screenshot of Ubuntu Terminal Downloading the Lantern repository to the computer via `git clone` command](dw_git-clone-lantern.png)
 
-_Navigate to the new folder containing Lantern files_
+**Navigate to the new folder containing Lantern files by running this command in your terminal:**
 
 ```sh
 cd lantern
 ```
 
-_Open this folder in VS Code_
+**Running this command in your Terminal will open the Lantern folder in VS Code. If this doesn't work, you can open VS Code directly and open the folder from within VS Code (see [Finding Your Ubuntu Files with Windows Explorer](#wsl-path) for finding the Lantern folder on Windows). Microsoft has some [really good videos on navigating the VS Code interface](https://code.visualstudio.com/docs/getstarted/introvideos).**
 
 ```sh
 code .
@@ -270,7 +319,7 @@ _These icons are generated by the [vscode-icons extension](https://marketplace.v
 
 ## Lantern Files and Folders
 
-Lantern comes with a few files and folders you'll be using to add and edit your manuscript content. All of these files and folders are contained in the `source` directory. These are the **only** files and folders you will need to edit to use Lantern for your textbook project.
+Lantern comes with a few files and folders you'll be using to add and edit your manuscript content. All of these files and folders are contained in the `source` directory. These are the **only** files and folders you will need to edit to use Lantern for your textbook project. Click on the `source` directory to view its files and folders.
 
 ![Screenshot of the `source` directory](dw_source-dir.png)
 
@@ -288,23 +337,11 @@ Lantern comes with a few files and folders you'll be using to add and edit your 
 
 Textbooks need bibliographic metadata in order to be indexed by search engines and library catalogs. Lantern stores metadata about the textbook in a YAML file. The information stored in the YAML file will be used to fill the templates for each of the publication formats. 
 
-::: box :::
-
-### YAML Primer
-
-YAML is to JSON what Markdown is to HTML. It's a more human-readable (and human-writable) way to express and store data. 
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/cdLNKUoMc6c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-YAML needs to be valid, so if you ever hit an error, it's a good idea to check the YAML code you're using with a [YAML validation tool](https://jsonformatter.org/yaml-validator). 
-
-:::
-
 - Open the `metadata.yml` file to view the available metadata fields.
 
 ![Screenshot of the Metadata file in VS Code](dw_metadata.png)
 
-- Edit the file by replacing the placeholder metadata values with your textbook's information 
+- Edit the file by replacing the placeholder metadata values with your textbook's information. You could use an example of your own to practice, or you could visit our Google drive to download some sample chapters.
 
 - When you're finished with your edits, save the file: Control + S 
 
@@ -326,7 +363,7 @@ The title of the chapter as it displays in the final textbook is set by the firs
 
 **HTML:**
 
-# Introduction to Vegetable Lasagna {.unlisted}
+![Screenshot of Chapter Title from HTML output](dw_html-title.png)
 
 ::: box :::
 
@@ -352,11 +389,12 @@ _The Math rendering in the preview screen is handled by the VS Code [Markdown+Ma
 
 Most OER authors are not writing their manuscripts in Markdown (yet!), so we'll need to convert from more common file formats. The [example chapters](https://drive.google.com/drive/folders/1Fl__DhDXDFyoPmwX0CHpfj10qhOY3t0k?usp=sharing) are Google Docs that can be downloaded as `.docx` or `.odt` files, which are the file types that most word processing software use. 
 
-Lantern has includes a micro-workflow that will help you convert raw manuscript files from `.docx` or `.odt` to Markdown (`.md`).
+Lantern includes a micro-workflow that will help you convert raw manuscript files from `.docx` or `.odt` to Markdown (`.md`).
 
 - Download the example chapter files from the Google Drive, ignoring the README file, which we don't need
 - Save the files to the `source/preprocess/` folder in your Lantern project directory
-
+    - Drag and drop the files to the `/source/preprocess/` folder within VS Code`; or
+    - Drag and drop the files to the `/source/preprocess/` folder using your file explorer ([additional guidance for Windows users](#finding-your-ubuntu-files-with-windows-explorer))
 - In your terminal window, run this command:
 
 ```
@@ -365,7 +403,7 @@ make markdown
 
 This command will run a script that will use Pandoc to convert the `.docx` or `.odt` files in the `source/preprocess/` folder to Markdown files that will be saved in the `source/chapters/` folder. 
 
-You can now edit any of these files using your text editor. 
+You can now edit any of these files using your text editor (VS Code). 
 
 ### Editing Chapter Files
 
@@ -378,7 +416,8 @@ The title of this particular chapter is not formatted properly. Instead of marki
 - Change the `**Probabilities**` heading to a proper markdown heading: `# Probabilities`
 
 - There is another heading error in the file. Change `**Introduction to Probability Standard**` in line 19 to `## Introduction to Probability Standard` so that it represents a "Heading 2", or section heading.
-- Scroll down to the bottom of the page and click on the "Commit changes" button to save these changes to your textbook
+
+- Type Ctrl + S (or File > Save in the VS Code menu bar) to save these changes to your textbook
 
 ## Building Publication Outputs
 
@@ -400,9 +439,10 @@ You can run these commands as often as you'd like. You can also start fresh by r
 
 ## Uploading to a Web Server
 
-The contents within the `public` folder are intended to be ready for distribution with the public. The `make html` and `make textbook` commands will generate a fully-functional static website that you may upload to any web server or hosting service. 
+Once you're done editing your textbook, go to your terminal and type in `make textbook` to generate a fully-fuctional static website that you can be uploaded to any web server or hosting service. This command creates and places all of your output files within a folder called `public`. The contents within the `public` folder are intended to be ready for distribution with the public.
 
-To demonstrate this step, we can use [Netlify Drop](https://app.netlify.com/drop). [Netlify](https://netlify.com) is a web hosting service that specializes in static websites. Here's a video to demonstrate the Netlify Drop feature: 
+
+This part is optional, but to demonstrate the process of uploading the files to a web server, you can use [Netlify Drop](https://app.netlify.com/drop). [Netlify](https://netlify.com) is a web hosting service that specializes in static websites. Here's a video to demonstrate the Netlify Drop feature: 
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/-LRlQ_jaLAU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
