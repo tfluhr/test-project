@@ -69,7 +69,7 @@ $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).docx:	$(BASE_DEPENDENCIES)
 DOCS_OUTPUT_DIRECTORY = public/docs
 DOCS_IMAGES = $(shell find docs/images -type f)
 DOCS_CONTENT = awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $(DOCS_CHAPTERS)
-DOCS_DEPENDENCIES = $(MAKEFILE) $(DOCS_CHAPTERS) $(DOCS_IMAGES) 
+DOCS_DEPENDENCIES = $(shell echo "$(MAKEFILE)" "$(DOCS_CHAPTERS)" "$(DOCS_IMAGES)" )
 DOCS = --defaults assets/defaults/docs.yml
 DOCS_CHAPTERS += $(addprefix ./docs/chapters/,\
  introduction.md\
@@ -81,12 +81,11 @@ DOCS_CHAPTERS += $(addprefix ./docs/chapters/,\
  metadata.md\
  content.md\
  bibliographies.md\
+ troubleshooting.md\
 )
 
 # documentation build commands
-docs:	docs_html
-
-docs_html:	$(DOCS_OUTPUT_DIRECTORY)/index.html
+docs:	$(DOCS_OUTPUT_DIRECTORY)/index.html
 
 # lantern documenation build recipes
 $(DOCS_OUTPUT_DIRECTORY)/index.html:	$(DOCS_DEPENDENCIES)
