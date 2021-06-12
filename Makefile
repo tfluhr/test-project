@@ -1,6 +1,8 @@
 # textbook content settings
 OUTPUT_FILENAME = textbook
 OUTPUT_DIRECTORY = public
+# looks for :Zone.Identifier files added by https://github.com/microsoft/WSL/issues/4609
+CHECK = $(shell find . -name '*:Zone.Identifier' -delete)
 IMAGES = $(shell find source/images -type f)
 CHAPTERS = source/chapters/*.md
 CONTENT = awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $(CHAPTERS)
@@ -14,7 +16,7 @@ EPUB = --verbose --defaults assets/defaults/epub.yml --mathml
 # utilities
 MAKEFILE = Makefile
 PANDOC_COMMAND = pandoc
-BASE_DEPENDENCIES = $(MAKEFILE) $(CHAPTERS) $(IMAGES) 
+BASE_DEPENDENCIES = $(MAKEFILE) $(CHECK) $(CHAPTERS) $(IMAGES) 
 
 # build commands
 textbook:	html docx latex epub pdf
@@ -69,7 +71,7 @@ $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).docx:	$(BASE_DEPENDENCIES)
 DOCS_OUTPUT_DIRECTORY = public/docs
 DOCS_IMAGES = $(shell find docs/images -type f)
 DOCS_CONTENT = awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $(DOCS_CHAPTERS)
-DOCS_DEPENDENCIES = $(shell echo "$(MAKEFILE)" "$(DOCS_CHAPTERS)" "$(DOCS_IMAGES)" )
+DOCS_DEPENDENCIES = $(MAKEFILE) $(CHECK) $(DOCS_CHAPTERS) $(DOCS_IMAGES)
 DOCS = --defaults assets/defaults/docs.yml
 DOCS_CHAPTERS += $(addprefix ./docs/chapters/,\
  introduction.md\
