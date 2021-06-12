@@ -2,6 +2,14 @@
 
 The desktop workflow brings all of the required processing software to your computer. It's designed to remove GitHub as a dependency so that you can use any web hosting platform for publishing your open textbooks. In this tutorial, we'll walk you through the process of setting up your computer and running basic processing commands. 
 
+The basic workflow involves:
+
+- Managing source manuscript files
+- Editing plain text using formatting rules
+- Running build commands for generating publication formats
+
+![Screenshot of a Visual Studio Code Workspace with Lantern files](dw_workspace.png)
+
 **Prerequisites**
 
 You'll need a Windows, macOS, or Linux computer with the ability to install open source software packages from the command line (we'll teach you how!). For example, on a Windows computer, you'll need the ability to login as an administrator to install certain programs and enable advanced operating system features. 
@@ -52,7 +60,7 @@ _If you missed this step, you may have to reinstall VS Code and check the boxes.
 - [Markdown Table Prettifier](https://marketplace.visualstudio.com/items?itemName=darkriszty.markdown-table-prettify): Auto-format markdown tables for easier readability
 - [Excel to Markdown Table](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table): Copy tables from [Microsoft Excel](https://www.microsoft.com/en-us/microsoft-365/excel) and paste as Markdown tables
 
-## Setup on Windows
+## Windows Subsystem for Linux
 
 _You can [skip to the next section](#using-the-terminal) if you are using macOS or Linux._
 
@@ -78,12 +86,15 @@ This setup requires about 5GB of disk space.
 
 WSL is a feature in Windows that lets you run a Linux operating system _within_ your normal Windows operating system. Linux operating systems are available in a [variety of _distributions_](https://en.wikipedia.org/wiki/Linux_distribution#Widely_used_GNU-based_or_GNU-compatible_distributions). Each distribution is a collection of software packages that use the Linux kernel. This set of instructions will install WSL with [Ubuntu](https://ubuntu.com/) 20.04 LTS as the Linux distribution.   
 
+#### Open a Terminal in VS Code
+
+- Open VS Code
+- Click on Terminal in the menu bar
+- Select New Terminal
+
 **Checking Your System Type: Most Windows computers have either x64 or ARM64 systems. If you're not sure which one you're using, follow these steps:**
 
-- Hit the Windows Key
-- Type "PowerShell"
-- Press Enter
-- Type or copy and paste this into the prompt (capitalization is important): `systeminfo | find "System Type"`
+- In the VS Code Terminal, type or copy and paste this into the prompt (capitalization is important): `systeminfo | find "System Type"`
 - Press Enter
 
 _You should see a message that says something like: ` x64-based PC`_. 
@@ -104,14 +115,13 @@ _The pop-up message will include both version and build numbers for your Windows
 
 **If you meet the system requirements, you can move ahead to the next steps. If you don't, try using the online workflow instead.**
 
-**Open PowerShell as an Administrator**
+**Open VS Code as an Administrator**
 
-- Hit the Windows Key
-- Type "PowerShell"
-- Use the arrow to see more options; select "Run as Administrator"
-- Login with an Administrator username and password
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/u4QVJyWCErI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+- Close VS Code if it's currently open
+- Right-click on the VS Code program icon
+- Select "Run as Administrator"
+- Login with an Administrator username and password if prompted
+- Open a Terminal again
 
 **Enable WSL on Your Computer -- In PowerShell, run:**
 
@@ -222,11 +232,36 @@ You can navigate to these files with Windows explorer quickly by typing in `\\ws
 
 ## Install Homebrew
 
-[Homebrew](https://brew.sh) is a software package manager that simplifies the process for installing, uninstalling, and upgrading software from the command line. Visit [https://brew.sh/](https://brew.sh/) for instructions on installing Homebrew. 
+[Homebrew](https://brew.sh) is a software package manager that simplifies the process for installing, uninstalling, and upgrading software from the command line. Visit [https://brew.sh/](https://brew.sh/) for instructions on installing Homebrew. This process will take a few minutes, so let it run for a while!
 
-Be sure to read through the "Next Steps:" prompt in your terminal after the initial Homebrew install is complete. Run the commands that Homebrew provides to "Add Homebrew to your PATH" and "Install the Homebrew dependences". Check your terminal for the exact commands.
+**Be sure to read through the section beginning with "Next Steps" in your terminal prompt after the initial Homebrew install is complete.** Run the commands that Homebrew provides to "Add Homebrew to your PATH" and "Install the Homebrew dependences". Check your terminal for the exact commands.
 
 ![Screenshot of Ubuntu Terminal displaying helpful commands after installation](dw_homebrew-commands.png)
+
+The follow commands are ***examples***. Do not run _these_ commands. Run the ones your terminal prompt displays as they will be specific recommendations for your system:
+
+```
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/USERNAME/.profile
+```
+and: 
+
+```
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+```
+
+If you're on Linux, you may be asked to install additional dependencies:
+
+```
+sudo apt-get install build-essential
+```
+
+To verify the installation, run:
+
+```
+brew --version
+```
+
+If you get a version number in response, Homebrew was successfully installed.
 
 ## Install Pandoc
 
@@ -239,6 +274,20 @@ We can install both of these with Homebrew by executing the following command:
 ```sh
 brew install pandoc pandoc-crossref
 ```
+
+To verify the installations, run:
+
+```
+pandoc --version
+```
+
+and
+
+```
+pandoc-crossref --version
+```
+
+If you get version numbers in response to these commands, Pandoc and Pandoc-Crossref was successfully installed.
 
 ## Install TinyTeX
 
@@ -268,6 +317,18 @@ You now have have a minimal version of LaTeX installed. You can now use common L
 sudo chown -R $(whoami) /usr/local/bin
 curl -sL "https://yihui.org/tinytex/install-bin-unix.sh" | sh 
 ```
+
+### Verify You have LaTeX installed
+
+TinyTeX installs several LaTeX packages to help you use the system. An important one is called TeX Live Manager, which will manage your LaTeX packages. Specific LaTeX packages are required for compiling PDF documents. Lantern PDF templates do not require any additional LaTeX packages, but you might want to [install additional LaTeX packages](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages) if you decide to customize the templates. 
+
+You can verify your LaTeX installation by checking the version of TeX Live Manager with this command:
+
+```
+tlmgr --version
+```
+
+If you get a version number in response, then TinyTeX / LaTeX is properly installed!
 
 ## Creating Your Desktop Workspace
 
