@@ -43,13 +43,17 @@ We recommend installing [Visual Studio Code (VS Code)](https://code.visualstudio
 
 **Installation Tips:**
 
-When prompted to "Select Additional Tasks" during installation, double-check that the Add to `PATH` option is checked so you can easily open a folder using the `code` command from your terminal. We also think it's helpful to check the box for the other Additional Tasks, including (these options might only be applicable to Windows installations):
+When prompted to "Select Additional Tasks" during installation, double-check that the "Add to `PATH`" option is checked. We also think it's helpful to check the boxes for the other Additional Tasks, including:
+
+_Windows Users:_
 
 - Add "Open with Code" action to Windows Explorer file context menu 
 - Add "Open with Code" action to Windows Explore directory context menu
 - Register Code as an editor for supported file types
 
-_If you missed this step, you may have to reinstall VS Code and check the boxes. This is not necessary, but helpful._
+_macOS and Linux Users:_
+
+...
 
 :::
 
@@ -86,11 +90,13 @@ This setup requires about 5GB of disk space.
 
 WSL is a feature in Windows that lets you run a Linux operating system _within_ your normal Windows operating system. Linux operating systems are available in a [variety of _distributions_](https://en.wikipedia.org/wiki/Linux_distribution#Widely_used_GNU-based_or_GNU-compatible_distributions). Each distribution is a collection of software packages that use the Linux kernel. This set of instructions will install WSL with [Ubuntu](https://ubuntu.com/) 20.04 LTS as the Linux distribution.   
 
-#### Open a Terminal in VS Code
+#### Open a Terminal in VS Code as an Administrator
 
-- Open VS Code
+- Right-click on the VS Code program icon
+- Select "Run as Administrator"
+- Login with an Administrator username and password if prompted
 - Click on Terminal in the menu bar
-- Select New Terminal
+- Select New Terminal; this will open a PowerShell command prompt
 
 **Checking Your System Type: Most Windows computers have either x64 or ARM64 systems. If you're not sure which one you're using, follow these steps:**
 
@@ -115,21 +121,17 @@ _The pop-up message will include both version and build numbers for your Windows
 
 **If you meet the system requirements, you can move ahead to the next steps. If you don't, try using the online workflow instead.**
 
-**Open VS Code as an Administrator**
+**Enable WSL on Your Computer**
 
-- Close VS Code if it's currently open
-- Right-click on the VS Code program icon
-- Select "Run as Administrator"
-- Login with an Administrator username and password if prompted
-- Open a Terminal again
-
-**Enable WSL on Your Computer -- In PowerShell, run:**
+The following command can be copied and pasted into the PowerShell terminal prompt from within VS Code. You'll need to be running VS Code as an Administrator, as we did [above](#open-a-terminal-in-vs-code-as-an-administrator)).
 
 ```
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 ```
 
-**Enable Virtual Machine Features -- In PowerShell, run:**
+**Enable Virtual Machine Features**
+
+In the same PowerShell terminal prompt from within VS Code, run: 
 
 ```
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
@@ -151,15 +153,13 @@ wsl --set-default-version 2
 - Wait for the download to finish; it will take a few minutes
 - Click on the Launch button when the download finishes
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/smc9TTjbygM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 **Congrats! You now have an Ubuntu Operating System within your Windows computer!**
 
 ::: box :::
 
 **Windows Users**
 
-VS Code can be set up to work with your Windows Subsytem for Linux (WSL) setup. The first time you launch VS Code, it will likely detect your WSL setup and ask if you'd like to install recommended extensions. Click the "Install" button when prompted.
+VS Code can be set up to work with your Windows Subsytem for Linux (WSL) setup. VS Code will likely detect your WSL setup and ask if you'd like to install recommended extensions. Click the "Install" button when prompted.
 
 ![Screenshot of VS Code Extensions pop-up](dw_wsl-extensions-vs-code.png)
 
@@ -318,7 +318,7 @@ sudo chown -R $(whoami) /usr/local/bin
 curl -sL "https://yihui.org/tinytex/install-bin-unix.sh" | sh 
 ```
 
-### Verify You have LaTeX installed
+### Verify TinyTex/LaTeX Installation
 
 TinyTeX installs several LaTeX packages to help you use the system. An important one is called TeX Live Manager, which will manage your LaTeX packages. Specific LaTeX packages are required for compiling PDF documents. Lantern PDF templates do not require any additional LaTeX packages, but you might want to [install additional LaTeX packages](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages) if you decide to customize the templates. 
 
