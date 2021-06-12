@@ -41,7 +41,7 @@ We recommend installing [Visual Studio Code (VS Code)](https://code.visualstudio
 
 ::: box :::
 
-**Installation Tips:**
+**Windows Installation Tips:**
 
 When prompted to "Select Additional Tasks" during installation, double-check that the "Add to `PATH`" option is checked. We also think it's helpful to check the boxes for the other Additional Tasks, including:
 
@@ -50,10 +50,6 @@ _Windows Users:_
 - Add "Open with Code" action to Windows Explorer file context menu 
 - Add "Open with Code" action to Windows Explore directory context menu
 - Register Code as an editor for supported file types
-
-_macOS and Linux Users:_
-
-...
 
 :::
 
@@ -217,6 +213,12 @@ You can navigate to these files with Windows explorer quickly by typing in `\\ws
 
 ## Using the Terminal
 
+Lantern uses Bash terminal commands to move between directories and install software. Bash terminal commands can be used on all macOS, Linux, or Windows/WSL operating systems. VS Code has an integrated Terminal feature. To open the terminal in VS Code, click on the "Terminal" option in the menu bar and select "New Terminal". This will open your default terminal (on Windows with WSL, this )
+
+![Screenshot of opening the terminal in VS Code](dw_vscode-new-terminal.png)
+
+We'll be using the terminal to install a few more software packages. 
+
 ::: box :::
 
 **Bash Terminal Cheat Sheet**: We'll use Bash commands to navigate our file system, rather than using a graphical file explorer program.
@@ -232,13 +234,21 @@ You can navigate to these files with Windows explorer quickly by typing in `\\ws
 
 ## Install Homebrew
 
-[Homebrew](https://brew.sh) is a software package manager that simplifies the process for installing, uninstalling, and upgrading software from the command line. Visit [https://brew.sh/](https://brew.sh/) for instructions on installing Homebrew. This process will take a few minutes, so let it run for a while!
+[Homebrew](https://brew.sh) is a software package manager that simplifies the process for installing, uninstalling, and upgrading software from the command line. Visit the [Homebrew homepage](https://brew.sh/) for instructions on installing Homebrew on your operating system. The instructions involve copying and pasting one line in your terminal prompt (you might be prompted to enter your password in the terminal before it continues). 
 
-**Be sure to read through the section beginning with "Next Steps" in your terminal prompt after the initial Homebrew install is complete.** Run the commands that Homebrew provides to "Add Homebrew to your PATH" and "Install the Homebrew dependences". Check your terminal for the exact commands.
+This process will take a 5-7 minutes, so let it run for a while! You'll know when it's finished when the prompt returns to a dollar sign (`$`).
+
+![Screenshot of Homebrew install steps in a terminal window](dw_homebrew-install.png)
+
+::: box :::
+
+**Windows/ WSL and Linux Users:**
+
+Be sure to read through the section beginning with "Next Steps" in your terminal prompt after the initial Homebrew install is complete. Run the commands that Homebrew provides to "Add Homebrew to your PATH" and "Install the Homebrew dependences". Check your terminal for the exact commands.
 
 ![Screenshot of Ubuntu Terminal displaying helpful commands after installation](dw_homebrew-commands.png)
 
-The follow commands are ***examples***. Do not run _these_ commands. Run the ones your terminal prompt displays as they will be specific recommendations for your system:
+The follow commands are ***examples***. Do not run _these_ commands. Run the ones your terminal prompt displays as they will be specific recommendations for your system.
 
 ```
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/USERNAME/.profile
@@ -249,11 +259,13 @@ and:
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 ```
 
-If you're on Linux, you may be asked to install additional dependencies:
+You may be asked to install additional dependencies:
 
 ```
 sudo apt-get install build-essential
 ```
+
+:::
 
 To verify the installation, run:
 
@@ -265,11 +277,9 @@ If you get a version number in response, Homebrew was successfully installed.
 
 ## Install Pandoc
 
-We can use Homebrew to install [Pandoc](https://pandoc.org) and [Pandoc Crossref](https://github.com/lierdakil/pandoc-crossref). 
+We can use Homebrew to install [Pandoc](https://pandoc.org) and [Pandoc Crossref](https://github.com/lierdakil/pandoc-crossref). Pandoc is our main document converter. We use Pandoc to convert manuscript files from Word processing formats to Markdown, then Markdown to our publishing output formats (e.g. HTML, LaTeX, DOCX, etc.). Pandoc Crossref is a filter that helps us label and number equations, figures, and images in order to produce links within our textbook projects. 
 
-Pandoc is our main document converter. We use Pandoc to convert manuscript files from Word processing formats to Markdown, then Markdown to our publishing output formats (e.g. HTML, LaTeX, DOCX, etc.). Pandoc Crossref is a filter that helps us label and number equations, figures, and images in order to produce links within our textbook projects. 
-
-We can install both of these with Homebrew by executing the following command: 
+We can install both of these with Homebrew by executing the following command (>1min): 
 
 ```sh
 brew install pandoc pandoc-crossref
@@ -287,7 +297,7 @@ and
 pandoc-crossref --version
 ```
 
-If you get version numbers in response to these commands, Pandoc and Pandoc-Crossref was successfully installed.
+If you get version numbers in response to these commands, both of these programs were successfully installed.
 
 ## Install TinyTeX
 
@@ -334,15 +344,15 @@ If you get a version number in response, then TinyTeX / LaTeX is properly instal
 
 ::: box :::
 
-We've just downloaded a few things. Here's what they do:
-
-Bash Terminal
-
-: This will where we run our commands for building the textbook publication formats. 
+We've just downloaded and setup a few things. Here's what they do:
 
 VS Code
 
-: This is our text editor, where we will be writing YAML metadata about our textbooks and typesetting our manuscript content in Markdown.
+: This is our text editor. We'll use this as our primary desktop workspace for managing files, writing YAML metadata about our textbooks, and typesetting our manuscript content in Markdown, and running build commands for our publication outputs. 
+
+Terminal
+
+: This will where we run our commands for building the textbook publication formats. We'll use VS Code's integrated terminal feature.
 
 TinyTeX
 
@@ -376,29 +386,25 @@ cd lantern-projects
 
 ## Download Lantern
 
-Now that you have all of the required software for the desktop workflow, you're ready to download the Lantern files to your computer. [Lantern](https://github.com/nulib-oer/lantern) is a Git repository hosted on [GitHub](https://github.com). We won't get too much into Git or Github, but we will use it to download the files. Git is pre-installed with Ubuntu and macOS (if it's not on your macOS, run `brew install git` in your terminal). 
+Now that you have all of the required software for the desktop workflow, you're ready to download the Lantern files to your computer. [Lantern](https://github.com/nulib-oer/lantern) is a template repository hosted on [GitHub](https://github.com). We won't get too much into Git or Github, but we will use it to download the files. Git is pre-installed with Ubuntu (as well as Windows/WSL) and macOS. 
 
 **Open your terminal and download Lantern by running this command:**
 
 ```sh
-git clone https://github.com/nulib-oer/lantern.git
+git clone https://github.com/nulib-oer/lantern.git test-project
 ```
 
-_This is a [Git](https://git-scm.com/) command that downloads a copy of git repository to your computer._
+_This is a [Git](https://git-scm.com/) command that downloads a copy of the Lantern files from GitHub to your computer and stores them within a new folder called `test-project`. This is the process you can use over and over whenever you want to start a new textbook projects with Lantern's template repository._
 
-![Screenshot of Ubuntu Terminal Downloading the Lantern repository to the computer via `git clone` command](dw_git-clone-lantern.png)
+![Screenshot of macOS Terminal in VS Code Downloading the Lantern repository to the computer via `git clone` command](dw_git-clone-lantern.png)
 
 **Navigate to the new folder containing Lantern files by running this command in your terminal:**
 
 ```sh
-cd lantern
+cd test-project
 ```
 
-**Running this command in your Terminal will open the Lantern folder in VS Code. If this doesn't work, you can open VS Code directly and open the folder from within VS Code (see [Finding Your Ubuntu Files with Windows Explorer](#wsl-path) for finding the Lantern folder on Windows). Microsoft has some [really good videos on navigating the VS Code interface](https://code.visualstudio.com/docs/getstarted/introvideos).**
-
-```sh
-code .
-```
+**Open the `test-project` folder in VS Code by clicking on the File option in the menu bar and selecting "Open...". Microsoft has some [really good videos on navigating the VS Code interface](https://code.visualstudio.com/docs/getstarted/introvideos).**
 
 ![Screenshot of VS Code open to the Lantern folder](dw_lantern-vscode.png)
 _These icons are generated by the [vscode-icons extension](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons), which is highly recommended!_
