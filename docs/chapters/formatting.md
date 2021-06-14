@@ -1,6 +1,6 @@
 # Plain Text Formatting
 
-We'll use plain text to create metadata and format our textbook projects. This work requires a text editor. Every operating system includes a default plain text editor. On Windows, the default editor is [Notepad](https://www.microsoft.com/en-us/p/windows-notepad/9msmlrh6lzf3?activetab=pivot:overviewtab); on macOS, the default editor is [TextEdit](https://support.apple.com/guide/textedit/welcome/mac). Both of these options will work, as well as GitHub's online text editor, but we recommend installing [Visual Studio Code (VS Code)](https://code.visualstudio.com/), which is free for Windows, macOS, and Linux, and has a lot of features that are useful for Lantern users. 
+We'll use plain text to create metadata and format our textbook projects. This work requires a text editor. Every operating system includes a default plain text editor. On Windows, the default editor is [Notepad](https://www.microsoft.com/en-us/p/windows-notepad/9msmlrh6lzf3?activetab=pivot:overviewtab); on macOS, the default editor is [TextEdit](https://support.apple.com/guide/textedit/welcome/mac). 
 
 ## Textbook Metadata with YAML
 
@@ -12,9 +12,7 @@ Textbooks need bibliographic metadata in order to be indexed by search engines a
 
 :::
 
-## YAML within Lantern
-
-The information stored in the YAML file will be used to fill the templates for each of the publication formats (e.g. HTML, PDF, etc.). You need to edit a `metadata.yml` file to store the textbook's title, authors, contributors, and license, and other information. For example, in the case of [*Lantern: Minimal Computing Workflows for Publishing Open Textbooks*](http://lantern.northwestern.pub), the `metadata.yml` file stores all the data necessary to display this information (and more):
+The information stored in YAML syntax will be used to fill the templates for each of the publication formats (e.g. HTML, PDF, etc.). Lantern includes a `metadata.yml` file (more on this later!) that is used to store all the data necessary to display this information (and more):
 
 - Title
 - Subtitle
@@ -39,7 +37,7 @@ The key must **always** be followed by a colon and a space. There are a number o
 - Two key value-pairs **cannot** be in the same line. 
 - If a key holds multiple values, each value must appear in a new line, intended, and preceded by a dash and a space. 
 
-### Single Value Fields
+### Single Value Metadata Fields
 
 ::: box :::
 
@@ -61,7 +59,7 @@ title: Theories of Relativity
 
 The key begins a new line in the YAML file and is separated by the value with a colon (`:`) and a space. The value can be a string, [with or without quotations](https://www.yaml.info/learn/quote.html) (quotations can be usefule for capturing literal strings, especially if the string of text includes an apostrophe or other special character). YAML technically can store data types other than strings, but Lantern is mostly concerned with strings of text. 
 
-### Multiple Value Fields
+### Multiple Value Metadata Fields
 
 ::: box :::
 
@@ -136,7 +134,7 @@ If you want to know more about YAML's capabilities in contexts beyond Lantern yo
 
 :::
 
-## Chapter Content in Markdown
+## Chapter Content with Markdown
 
 You can use a word processor to prepare and format documents before they're converted to Markdown files, but you will need to learn some basic Markdown syntax in order to clean up your conversions and create more complex elements within your textbook, such as callout boxes, tables, and math equations.
 
@@ -165,9 +163,3 @@ More content, but in list form:
 ```
 
 Lantern provides guidance and tools to simplify the conversion process from common word processing formats (`.docx` or `.odt`) to Markdown. The conversions won't be perfect, but they'll save you a lot of time and make your documents more accessible. Since Lantern uses Pandoc as it's Markdown processor, we'll be using [Pandoc's Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown) to format our textbooks. 
-
-::: box :::
-
-**We provide a [reference chapter on Markdown](#chapter-content-in-markdown) for formatting specific elements.**
-
-:::
