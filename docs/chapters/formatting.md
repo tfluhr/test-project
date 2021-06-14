@@ -130,7 +130,7 @@ If you want to know more about YAML's capabilities in contexts beyond Lantern yo
 
 ::: box :::
 
-**We provide a [reference chapter on YAML](#metadata-in-yaml) for all available metadata fields.**
+**Coming soon: we provide a [reference chapter on YAML](#) for all available metadata fields.**
 
 :::
 
@@ -163,3 +163,9 @@ More content, but in list form:
 ```
 
 Lantern provides guidance and tools to simplify the conversion process from common word processing formats (`.docx` or `.odt`) to Markdown. The conversions won't be perfect, but they'll save you a lot of time and make your documents more accessible. Since Lantern uses Pandoc as it's Markdown processor, we'll be using [Pandoc's Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown) to format our textbooks. 
+
+::: box :::
+
+**Coming soon: We provide a [reference chapter on Markdown](#) for all available chapter elements.**
+
+:::
