@@ -1,4 +1,4 @@
-# Online Workflow Tutorial
+# Online Workflow 
 
 The Online Workflow is entirely web-based and uses [GitHub](https://github.com) as a publishing platform. This tutorial will guide you through the process of setting up your textbook project on GitHub. By the end of this tutorial, you will be able to use Lantern to create and publish open textbooks.
 
@@ -25,7 +25,9 @@ Your online workspace will be a repository on GitHub. Your repository will conta
 
 ::: box :::
 
-A repository is a project folder that uses [Git](https://git-scm.com/) for version control. [GitHub](https://github.com) is a website for hosting Git repositories.
+A repository is a project folder that uses [Git](https://git-scm.com/) for version control. [GitHub](https://github.com) is a website for hosting Git repositories. **This video introduces GitHub's web interface and Lantern's template repository.**
+
+<iframe style="display:block;margin:auto" width="560" height="315" src="https://www.youtube-nocookie.com/embed/YPo1nlT2XMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 :::
 
