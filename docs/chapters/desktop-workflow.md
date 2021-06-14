@@ -2,13 +2,19 @@
 
 The desktop workflow brings all of the required processing software to your computer. It's designed to remove GitHub as a dependency so that you can use any web hosting platform for publishing your open textbooks. In this tutorial, we'll walk you through the process of setting up your computer and running basic processing commands. 
 
+::: box :::
+
 The basic workflow involves:
 
 - Managing source manuscript files
 - Editing plain text using formatting rules
 - Running build commands for generating publication formats
 
+All within the Visual Studio Code text editor:
+
 ![Screenshot of a Visual Studio Code Workspace with Lantern files](dw_workspace.png)
+
+:::
 
 **Prerequisites**
 
@@ -53,12 +59,7 @@ _Windows Users:_
 
 :::
 
-[VS Code](https://code.visualstudio.com/) can be customized to your workflow with [Extensions](https://marketplace.visualstudio.com/). You might be interested in trying a few extensions to help with formatting Markdown documents. Here are a few popular options:
-
-- [VS Code Icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons): Nice set of icons to help distinguish between file types and folders
-- [Markdown+Math](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath): Preview LaTeX math equation rendering
-- [Markdown Table Prettifier](https://marketplace.visualstudio.com/items?itemName=darkriszty.markdown-table-prettify): Auto-format markdown tables for easier readability
-- [Excel to Markdown Table](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table): Copy tables from [Microsoft Excel](https://www.microsoft.com/en-us/microsoft-365/excel) and paste as Markdown tables
+[VS Code](https://code.visualstudio.com/) can be customized to your workflow with [Extensions](https://marketplace.visualstudio.com/). You might be interested in trying a few extensions to help with formatting Markdown documents. We recommend [VS Code Icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons), which includes a nice set of icons to help distinguish between file types and folders
 
 ## Windows Subsystem for Linux
 
@@ -80,11 +81,19 @@ We highly recommend following [Microsoft's instructions for a manual installatio
 
 ::: box :::
 
-This setup requires about 5GB of disk space.
+This setup requires about 5GB of disk space. While we provide specific steps and commands, we recommend you double-check [Microsoft's documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps) to ensure the commands are accurate as they may change over time.
 
 :::
 
-WSL is a feature in Windows that lets you run a Linux operating system _within_ your normal Windows operating system. Linux operating systems are available in a [variety of _distributions_](https://en.wikipedia.org/wiki/Linux_distribution#Widely_used_GNU-based_or_GNU-compatible_distributions). Each distribution is a collection of software packages that use the Linux kernel. This set of instructions will install WSL with [Ubuntu](https://ubuntu.com/) 20.04 LTS as the Linux distribution.   
+WSL is a feature in Windows that lets you run a Linux operating system _within_ your normal Windows operating system. Linux operating systems are available in a [variety of _distributions_](https://en.wikipedia.org/wiki/Linux_distribution#Widely_used_GNU-based_or_GNU-compatible_distributions). Each distribution is a collection of software packages that use the Linux kernel. This set of instructions will install WSL with [Ubuntu](https://ubuntu.com/) 20.04 LTS as the Linux distribution.  
+
+::: box :::
+
+**Video Demonstration of Next Few Steps**
+
+<iframe style="display:block;margin:auto" width="560" height="315" src="https://www.youtube-nocookie.com/embed/6onU19_wYK8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+:::
 
 #### Open a Terminal in VS Code as an Administrator
 
@@ -94,14 +103,14 @@ WSL is a feature in Windows that lets you run a Linux operating system _within_ 
 - Click on Terminal in the menu bar
 - Select New Terminal; this will open a PowerShell command prompt
 
-**Checking Your System Type: Most Windows computers have either x64 or ARM64 systems. If you're not sure which one you're using, follow these steps:**
+#### Checking Your System Type: Most Windows computers have either x64 or ARM64 systems. If you're not sure which one you're using, follow these steps:
 
 - In the VS Code Terminal, type or copy and paste this into the prompt (capitalization is important): `systeminfo | find "System Type"`
 - Press Enter
 
 _You should see a message that says something like: ` x64-based PC`_. 
 
-**Checking Your Windows 10 Version: There are several **versions** and **builds** of Windows 10. If you're not sure which version and build you have, follow these steps:**
+#### Checking Your Windows 10 Version: There are several **versions** and **builds** of Windows 10. If you're not sure which version and build you have, follow these steps:
 
 - Hit the Windows Key
 - Type "run" to find the Run app
@@ -133,9 +142,23 @@ In the same PowerShell terminal prompt from within VS Code, run:
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 
-**Restart your computer**
+#### Restart your computer
 
-**Based on your system type (e.g. x64), Download the latest Linux kernel update package [from Microsoft](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package).**
+#### Based on your system type (e.g. x64), Download the latest Linux kernel update package [from Microsoft](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package).
+
+::: box :::
+
+**Video Demonstration of Next Few Steps**
+
+<iframe style="display:block;margin:auto" width="560" height="315" src="https://www.youtube-nocookie.com/embed/9f__fo5dxXc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+VS Code can be set up to work with your Windows Subsytem for Linux (WSL) setup. VS Code will likely detect your WSL setup and ask if you'd like to install recommended extensions. Click the "Install" button when prompted.
+
+![Screenshot of VS Code Extensions pop-up](dw_wsl-extensions-vs-code.png)
+
+If you didn't see that prompt when opening VS Code, [follow these instructions](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode#:~:text=Visit%20the%20VS%20Code%20install,WSL%20using%20the%20code%20command.) on configuring youre VS Code editor with your WSL instance. You can skip the Git and Windows Terminal sections as those are optional.  
+
+:::
 
 **Set WSL 2 as your default version -- In PowerShell, run:**
 
@@ -151,29 +174,23 @@ wsl --set-default-version 2
 
 **Congrats! You now have an Ubuntu Operating System within your Windows computer!**
 
-::: box :::
-
-**Windows Users**
-
-VS Code can be set up to work with your Windows Subsytem for Linux (WSL) setup. VS Code will likely detect your WSL setup and ask if you'd like to install recommended extensions. Click the "Install" button when prompted.
-
-![Screenshot of VS Code Extensions pop-up](dw_wsl-extensions-vs-code.png)
-
-If you didn't see that prompt when opening VS Code, [follow these instructions](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode#:~:text=Visit%20the%20VS%20Code%20install,WSL%20using%20the%20code%20command.) on configuring youre VS Code editor with your WSL instance. You can skip the Git and Windows Terminal sections as those are optional.  
-
-:::
-
 This will launch a new terminal window for Ubuntu. In the task bar, we recommend you right-click the Ubuntu icon and pin the program to your task bar (or Start menu) for easy access to it. 
 
 ![Screenshot of Windows Desktop with "Pin to Task Bar" option displayed](dw_pin-ubuntu-to-taskbar.png)
 
 **Create a User for Ubuntu**
 
-The first time you open the Ubuntu terminal, you will be prompted to create a new user profile. This user is separate from the user profile you use to log in to your Windows computer. You can set this to whatever you want; just be sure to remember the password!
+The first time you open the Ubuntu terminal, you will be prompted to create a new user profile. This user is separate from the user profile you use to log in to your Windows computer. You can set this to whatever you want (even reusing the same Windows credentials you have); just be sure to remember the password!
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/XYDi64_g9Vk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+::: box :::
 
-**Update Your Ubuntu System Packages**
+**Creating a User for your Ubuntu OS**
+
+<iframe style="display:block;margin:auto" width="560" height="315" src="https://www.youtube-nocookie.com/embed/D9e3osliSSo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+:::
+
+#### Update Your Ubuntu System Packages
 
 It's usually a good idea to keep your system packages up to date with the latest versions. Since you have a clean install of Ubuntu 20.04 LTS, it's worth checking to make sure all software dependences are current with their latest release. We can do this with a few commands:
 
@@ -191,16 +208,6 @@ sudo apt upgrade
 
 *You will be asked to confirm the installation of new versions of software; enter `Y` and press enter.*
 
-**Enable Easy Copying and Pasting in the Ubuntu Terminal**
-
-- Right-click the top bar of the Ubuntu terminal
-- Select "Properties"
-- In the Edit options, check the box for "Use Ctrl+Shift+C/V as Copy/Paste"
-
-![Screenshot of Ubuntu (WSL) Settings](dw_enable-copy-paste.png)
-
-This will let you copy text from the terminal with `Ctrl+Shift+C` and paste text into the Terminal prompt with `Ctrl+Shift+V`. This will be very helpful during the Homebrew installation process.
-
 #### Finding Your Ubuntu Files with Windows Explorer
 
 Your WSL/Ubuntu system has its own file system that is separate from your Windows files (e.g. Documents, Pictures, Videos, etc.). Both are accessible by your Windows Explorer program. Windows treats your WSL/Ubuntu system as a Network Drive.
@@ -210,27 +217,6 @@ Your WSL/Ubuntu system has its own file system that is separate from your Window
 You can navigate to these files with Windows explorer quickly by typing in `\\wsl$` in the Explorer address bar.
 
 ![Screenshot of WSL path in Windows 10 File Explorer Address Bar](dw_wsl-files-path.png)
-
-## Using the Terminal
-
-Lantern uses Bash terminal commands to move between directories and install software. Bash terminal commands can be used on all macOS, Linux, or Windows/WSL operating systems. VS Code has an integrated Terminal feature. To open the terminal in VS Code, click on the "Terminal" option in the menu bar and select "New Terminal". This will open your default terminal (on Windows with WSL, this )
-
-![Screenshot of opening the terminal in VS Code](dw_vscode-new-terminal.png)
-
-We'll be using the terminal to install a few more software packages. 
-
-::: box :::
-
-**Bash Terminal Cheat Sheet**: We'll use Bash commands to navigate our file system, rather than using a graphical file explorer program.
-
-- `pwd`: will display the full path of the current directory
-- `cd`: will change directories to a target directory
-- `ls`: will list the files and folders within your currect directory
-    - `cd lantern-projects`: will change directories to a directory called `lantern-projects`
-    - `cd ..`: will change directories up one level to the parent directory of the current directory
-    - `cd ~`: will change directories to your "home" directory, which is the default directory that you start with when you open your Terminal app
-
-:::
 
 ## Install Homebrew
 
@@ -243,6 +229,12 @@ This process will take a 5-7 minutes, so let it run for a while! You'll know whe
 ::: box :::
 
 **Windows/ WSL and Linux Users:**
+
+<iframe style="display:block;margin:auto" width="560" height="315" src="https://www.youtube-nocookie.com/embed/MEWUsSUzZ7Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+***
+
+<iframe style="display:block;margin:auto" width="560" height="315" src="https://www.youtube-nocookie.com/embed/OJejWc8Bxng" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Be sure to read through the section beginning with "Next Steps" in your terminal prompt after the initial Homebrew install is complete. Run the commands that Homebrew provides to "Add Homebrew to your PATH" and "Install the Homebrew dependences". Check your terminal for the exact commands.
 
@@ -265,6 +257,12 @@ You may be asked to install additional dependencies:
 sudo apt-get install build-essential
 ```
 
+and 
+
+```
+brew install gcc
+```
+
 :::
 
 To verify the installation, run:
@@ -278,6 +276,14 @@ If you get a version number in response, Homebrew was successfully installed.
 ## Install Pandoc
 
 We can use Homebrew to install [Pandoc](https://pandoc.org) and [Pandoc Crossref](https://github.com/lierdakil/pandoc-crossref). Pandoc is our main document converter. We use Pandoc to convert manuscript files from Word processing formats to Markdown, then Markdown to our publishing output formats (e.g. HTML, LaTeX, DOCX, etc.). Pandoc Crossref is a filter that helps us label and number equations, figures, and images in order to produce links within our textbook projects. 
+
+::: box :::
+
+**Video Demonstration for all OS platforms**
+
+<iframe style="display:block;margin:auto" width="560" height="315" src="https://www.youtube-nocookie.com/embed/MTJGKfr-XWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+:::
 
 We can install both of these with Homebrew by executing the following command (>1min): 
 
@@ -307,7 +313,32 @@ Lantern uses [LaTeX](https://www.latex-project.org/) to make PDFs. LaTeX is a do
 
 Lantern uses a minimal LaTeX distribution called [TinyTeX](https://yihui.org/tinytex/). Follow the installation instructions on the TinyTeX homepage for your system:
 
+### macOS:
+
+Open your Terminal app and run these commands:
+
+```
+sudo chown -R $(whoami) /usr/local/bin
+curl -sL "https://yihui.org/tinytex/install-bin-unix.sh" | sh 
+```
+
+Now reload the terminal session with:
+
+```
+source ~/.profile
+```
+
 ### Windows WSL with Ubuntu:
+
+::: box :::
+
+**Video Demonstration of Installing TinyTeX on Ubuntu (WSL)**
+
+<iframe style="display:block;margin:auto" width="560" height="315" src="https://www.youtube.com/embed/_3pOnq7A1aY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+:::
+
+Open your Ubuntu (WSL) terminal and run this command:
 
 ```sh
 wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh
@@ -320,13 +351,6 @@ source ~/.profile
 ```
 
 You now have have a minimal version of LaTeX installed. You can now use common LaTeX commands, including `tlmgr`, `pdflatex`, and `xelatex` (You won't need to know these commands to use Lantern, but just letting you know that they are available). 
-
-### macOS:
-
-```
-sudo chown -R $(whoami) /usr/local/bin
-curl -sL "https://yihui.org/tinytex/install-bin-unix.sh" | sh 
-```
 
 ### Verify TinyTex/LaTeX Installation
 
@@ -343,6 +367,10 @@ If you get a version number in response, then TinyTeX / LaTeX is properly instal
 ## Creating Your Desktop Workspace
 
 ::: box :::
+
+**Video Overview**
+
+<iframe style="display:block;margin:auto" width="560" height="315" src="https://www.youtube-nocookie.com/embed/3S3k8HsvsQM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 We've just downloaded and setup a few things. Here's what they do:
 
@@ -382,6 +410,31 @@ Change into that directory:
 cd lantern-projects
 ```
 
+Open the current directory in VS Code:
+
+```
+code .
+```
+
+### Using the Terminal
+
+Lantern uses Bash terminal commands to move between directories and install software. Bash terminal commands can be used on all macOS, Linux, or Windows/WSL operating systems. VS Code has an integrated Terminal feature. To open the terminal in VS Code, click on the "Terminal" option in the menu bar and select "New Terminal". This will open your default terminal.
+
+![Screenshot of opening the terminal in VS Code](dw_vscode-new-terminal.png)
+
+::: box :::
+
+**Bash Terminal Cheat Sheet**: We'll use Bash commands to navigate our file system, rather than using a graphical file explorer program.
+
+- `pwd`: will display the full path of the current directory
+- `cd`: will change directories to a target directory
+- `ls`: will list the files and folders within your currect directory
+    - `cd lantern-projects`: will change directories to a directory called `lantern-projects`
+    - `cd ..`: will change directories up one level to the parent directory of the current directory
+    - `cd ~`: will change directories to your "home" directory, which is the default directory that you start with when you open your Terminal app
+
+:::
+
 ![Screenshot of Ubuntu terminal after running commands to create a workspace folder](dw_pwd-mkdir-cd.png)
 
 ## Download Lantern
@@ -394,7 +447,11 @@ Now that you have all of the required software for the desktop workflow, you're 
 git clone https://github.com/nulib-oer/lantern.git test-project
 ```
 
+::: box :::
+
 _This is a [Git](https://git-scm.com/) command that downloads a copy of the Lantern files from GitHub to your computer and stores them within a new folder called `test-project`. This is the process you can use over and over whenever you want to start a new textbook projects with Lantern's template repository._
+
+:::
 
 ![Screenshot of macOS Terminal in VS Code Downloading the Lantern repository to the computer via `git clone` command](dw_git-clone-lantern.png)
 
@@ -426,6 +483,8 @@ Lantern comes with a few files and folders you'll be using to add and edit your 
 - `metadata.yml`: This file defines the bibliographic metadata for your textbook
 
 - `references.bib`: This file contains the bibliography for your textbook in [BibTex format](http://www.bibtex.org/Format/)
+
+<iframe style="display:block;margin:auto" width="560" height="315" src="https://www.youtube-nocookie.com/embed/kM58ybg1LrI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Metadata
 
@@ -538,6 +597,6 @@ Once you're done editing your textbook, go to your terminal and type in `make te
 
 This part is optional, but to demonstrate the process of uploading the files to a web server, you can use [Netlify Drop](https://app.netlify.com/drop). [Netlify](https://netlify.com) is a web hosting service that specializes in static websites. Here's a video to demonstrate the Netlify Drop feature: 
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/-LRlQ_jaLAU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="display:block;margin:auto" width="560" height="315" src="https://www.youtube-nocookie.com/embed/-LRlQ_jaLAU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 If you want to give it a try, drag and drop the `public` folder from your computer to Netlify Drop to see your textbook project live on the web. From there, you can use the Netlify to manage your website, such as adding a custom domain name. 
