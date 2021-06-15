@@ -130,7 +130,7 @@ If you want to know more about YAML's capabilities in contexts beyond Lantern yo
 
 ::: box :::
 
-**Coming soon: we provide a [reference chapter on YAML](#) for all available metadata fields.**
+**We provide a [reference chapter on YAML](#metadata-in-yaml) for all available metadata fields.**
 
 :::
 
@@ -166,6 +166,6 @@ Lantern provides guidance and tools to simplify the conversion process from comm
 
 ::: box :::
 
-**Coming soon: We provide a [reference chapter on Markdown](#) for all available chapter elements.**
+**We provide a [reference chapter on Markdown](#content-in-markdown) for all available chapter elements.**
 
 :::
