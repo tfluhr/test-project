@@ -59,7 +59,7 @@ publisher:
 
 cover: true
 
-toc-title: "Contents" # name for the table of contents
+toc-title: "User Guide" # name for the table of contents
 reference-section-title: "References" # name for the references or bibliography section
 
 linkReferences: true
