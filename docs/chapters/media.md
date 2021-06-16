@@ -27,14 +27,22 @@ Image file names must not contain any spaces or special characters. We recommend
 
 Large images can greatly reduce your textbook's website load time or the size of your PDF output file. Therefore, we recommend using image compression tools to help reduce file size for serving on the web or embedding in PDFs. [TinyPNG](https://tinypng.com/) and [TinyJPG](https://tinyjpg.com/) are free web services that will compress your PNG and JPG files. 
 
-## Embedded Video and Audio
+## Video and Audio
 
 Lantern does not provide a media streaming mechanism on its own, but you can use the embed code from any media streaming service to include video or audio within the HTML version of your project. 
 
-Streaming services typically provide embed code as part of the "Share" feature for the item. Embed code is raw HTML code that looks like this:
+Streaming services typically provide embed code as part of the "Share" feature for the item. Embed code is raw HTML code.
+
+Example Video from YouTube:
 
 ```html
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YPo1nlT2XMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
+
+Example Audio from SoundCloud:
+
+```html
+<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/767415286&color=%230d1024&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/user-463918057" title="NU Digital Learning" target="_blank" style="color: #cccccc; text-decoration: none;">NU Digital Learning</a> · <a href="https://soundcloud.com/user-463918057/episode-14-open-textbooks" title="Episode 14: Open Textbooks" target="_blank" style="color: #cccccc; text-decoration: none;">Episode 14: Open Textbooks</a></div>
 ```
 
 Copy the emded code from the streaming service and paste it directly within the Markdown document where you want the media embed to appear in the text. 
