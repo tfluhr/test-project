@@ -82,6 +82,7 @@ DOCS_CHAPTERS += $(addprefix ./docs/chapters/,\
  desktop-workflow.md\
  metadata.md\
  content.md\
+ media.md\
  bibliographies.md\
  troubleshooting.md\
 )
