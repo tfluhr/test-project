@@ -34,7 +34,7 @@ preserve-tabs: true
 
 # html markup settings
 shift-heading-level-by: 1 # h1 headings in markdown become h2 in html
-section-divs: true
+section-divs: false
 wrap: none
 # identifier-prefix: lantern
 # title-prefix: ""
