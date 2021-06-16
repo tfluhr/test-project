@@ -84,6 +84,7 @@ DOCS_CHAPTERS += $(addprefix ./docs/chapters/,\
  content.md\
  media.md\
  bibliographies.md\
+ customization.md\
  troubleshooting.md\
 )
 
