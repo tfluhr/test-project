@@ -554,6 +554,16 @@ Lantern includes a micro-workflow that will help you convert raw manuscript file
 make markdown
 ```
 
+::: box :::
+
+**Opening Your Project Folder in Explorer or Finder**
+
+VS Code makes it easy to open your project folder in a more familiar setting. Right-click on a file or folder in VS Code and select "Reveal in Explorer" (on Windows) or "Reveal in Finder" (on macOS) to easily access your files using your systems file system application:
+
+![Screenshot of "Reveal in Explorer" option in VS Code](dw_reveal-in-explorer.png)
+
+:::
+
 This command will run a script that will use Pandoc to convert the `.docx` or `.odt` files in the `source/preprocess/` folder to Markdown files that will be saved in the `source/chapters/` folder. 
 
 You can now edit any of these files using your text editor (VS Code). 
