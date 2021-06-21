@@ -16,9 +16,9 @@ Lantern teaches two production workflows that use plain text to format chapter c
 
 We recommend the online workflow to first-time users of Lantern and the Desktop workflow to advanced users looking for more flexibility and customization.
 
-- The [**online** workflow](#online-workflow-tutorial) is the simpler option, but it relies on [GitHub](https://github.com/) for document processing. This workflow does not use the command line or require any software installations.
+- The [**online** workflow](#online-workflow) is the simpler option, but it relies on [GitHub](https://github.com/) for document processing. This workflow does not use the command line or require any software installations.
 
-- The [**desktop** workflow](#desktop-workflow-tutorial) is more complicated, but removes GitHub as a dependency. Some free software installation is required. This workflow uses the command line to run scripts that Lantern provides.
+- The [**desktop** workflow](#desktop-workflow) is more complicated, but removes GitHub as a dependency. Some free software installation is required. This workflow uses the command line to run scripts that Lantern provides.
 
 The online workflow uses [GitHub Pages](https://https://pages.github.com/) as a web hosting service, but the output files can be uploaded to any other static website hosting service. 
 
