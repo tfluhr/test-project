@@ -63,7 +63,7 @@ _Windows Users:_
 
 ## Windows Subsystem for Linux
 
-_You can [skip to the next section](#using-the-terminal) if you are using macOS or Linux._
+_You can [skip to the next section](#install-homebrew) if you are using macOS or Linux._
 
 Lantern uses software that requires a [Unix-like](https://en.wikipedia.org/wiki/Unix-like) operating system. Since Windows does not behave like a Unix system, we'll need to install one before working with Lantern. Luckily, recent versions of Windows 10 support the [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/about), which allows you to install and run a full [Linux distribution](https://en.wikipedia.org/wiki/Linux_distribution) within your normal Windows environment. 
 
