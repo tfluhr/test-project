@@ -8,14 +8,14 @@ CHAPTERS = source/chapters/*.md
 CONTENT = awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $(CHAPTERS)
 
 # output configuration files
-HTML = --verbose --filter pandoc-crossref --defaults assets/defaults/html.yml
+HTML = --filter pandoc-crossref --defaults assets/defaults/html.yml
 DOCX = --defaults assets/defaults/docx.yml
 LATEX = --filter pandoc-crossref --defaults assets/defaults/latex.yml --no-highlight
-EPUB = --verbose --defaults assets/defaults/epub.yml --mathml
+EPUB = --defaults assets/defaults/epub.yml --mathml
 
 # utilities
 MAKEFILE = Makefile
-PANDOC_COMMAND = pandoc
+PANDOC_COMMAND = pandoc --quiet
 BASE_DEPENDENCIES = $(MAKEFILE) $(CHECK) $(CHAPTERS) $(IMAGES) 
 
 # build commands
@@ -32,40 +32,42 @@ docx:	$(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).docx
 latex:	$(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).tex
 
 markdown:
-	bash ./assets/scripts/preprocess.sh
+	@bash ./assets/scripts/preprocess.sh
+	@echo "📚 Your Markdown files are ready in the /chapters/ folder"
 
 clean:
-	rm -r $(OUTPUT_DIRECTORY)
+	@rm -r $(OUTPUT_DIRECTORY)
+	@echo "🧹 Let's start over."
 
 # recipes for outputs
 $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).epub:	$(BASE_DEPENDENCIES)
-	mkdir -p $(OUTPUT_DIRECTORY)
-	$(CONTENT) | tee | $(PANDOC_COMMAND) $(EPUB) -o $@
-	@echo "$@ was built"
+	@mkdir -p $(OUTPUT_DIRECTORY)
+	@$(CONTENT) | tee | $(PANDOC_COMMAND) $(EPUB) -o $@
+	@echo "📚 The EPUB edition is now available in $@"
 
 $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).html:	$(BASE_DEPENDENCIES)
-	mkdir -p $(OUTPUT_DIRECTORY)
-	$(CONTENT) | tee | $(PANDOC_COMMAND) $(HTML) -o $@
-	cp $(IMAGES) $(OUTPUT_DIRECTORY)
-	cp assets/lib/* $(OUTPUT_DIRECTORY)
-	cp assets/styles/* $(OUTPUT_DIRECTORY)
-	mv $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).html $(OUTPUT_DIRECTORY)/index.html
-	@echo "$@ was built"
+	@mkdir -p $(OUTPUT_DIRECTORY)
+	@$(CONTENT) | tee | $(PANDOC_COMMAND) $(HTML) -o $@
+	@cp $(IMAGES) $(OUTPUT_DIRECTORY)
+	@cp assets/lib/* $(OUTPUT_DIRECTORY)
+	@cp assets/styles/* $(OUTPUT_DIRECTORY)
+	@mv $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).html $(OUTPUT_DIRECTORY)/index.html
+	@echo "📚 The HTML edition is now available in $@"
 
 $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).pdf:	$(BASE_DEPENDENCIES)
-	mkdir -p $(OUTPUT_DIRECTORY)
-	$(CONTENT) | tee | $(PANDOC_COMMAND) $(LATEX) -o $@
-	@echo "$@ was built"
+	@mkdir -p $(OUTPUT_DIRECTORY)
+	@$(CONTENT) | tee | $(PANDOC_COMMAND) $(LATEX) -o $@
+	@echo "📚 The PDF edition is now available in $@"
 
 $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).tex:	$(BASE_DEPENDENCIES)
-	mkdir -p $(OUTPUT_DIRECTORY)
-	$(CONTENT) | tee | $(PANDOC_COMMAND) $(LATEX) -o $@
-	@echo "$@ was built"
+	@mkdir -p $(OUTPUT_DIRECTORY)
+	@$(CONTENT) | tee | $(PANDOC_COMMAND) $(LATEX) -o $@
+	@echo "📚 The LaTeX edition is now available in $@"
 
 $(OUTPUT_DIRECTORY)/$(OUTPUT_FILENAME).docx:	$(BASE_DEPENDENCIES)
-	mkdir -p $(OUTPUT_DIRECTORY)
-	$(CONTENT) | tee | $(PANDOC_COMMAND) $(DOCX) -o $@
-	@echo "$@ was built"
+	@mkdir -p $(OUTPUT_DIRECTORY)
+	@$(CONTENT) | tee | $(PANDOC_COMMAND) $(DOCX) -o $@
+	@echo "📚 The DOCX edition is now available in $@"
 
 # lantern documentation content settings 
 DOCS_OUTPUT_DIRECTORY = public/docs
