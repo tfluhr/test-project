@@ -4,13 +4,7 @@ We'll use plain text to create metadata and format our textbook projects. This w
 
 ## Textbook Metadata with YAML
 
-::: box :::
-
-**Learning Objectives**
-
 Textbooks need bibliographic metadata in order to be indexed by search engines and library catalogs. Lantern stores metadata about the textbook in a YAML file. YAML is a data serialization language, like [JSON](https://en.wikipedia.org/wiki/JSON) or [XML](https://en.wikipedia.org/wiki/XML), often used as a format for configuration settings. In this chapter you will learn all you need to know to use YAML for the purposes of creating open textbooks with Lantern. 
-
-:::
 
 The information stored in YAML syntax will be used to fill the templates for each of the publication formats (e.g. HTML, PDF, etc.). Lantern includes a `metadata.yml` file (more on this later!) that is used to store all the data necessary to display this information (and more):
 
@@ -57,7 +51,7 @@ For example, the title for a textbook called "Theories of Relativity" would be e
 title: Theories of Relativity
 ```
 
-The key begins a new line in the YAML file and is separated by the value with a colon (`:`) and a space. The value can be a string, [with or without quotations](https://www.yaml.info/learn/quote.html) (quotations can be usefule for capturing literal strings, especially if the string of text includes an apostrophe or other special character). YAML technically can store data types other than strings, but Lantern is mostly concerned with strings of text. 
+The key begins a new line in the YAML file and is separated by the value with a colon (`:`) and a space. The value can be a string, [with or without quotations](https://www.yaml.info/learn/quote.html) (quotations can be useful for capturing literal strings, especially if the string of text includes an apostrophe or other special character). YAML technically can store data types other than strings, but Lantern is mostly concerned with strings of text. 
 
 ### Multiple Value Metadata Fields
 
@@ -76,7 +70,7 @@ keywords:
     - digital publishing
 ```
 
-Each value for `keywords` is identified as a list item. The list item needs to be on a new line, indented, and begin a hyphen symbol (`-`) followed by a space. Some of Lantern's multiple value fields include more secificity. For example, an `author` can have a `name` and an `affiliation`. Here's how Lantern expresses mutliple authors in YAML:
+Each value for `keywords` is identified as a list item. The list item needs to be on a new line, indented, and begin a hyphen symbol (`-`) followed by a space. Some of Lantern's multiple value fields include more specificity. For example, an `author` can have a `name` and an `affiliation`. Here's how Lantern expresses mutliple authors in YAML:
 
 ```yaml
 author:
@@ -106,7 +100,7 @@ Consider the following titles:
 
 -   J.D Salinger's novel *The Catcher in the Rye* and the presentation of the crisis of adolescence
 
-These examples contain especial characters, specifically quotations, colons and plus signs. The easiest way of avoiding issues with special characters is by using YAML's [literal block](https://learnxinyminutes.com/docs/yaml/) syntax. This syntax uses a pipe character and a new indented block of text to capture a the text with special characters:
+These examples contain special characters, specifically quotations, colons and plus signs. The easiest way of avoiding issues with special characters is by using YAML's [literal block](https://learnxinyminutes.com/docs/yaml/) syntax. This syntax uses a pipe character and a new indented block of text to capture a the text with special characters:
 
 ```yaml
 literal-block: |
@@ -138,7 +132,7 @@ If you want to know more about YAML's capabilities in contexts beyond Lantern yo
 
 You can use a word processor to prepare and format documents before they're converted to Markdown files, but you will need to learn some basic Markdown syntax in order to clean up your conversions and create more complex elements within your textbook, such as callout boxes, tables, and math equations.
 
-Writing in Markdown should be thought of as giving your content structure, not style. You use Markdown to headings, links, lists, footnotes, etc. Special characters like en- and em-dashes, and diacritics work fine in Markdown and in Lantern. 
+Writing in Markdown should be thought of as giving your content structure, not style. You use Markdown for headings, links, lists, footnotes, etc. Special characters like en- and em-dashes, and diacritics work fine in Markdown and in Lantern. 
 
 Example content in Markdown syntax:
 

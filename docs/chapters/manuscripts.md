@@ -4,7 +4,7 @@ If you're starting with Microsoft Word files, you'll need the ability to open th
 
 ## File Naming and Organization
 
-Each chapter of your textbook needs to be it's own separate file. This is true in both the Microsoft Word stage as well as the Markdown stage. To make things easier, we recommend sparating each chapter as Microsoft Word files using the following naming convention:
+Each chapter of your textbook needs to be it's own separate file. This is true in both the Microsoft Word stage as well as the Markdown stage. To make things easier, we recommend separating each chapter as Microsoft Word files using the following naming convention:
 
 | Naming Convention              | Example                 |
 |--------------------------------|-------------------------|
@@ -14,7 +14,7 @@ Lantern's conversion process betwen Word and Markdown will retain the file names
 
 ## Chapter Styles
 
-If you're starting the OER production process with a manuscript that was
+If you're starting with a manuscript that was
 written in a word processor, we recommend applying standardized styles
 to some elements of your chapters before adding them to your project
 repository. Styles provide visual structure to the text, and they also
@@ -69,19 +69,13 @@ order (for example, use heading 3 only after you've already used heading
 For more information on building document structure with headings, visit
 the [WebAim's Semantic Structure guide](https://webaim.org/techniques/semanticstructure/).
 
-## To add images
+## Adding images
 
-Instead of adding images directly to your Word document, add placeholder
-text that you can use to add the images directly from your repository
-later. This will ensure the image retains its quality when being
-converted to Markdown. Sample placeholder text:
+Instead of embedding images within Word documents, we recommend adding the image files to a specific folder and referecing the file name within the document. 
+
+For now, you can use placeholder text within your Word document so you know where the images will eventually be placed. Here's a sample placeholder text you can use:
 
 \[INSERT IMAGE: "(caption)" filname.jpg (sent separately)\]
-
-With a little training, standardized styles can be used by OER authors
-themselves as they\'re writing their manuscripts. In the resources
-section of Lantern, you'll find a formatted `.docx` template that you can
-use or share with your authors to get started.
 
 ::: box :::
 

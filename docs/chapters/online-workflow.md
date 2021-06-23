@@ -165,7 +165,7 @@ Lantern includes a micro-workflow that will help you convert raw manuscript file
 - Upload one or more of the `.docx` or `.odt` files
 - Click on the "Commit changes" button and (optionally) add a message about the uploads
 
-This action will trigger the GitHub repository to convert your `.docx` or `.odt` chapter files to markdown, then add the markdown files to the `source/chapters/` folder. This folder should now look something like this:
+This action will trigger the GitHub repository to convert your `.docx` or `.odt` chapter files to markdown, then add the markdown files to the `source/chapters/` folder. The action takes a minute or two to complete. This folder should now look something like this:
 
 ![Screenshot of the chapters folder on GitHub](ow_chapters.png)
 
@@ -189,7 +189,7 @@ The editor view of the file will allow you to edit the raw markdown contents as 
 
 The title of this particular chapter is not formatted properly. Instead of marking the title as a heading, the title is formatted as `**bold**`. This is a common problem with word processing formats, wherein headings are representing _visually_ but not _semantically_. Markdown uses specific syntax to mark contents as headings.
 
-- Change the `**Probabilities**` heading to a proper markdown heading: `# Probabilities`
+- Change the `**Probability**` heading to a proper markdown heading: `# Probability`
 
 All chapter files using Lantern must begin with the title of the chapter formatted as a "Heading 1" or a first-level heading using the hashtag symbol (`#`). The number of hashtags corresponds to the level that heading represents (for example, one hashtag converts to a `<h1>` tag when the output is HTML). There are typically between 1 and 6 heading level options. 
 

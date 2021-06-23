@@ -220,7 +220,7 @@ You can navigate to these files with Windows explorer quickly by typing in `\\ws
 
 ## Install Homebrew
 
-[Homebrew](https://brew.sh) is a software package manager that simplifies the process for installing, uninstalling, and upgrading software from the command line. Visit the [Homebrew homepage](https://brew.sh/) for instructions on installing Homebrew on your operating system. The instructions involve copying and pasting one line in your terminal prompt (you might be prompted to enter your password in the terminal before it continues). 
+[Homebrew](https://brew.sh) is a software package manager that simplifies the process for installing, uninstalling, and upgrading software from the command line. Visit the [Homebrew homepage](https://brew.sh/) for instructions on installing Homebrew on your operating system. The instructions involve copying and pasting one line in your terminal prompt. You might be prompted to enter your password in the terminal before it continues. This is the password you use to login to your computer; or, in the case of Windows Subsystem for Linux/ Ubuntu, the password you set for your Linux user. 
 
 This process will take a 5-7 minutes, so let it run for a while! You'll know when it's finished when the prompt returns to a dollar sign (`$`).
 
@@ -315,7 +315,7 @@ Lantern uses a minimal LaTeX distribution called [TinyTeX](https://yihui.org/tin
 
 ### macOS:
 
-Open your Terminal app and run these commands:
+Open your Terminal app and run these commands (requires password):
 
 ```
 sudo chown -R $(whoami) /usr/local/bin
@@ -576,7 +576,7 @@ The conversion process between word processing formats and markdown won't be per
 
 The title of this particular chapter is not formatted properly. Instead of marking the title as a heading, the title is formatted as `**bold**`. This is a common problem with word processing formats, wherein headings are representing _visually_ but not _semantically_. In other words, the headings are human-readable but not machine-readable. Markdown uses specific syntax to mark contents as headings.
 
-- Change the `**Probabilities**` heading to a proper markdown heading: `# Probabilities`
+- Change the `**Probability**` heading to a proper markdown heading: `# Probability`
 
 - There is another heading error in the file. Change `**Introduction to Probability Standard**` in line 19 to `## Introduction to Probability Standard` so that it represents a "Heading 2", or section heading.
 
