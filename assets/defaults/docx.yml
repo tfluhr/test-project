@@ -16,7 +16,6 @@ toc-depth: 3
 
 # section numbers
 number-sections: false
-number-offset: [0,0,0,0,0,0]
 
 # citations
 citeproc: true
