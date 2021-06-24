@@ -11,7 +11,7 @@ CONTENT = awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $(CHAPTERS)
 HTML = --filter pandoc-crossref --defaults assets/defaults/html.yml
 DOCX = --defaults assets/defaults/docx.yml
 LATEX = --filter pandoc-crossref --defaults assets/defaults/latex.yml --no-highlight
-EPUB = --defaults assets/defaults/epub.yml --mathml
+EPUB = --filter pandoc-crossref --defaults assets/defaults/epub.yml --mathml
 
 # utilities
 MAKEFILE = Makefile
