@@ -7,7 +7,7 @@ Lantern supports adding images and embedding video or audio from streaming servi
 Add image elements to your textbook chapters using this syntax:
 
 ```
-![Alt Text / Image Caption](filame.png "optional image title")
+![Alt Text / Image Caption](filename.png "optional image title")
 ```
 Images are block elements that need to be on their own lines, separated by empty lines, like paragraphs. 
 
@@ -25,7 +25,7 @@ Image file names must not contain any spaces or special characters. We recommend
 
 [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics) and [JPEG](https://en.wikipedia.org/wiki/JPEG) file formats give the best results. We recommend PNG files for computer graphics and JPEG files for photos. Be mindful of the image dimensions. You can use basic image viewing software on your computers to scale the image to no wider than 800px. This will help keep the file size small, lower your storage needs, and improve the page load / download performance of your resulting output formats.
 
-Large images can greatly reduce your textbook's website load time or the size of your PDF output file. Therefore, we recommend using image compression tools to help reduce file size for serving on the web or embedding in PDFs. [TinyPNG](https://tinypng.com/) and [TinyJPG](https://tinyjpg.com/) are free web services that will compress your PNG and JPG files. 
+Large images can slow down your website's load time, add to storage costs, and make the size of your PDF output file larger than it needs to be. Therefore, we recommend using image compression tools to help reduce file size for serving on the web or embedding in PDFs. [TinyPNG](https://tinypng.com/) and [TinyJPG](https://tinyjpg.com/) are free web services that will compress your PNG and JPG files. 
 
 ## Video and Audio
 

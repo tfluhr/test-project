@@ -2,7 +2,7 @@
 
 ::: box :::
 
-"[Minimal computing](https://go-dh.github.io/mincomp/about/)" is a critical framework that places limits on hardware and software choices in order to prioritize the longevity of digital texts, the mitigation of technological obscolescence, and the maintenance of systems. Lantern applies this framework to the production the open textbooks.
+"[Minimal computing](https://go-dh.github.io/mincomp/about/)" is a critical framework that places limits on hardware and software choices in order to prioritize the longevity of digital texts, the mitigation of technological obscolescence, and the maintenance of systems. Lantern applies this framework to the production of open textbooks.
 
 :::
 
@@ -10,7 +10,7 @@ Lantern uses Markdown as a typesetting format for publishing.
 
 > "Markdown is intended to be as easy-to-read and easy-to-write as is feasible. Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions." - [John Gruber](https://daringfireball.net/projects/markdown/syntax#philosophy) (one of Markdown's original creators)
 
-Lantern uses [Pandoc](https://pandoc.org/) as it's processing engine to produce publication formats, such as HTML, PDF, DOCX, and EPUB. Lantern can be use without or without installing additional software on your computer. 
+Lantern uses [Pandoc](https://pandoc.org/) as it's processing engine to produce publication formats, such as HTML, PDF, DOCX, and EPUB. Lantern can be used with or without installing additional software on your computer. 
 
 ## Features
 

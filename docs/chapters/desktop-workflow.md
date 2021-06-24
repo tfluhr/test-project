@@ -59,7 +59,7 @@ _Windows Users:_
 
 :::
 
-[VS Code](https://code.visualstudio.com/) can be customized to your workflow with [Extensions](https://marketplace.visualstudio.com/). You might be interested in trying a few extensions to help with formatting Markdown documents. We recommend [VS Code Icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons), which includes a nice set of icons to help distinguish between file types and folders
+[VS Code](https://code.visualstudio.com/) can be customized to your workflow with [Extensions](https://marketplace.visualstudio.com/). You might be interested in trying a few extensions to help with formatting Markdown documents. We recommend [VS Code Icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons), which includes a nice set of icons to help distinguish between file types and folders.
 
 ## Windows Subsystem for Linux
 
@@ -498,7 +498,7 @@ Textbooks need bibliographic metadata in order to be indexed by search engines a
 
 - When you're finished with your edits, save the file: Control + S 
 
-You can fill out the this file using [all available metadata fields](#).
+You can fill out the this file using [all available metadata fields](#metadata-in-yaml).
 
 ## Chapters
 

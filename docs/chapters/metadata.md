@@ -63,7 +63,7 @@ Metadata for your textbook project is contained within the `source/metadata.yml`
 
 - `download`: This allows you to control the download options available on the books website. By default, all of the output formats are generated and linked from the website. You can remove or comment out any format options you don't want to distribute. 
 
-    - `format`: The label of the format. You can change this to change the label (exmaple: using `Microsoft Word` instead of `DOCX`).
+    - `format`: The label of the format. You can change this to change the label (example: using `Microsoft Word` instead of `DOCX`).
     - `link`: Link to the file. Specify the file name with the exention. You can also put a URL here if the format is available at another web address.
 
 - `toc-title`: The label for the Table of Contents.

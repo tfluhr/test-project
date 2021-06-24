@@ -1,6 +1,6 @@
 # Customization
 
-Lantern's template repository provides everything you need to begin customizing the styles, templates, and output files. This section provide minimal guidance on customizing your textbooks and refers you to [Pandoc's documentation](https://pandoc.org/MANUAL.html) for further explanation and assistance. 
+Lantern's template repository provides everything you need to begin customizing the styles, templates, and output files. This section provides minimal guidance on customizing your textbooks and refers you to [Pandoc's documentation](https://pandoc.org/MANUAL.html) for further explanation and assistance. 
 
 Up until now, we've been pointing you to the `/source/` for adding all of your textbook contents. The `/assets/` folder contains most of the files you need for customizing your textbooks.
 
@@ -35,7 +35,7 @@ The PDF output file is generated using [LaTeX](https://www.latex-project.org/). 
 
 You are welcome to edit `/assets/templates/lantern.tex` by adding your own LaTeX commands. If your custom LaTeX commands require new LaTeX packages (from [CTAN](https://www.ctan.org/), for example), make sure that your LaTeX system has those new packages installed. 
 
-TinyText includes the TeX Live manager, so adding new LaTeX packages from CTAN is easy from your system terminal:
+TinyTeX includes the TeX Live manager, so adding new LaTeX packages from CTAN is easy from your system terminal:
 
 ```
 tlmgr install <package-name>

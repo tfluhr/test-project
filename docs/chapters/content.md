@@ -14,7 +14,7 @@ You can use any punctuation in the title. When the book is rendered, the chapter
 
 ## Section Headings
 
-Think of your headings as content outlines, not as visual representations of hierarchy based on font size.Like the chapter title, Headings are created with hashtags where the number of hashtags corresponds to the level of the heading you want.
+Think of your headings as content outlines, not as visual representations of hierarchy based on font size. Like the chapter title, headings are created with hashtags where the number of hashtags corresponds to the level of the heading you want.
 
 ```
 ## Section Heading
@@ -135,7 +135,7 @@ another item
 : another item's definition.
 ```
 
-Each item begins on its own line by itself, followed by a double-line break, a colon `:`, and the defition of the item. 
+Each item begins on its own line by itself, followed by a double-line break, a colon `:`, and the definition of the item. 
 
 ## Footnotes
 

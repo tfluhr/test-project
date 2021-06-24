@@ -20,7 +20,7 @@ We recommend the online workflow to first-time users of Lantern and the Desktop 
 
 - The [**desktop** workflow](#desktop-workflow) is more complicated, but removes GitHub as a dependency. Some free software installation is required. This workflow uses the command line to run scripts that Lantern provides.
 
-The online workflow uses [GitHub Pages](https://https://pages.github.com/) as a web hosting service, but the output files can be uploaded to any other static website hosting service. 
+The online workflow uses [GitHub Pages](https://pages.github.com/) as a web hosting service, but the output files can be uploaded to any other static website hosting service. 
 
 ## Manuscript Files
 
