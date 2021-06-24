@@ -29,7 +29,7 @@ highlight-style: pygments
 preserve-tabs: true
 
 # html markup settings
-shift-heading-level-by: 1 # h1 headings in markdown become h2 in html
+#shift-heading-level-by: 1 # h1 headings in markdown become h2 in html
 section-divs: true
 wrap: none
 # identifier-prefix: lantern
@@ -48,3 +48,11 @@ abbreviations:
 
 epub-subdirectory: EPUB
 epub-chapter-level: 1
+
+css: 
+  - assets/lib/uikit.css
+  - assets/styles/lantern.css
+
+resource-path:
+  - .
+  - source/images/
