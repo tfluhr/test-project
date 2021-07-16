@@ -44,7 +44,7 @@ Lantern provides [conversion scripts](https://github.com/nulib-oer/lantern/blob/
 |-----------------|--------------------|------------------------------------------|
 | `.docx`         | Open Office XML    | Microsoft Word, Google Docs, LibreOffice |
 | `.odt`          | Open Document Text | Microsoft Word, Google Docs, LibreOffice |
-| `.tex`          | LaTeX              | Plain text editor (e.g. VS Code)     |
+| `.tex`          | LaTeX              | Plain text editor (e.g. VS Code, Overleaf)     |
 
 : Lantern will convert these file formats to Markdown
 
@@ -75,7 +75,6 @@ The online workflow provides a GitHub repository that is preconfigured to run al
 
 | Requirements | Online | Desktop |
 |-|-|-|
-| Word Processor | Yes | Yes |
 | GitHub Account | Yes | No |
 | Text Editor | No | Yes |
 | Pandoc | No | Yes |

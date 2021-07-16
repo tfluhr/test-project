@@ -95,7 +95,7 @@ YAML needs to be valid, so if you ever hit an error, it's a good idea to check t
 
 ![Screenshot of the editing icon](ow_edit-this-file.png)
 
-- Use GitHub's online text editor to replace the placeholder metadata values with your textbook's information (or any information to test it out). 
+- Use GitHub's online text editor to replace the [placeholder metadata values with your textbook's information](#metadata-in-yaml) (or any information to test it out). You can also delete any metadata fields you are not using, for example: `contributor`. 
 
 - When you're finished with your edits, scroll to the bottom of the page to the "Commit changes" form. 
 

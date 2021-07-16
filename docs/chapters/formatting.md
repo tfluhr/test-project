@@ -4,7 +4,7 @@ We'll use plain text to create metadata and format our textbook projects. This w
 
 ## Textbook Metadata with YAML
 
-Textbooks need bibliographic metadata in order to be indexed by search engines and library catalogs. Lantern stores metadata about the textbook in a YAML file. YAML is a data serialization language, like [JSON](https://en.wikipedia.org/wiki/JSON) or [XML](https://en.wikipedia.org/wiki/XML), often used as a format for configuration settings. In this chapter you will learn all you need to know to use YAML for the purposes of creating open textbooks with Lantern. 
+Textbooks need bibliographic metadata in order to be indexed by search engines and library catalogs. Lantern stores metadata about the textbook in a [YAML](https://en.wikipedia.org/wiki/YAML) file. YAML is a data serialization language, like [JSON](https://en.wikipedia.org/wiki/JSON) or [XML](https://en.wikipedia.org/wiki/XML), often used as a format for configuration settings. In this chapter you will learn all you need to know to use YAML for the purposes of creating open textbooks with Lantern. 
 
 The information stored in YAML syntax will be used to fill the templates for each of the publication formats (e.g. HTML, PDF, etc.). Lantern includes a `metadata.yml` file (more on this later!) that is used to store all the data necessary to display this information (and more):
 
@@ -51,7 +51,7 @@ For example, the title for a textbook called "Theories of Relativity" would be e
 title: Theories of Relativity
 ```
 
-The key begins a new line in the YAML file and is separated by the value with a colon (`:`) and a space. The value can be a string, [with or without quotations](https://www.yaml.info/learn/quote.html) (quotations can be useful for capturing literal strings, especially if the string of text includes an apostrophe or other special character). YAML technically can store data types other than strings, but Lantern is mostly concerned with strings of text. 
+The key begins a new line in the YAML file and is separated by the value with a colon (`:`) and a space. The value can be a string, [with or without quotations](https://www.yaml.info/learn/quote.html) (quotations can be useful for capturing literal strings, especially if the string of text includes a colon, apostrophe, or other special character). YAML technically can store data types other than strings, but Lantern is mostly concerned with strings of text. 
 
 ### Multiple Value Metadata Fields
 
@@ -80,7 +80,7 @@ author:
         affiliation: Northwestern University
 ```
 
-Again, each item in the `author` list is distringuished by the hyphen (`-`). 
+Again, each item in the `author` list is distinguished by the hyphen (`-`). 
 
 ### Special Characters and Paragraphs
 

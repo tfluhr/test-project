@@ -598,7 +598,7 @@ Lantern includes several commands you can run in your terminal to make your text
 
 - `make textbook`: Does all of the above. 
 
-You can run these commands as often as you'd like. You can also start fresh by running the `make clean` command, which will delete the `public` folder. The `public` is indended to contain the textbook files in various formats so that you can share these files however you'd like, including by uploading these files to any web hosting services without any further editing or processing. 
+You can run these commands as often as you'd like. You can also start fresh by running the `make clean` command, which will delete the `public` folder. The `public` is intended to contain the textbook files in various formats so that you can share these files however you'd like, including by uploading these files to any web hosting services without any further editing or processing. 
 
 ## Uploading to a Web Server
 

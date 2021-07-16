@@ -1,6 +1,6 @@
 # Preparing Manuscripts
 
-If you're starting with Microsoft Word files, you'll need the ability to open the files and apply styles to chapter contents, such as headings. We recommend [Microsoft Word](https://www.microsoft.com/en-us/microsoft-365/word?rtc=1) as your word processor, but [Libre Office](https://www.libreoffice.org/) or [Google Docs](https://www.google.com/docs/about/) will also work. 
+If you're starting with `.docx` or `.odt` files, you'll need the ability to open the files and apply styles to chapter contents, such as headings. We recommend [Microsoft Word](https://www.microsoft.com/en-us/microsoft-365/word?rtc=1) because of it's popularity, but cost-free options like [Libre Office](https://www.libreoffice.org/) or [Google Docs](https://www.google.com/docs/about/) will also work. 
 
 ## File Naming and Organization
 
@@ -20,7 +20,7 @@ to some elements of your chapters before adding them to your project
 repository. Styles provide visual structure to the text, and they also
 add semantic elements on the backend that can be more easily converted
 into Markdown format. In addition, applying styles will help to make
-your final OER accessible to screen readers.
+your final OER accessible to everyone.
 
 Use styles for the following content types:
 

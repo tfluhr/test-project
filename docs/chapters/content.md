@@ -193,8 +193,6 @@ This line of text includes some HTML `<title>Title</title>` code.
 
 ## Math equations
 
-[Markdown+Math](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath): Preview LaTeX math equation rendering
-
 Lantern uses LaTeX to generate PDFs and [MathJax](https://www.mathjax.org/) to render mathematical equations in web browsers. Both of these processing engines use dollar signs for tagging mathematical notation:
 
 Inline math uses single dollar signs:
