@@ -1,0 +1,756 @@
+\documentclass{book}
+
+\title{Happy Maevis Davis and the Half-Eaten Forrest Preserve Pizza}
+\newcommand{\subtitle}{Subtitle}
+\newcommand{\booklicense}{\href{https://creativecommons.org/licenses/by/4.0/}{Attribution
+4.0 International (CC BY 4.0)}}
+
+% authors %
+\author{Tim Fluhr}
+\newcommand{\authoraffiliation}{}
+
+% Create convenient commands \booktitle and \bookauthor
+\makeatletter
+\newcommand{\booktitle}{\@title}
+\newcommand{\bookauthor}{\@author}
+\makeatother
+
+% This utf8 declaration is not needed for versions of latex > 2018 but may
+% be helpful for older software. Eventually it may not be worth keeping.
+%\usepackage[utf8]{inputenc}  
+
+\usepackage{amsmath} % Used by equations
+\usepackage{hyperref}
+% link options
+\hypersetup{
+  colorlinks=true,
+  linkcolor=purple,
+  urlcolor=purple,
+  pdftitle={Happy Maevis Davis and the Half-Eaten Forrest Preserve Pizza}
+}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{graphicx}
+% sets image width to text body width
+\setkeys{Gin}{width=\linewidth} 
+\usepackage{xcolor}
+\definecolor{purple}{HTML}{663399}
+
+% The following dimensions specify 4.75" X 7.5" content on 6 3/8" by 9 1/4"
+% paper. The paper width and height can be tweaked as required and the content
+% should size to fit within the margins accordingly.
+%
+% The (inside) bindingoffset should be larger for books with more pages. Some
+% standard recommended sizes are .375in minimum up to 1in for 600+ page books.
+% Sizes .75in and .875in are also recommended roughly at 150 and 400 pages.
+\usepackage[bindingoffset=1in,
+            left=1in, 
+            right=1in,
+            top=1in, 
+            bottom=1in,
+            paperwidth=8.27in, 
+            paperheight=11.69in]{geometry}
+% Here is an alternative geometry for reading on letter size paper:
+% \usepackage[margin=.75in, paperwidth=8.5in, paperheight=11in]{geometry}
+
+\renewcommand{\contentsname}{Contents} 
+
+% pandoc settings %
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\newenvironment{Shaded}{
+    \begin{center}
+    \begin{tabular}{|p{0.9\textwidth}|}
+    \hline\\
+    }
+    { 
+    \\\\\hline
+    \end{tabular} 
+    \end{center}
+}
+
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+% Content Starts Here
+\begin{document}
+\frontmatter
+
+% ---- Half Title Page ----
+% current geometry will be restored after title page
+\newgeometry{top=1.75in,bottom=.5in}
+\begin{titlepage}
+\begin{flushleft}
+
+% Title
+\textbf{\fontsize{48}{54}\selectfont Happy Maevis Davis and the Half-Eaten
+Forrest Preserve Pizza \\}
+\textbf{\large \textit{Subtitle}}
+
+% Draw a line 4pt high
+\par\noindent\rule{\textwidth}{4pt}\\
+
+% authors
+\begin{flushright}
+
+      \textbf{Tim Fluhr}, \emph{America U}\\
+  
+\end{flushright}
+
+% \vspace{\fill}
+\vspace{\fill}
+
+\end{flushleft}
+
+\begin{center}
+  %\includegraphics{booksvg.pdf}\\[4pt]
+  \fontfamily{lmtt}\small{Wet Dog Publishing Compay\\
+  Chicago, Il\\
+  https://example.com}
+\end{center}
+  
+\end{titlepage}
+\restoregeometry
+% ---- End of Half Title Page ----
+
+% Do not show page numbers on colophon page
+\thispagestyle{empty}
+
+\begin{flushleft}
+
+\textbf{Copyright \textcopyright{} 2021  The Authors\\
+License: \booklicense}\\[11pt] 
+
+\textbf{Exceptions} \\
+
+Except where otherwise noted, this book is licensed under a Attribution 4.0
+International (CC BY
+4.0). To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/
+
+The following material is excluded from the license: 
+
+\begin{itemize}
+    \item Chapter written under a different license
+    \item Image used with permission of the creator
+  \end{itemize}
+
+Chapter written under a different licenseImage used with permission of the
+creator
+
+For permissions beyond the scope of this license, visit https://example.com
+
+\vspace*{\fill}
+
+\begin{description}
+  \item[Recommended Citation] \hfill \\ {[}Fluhr, Tim. Happy Maevis Davis and
+the Half-Eaten Forrest Preserve Pizza. Chicago: Wet Dog Publishing Company,
+2021.{]}
+  \item[Publisher] \hfill \\ Wet Dog Publishing Compay, Chicago, Il
+  \item[Date] \hfill \\ 2021
+    \item[Website] \hfill \\ https://littlecaesars.com/en-us/
+      \item[ISBN] \hfill \\ 141515115 pbk.
+      \item[eISBN] \hfill \\ 4621411515
+      \item[DOI] \hfill \\ \href{https://doi.org/10.1000/xyz123}{10.1000/xyz123}
+    \item[Subjects] \hfill \\ Maevis Davis, Little Ceasar's, Joy
+  \item[keywords] \hfill \\ Pizza, Dog, Forrest Preserve
+    \item[Contributors] \hfill \\ Maevis Davis, Little Ceasar's Pizza
+  
+\end{description}
+
+\textbf{Disclaimer} \\
+  Use this space to add any legal disclaimers about the book.
+
+\vspace*{\fill}
+
+This book was typeset using \LaTeX{} software and processed with \href{https://pandoc.org}{Pandoc} using the \href{http://lantern.northwestern.pub}{Lantern} publishing workflow.\\
+
+\end{flushleft}
+
+% A title page resets the page # to 1, but the second title page
+% was actually page 3. So add two to page counter.
+\addtocounter{page}{2}
+
+% The asterisk excludes chapter from the table of contents.
+\chapter*{About this Book}
+One day Maevis the dog was walking in the forrest preserve and found a
+treasure. It was a half eaten Little Ceasar's Pizza.
+
+% Three-level Table of Contents
+\setcounter{tocdepth}{3}
+\tableofcontents
+
+\mainmatter
+
+\textbf{Preface}
+
+This work is in the public domain. Therefore, it can be copied and reproduced
+without limitation.
+
+This first chapter begins by discussing what statistics are and why the study
+of statistics is important. Subsequent sections cover a variety of topics all
+basic to the study of statistics. One theme common to all of these sections is
+that they cover concepts and ideas important for other chapters in the book.
+
+\hypertarget{introduction-to-vegetable-lasagna}{%
+\chapter{Introduction to Vegetable
+Lasagna}\label{introduction-to-vegetable-lasagna}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{First Author}, \emph{Affiliation}
+\item
+  \textbf{Second Author}, \emph{Affiliation}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{Learning Objectives}
+
+\begin{itemize}
+\tightlist
+\item
+  Objective
+\item
+  Objective
+\item
+  Objective
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+Soup cranberry spritzer edamame hummus figs tomato and basil Bolivian rainbow
+pepper chili pepper vine tomatoes ultimate avocado dressing drizzle summer
+fruit salad. Peanut butter crunch coconut dill plums morning smoothie bowl
+strawberries spiced peppermint blast crunchy seaweed mangos green tea. Eating
+together dark chocolate pine nuts red curry tofu noodles lychee chocolate
+cookie red amazon pepper orange mediterranean luxury bowl hearts of palm
+Italian linguine puttanesca lemon tahini dressing picnic salad walnut mushroom
+tart almonds pumpkin.
+
+\hypertarget{tbl:variables}{}
+\begin{longtable}[]{@{}lll@{}}
+\caption{\label{tbl:variables}This is an example table.}\tabularnewline
+\toprule
+Variable & Abbreviation & Definition \\
+\midrule
+\endfirsthead
+\toprule
+Variable & Abbreviation & Definition \\
+\midrule
+\endhead
+\(n\) & AAA & thing \\
+\(x\) & BBB & thing \\
+\(1\) & CCC & thing \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{math}{%
+\section{Math}\label{math}}
+
+\emph{Courtesy of \href{https://www.mathjax.org/\#samples}{MathJax}}
+
+The Quadratic Formula:
+
+\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
+
+Cauchy's Integral Formula:
+
+\[f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz\]
+
+Standard Deviation:
+
+\[\sigma = \sqrt{ \frac{1}{N} \sum_{i=1}^N (x_i -\mu)^2}\]
+
+\hypertarget{bibiliographic-references}{%
+\subsection{Bibiliographic References}\label{bibiliographic-references}}
+
+Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette
+tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato.
+Dandelion cucumber earthnut pea peanut soko zucchini {[}@lantern{]}.
+
+Soup cranberry spritzer edamame hummus figs tomato and basil Bolivian rainbow
+pepper chili pepper vine tomatoes ultimate avocado dressing drizzle summer
+fruit salad. Peanut butter crunch coconut dill plums morning smoothie bowl
+strawberries spiced peppermint blast crunchy seaweed mangos green tea. Eating
+together dark chocolate pine nuts red curry tofu noodles lychee chocolate
+cookie red amazon pepper orange mediterranean luxury bowl hearts of palm
+Italian linguine puttanesca lemon tahini dressing picnic salad walnut mushroom
+tart almonds pumpkin.
+
+\hypertarget{figure-images}{%
+\section{Figure Images}\label{figure-images}}
+
+This is the first subsection. Please, admire the gloriousnes of this graph:
+
+\begin{figure}
+\hypertarget{fig:graph}{%
+\centering
+\includegraphics{graph.png}
+\caption{A cool graph}\label{fig:graph}
+}
+\end{figure}
+
+\hypertarget{tables}{%
+\section{Tables}\label{tables}}
+
+Tables need to be finalized \emph{before} they are formatted in Markdown. It
+is recommended to use a
+\href{https://www.tablesgenerator.com/markdown_tables}{Markdown table
+generator}, rather than formatting tables in Markdown by hand. Some Markdown
+table generators will allow you to
+\href{https://jakebathman.github.io/Markdown-Table-Generator/}{import tables
+created in Excel or CSV formats}.
+
+\begin{longtable}[]{@{}ll@{}}
+\caption{This is an example table.}\tabularnewline
+\toprule
+Index & Name \\
+\midrule
+\endfirsthead
+\toprule
+Index & Name \\
+\midrule
+\endhead
+0 & AAA \\
+1 & BBB \\
+2 & CCC \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{more-elements}{%
+\section{More Elements}\label{more-elements}}
+
+\hypertarget{math-1}{%
+\subsection{Math}\label{math-1}}
+
+Formula example: \(\mu = \sum_{i=0}^{N} \frac{x_i}{N}\)
+
+Now, full size (with an equation label):
+
+\begin{equation}\protect\hypertarget{eq:equation}{}{\mu = \sum_{i=0}^{N} \frac{x_i}{N}}\label{eq:equation}\end{equation}
+
+\hypertarget{code}{%
+\subsection{Code}\label{code}}
+
+And a code sample:
+
+\begin{verbatim}
+def hello_world
+  puts "hello world!"
+end
+
+hello_world
+\end{verbatim}
+
+Check these unicode characters: ǽß¢ð€đŋμ
+
+\hypertarget{example-chapter}{%
+\chapter{Example Chapter}\label{example-chapter}}
+
+\textbf{Author} \emph{Affiliation} Email:
+\href{mailto:email@domain.edu}{\nolinkurl{email@domain.edu}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{Learning Objectives}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  item
+\item
+  item
+\item
+  item
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{introduction-1}{%
+\section{Introduction}\label{introduction-1}}
+
+Soup cranberry spritzer edamame hummus figs tomato and basil Bolivian rainbow
+pepper chili pepper vine tomatoes ultimate avocado dressing drizzle summer
+fruit salad. Peanut butter crunch coconut dill plums morning smoothie bowl
+strawberries spiced peppermint blast crunchy seaweed mangos green tea. Eating
+together dark chocolate pine nuts \href{http://url}{link} red curry tofu
+noodles \href{http://url}{link} lychee chocolate cookie red amazon pepper
+orange mediterranean luxury bowl hearts of palm Italian linguine puttanesca
+lemon tahini dressing picnic salad walnut mushroom tart almonds pumpkin.
+
+\hypertarget{subsection}{%
+\subsection{Subsection}\label{subsection}}
+
+Cumin blueberry chia seed jam raspberry fizz banana bread blueberries red
+pepper ghost pepper banh mi salad rolls crispy peppermint walnut pesto tart
+sweet potato apricot. Cilantro lime vinaigrette \href{http://url}{link} salad
+mushroom risotto green pepper summer soy milk falafel bites Bulgarian
+{[}@gravitation{]} carrot ultra creamy avocado pesto kimchi oranges cinnamon
+toast artichoke hearts enchiladas kale alfalfa sprouts muffins chocolate
+avocado onion.
+
+Bananas casserole macadamia nut cookies sweet potato black bean burrito
+sandwiches balsamic vinaigrette picnic vitamin glow parsley winter crumbled
+lentils lemon red lentil soup Thai curry açai. Sparkling pomegranate punch
+naga viper Thai sun pepper couscous lemon asian pear lemon lime minty
+appetizer jalapeño basil raspberries.
+
+\begin{description}
+\item[Term 1]
+Definition 1
+\item[Term 2]
+Definition 2
+\end{description}
+
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
+
+Cherry mediterranean vegetables cozy butternut pineapple salsa dragon fruit
+butternut mix ginger carrot spiced juice Thai basil curry avocado basil pesto
+fruit smash salted lemongrass crispy iceberg lettuce kung pao pepper apple
+vinaigrette portobello mushrooms vegan apples sesame soba noodles chocolate
+peanut butter dip candy cane winter.
+
+\begin{itemize}
+\tightlist
+\item
+  cool Thai super
+\item
+  chili maple orange
+\item
+  tempeh basmati
+\end{itemize}
+
+Scotch bonnet pepper Malaysian ginger lemongrass agave green tea entree
+shallots chia seeds spring peaches tempeh veggie burgers cool cucumbers
+overflowing cilantro cherry bomb cocoa a delicious meal creamy cauliflower
+alfredo sauce.
+
+\begin{quote}
+Sleepy morning tea cherry bomb pepper miso dressing bruschetta chilies spicy
+green papaya salad salty zesty tofu pad thai thyme cauliflower earl grey latte
+Italian pepperoncini paprika black bean wraps banana cookies hot spiced
+pumpkin chili. Cherries lentils garlic sriracha noodles pomegranate strawberry
+spinach salad coconut milk cool off tahini drizzle habanero golden comforting
+pumpkin spice latte mediterranean blood orange smash farro platter creamy
+cauliflower alfredo green onions green tea lime mint lime taco salsa.
+\end{quote}
+
+\hypertarget{cross-references}{%
+\subsection{Cross references}\label{cross-references}}
+
+These cross references are disabled by default. To enable them, check the
+\emph{\href{https://github.com/wikiti/pandoc-book-template\#cross-references}{Cross
+references}} section on the README.md file.
+
+Here's a list of cross references:
+
+\begin{itemize}
+\tightlist
+\item
+  Check fig.~\ref{fig:graph}.
+\item
+  Check tbl.~\ref{tbl:variables}.
+\item
+  Check eq.~\ref{eq:equation}.
+\end{itemize}
+
+\hypertarget{probability}{%
+\chapter{Probability}\label{probability}}
+
+\emph{Author(s)}
+
+Dan Osherson
+
+\emph{Prerequisites}
+
+None
+
+\textbf{Learning Objectives}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Define symmetrical outcomes
+\item
+  Distinguish between frequentist and subjective approaches
+\item
+  Determine whether the frequentist or subjective approach is better suited
+  for a given situation
+\end{enumerate}
+
+\hypertarget{introduction-to-probability-standard}{%
+\section{Introduction to Probability
+Standard}\label{introduction-to-probability-standard}}
+
+\textbf{Inferential statistics}\footnote{The branch of statistics concerned
+  with drawing conclusions about a
+  \href{https://onlinestatbook.com/2/glossary/population.html}{\underline{population}}
+  from a
+  \href{https://onlinestatbook.com/2/glossary/sample.html}{\underline{sample}}.
+  This is generally done through
+  \href{https://onlinestatbook.com/2/glossary/random_sampling.html}{\underline{random
+  sampling}}, followed by
+  \href{https://onlinestatbook.com/2/glossary/inference.html}{\underline{inferences}}
+  made about
+  \href{https://onlinestatbook.com/2/glossary/center(distribution).html}{\underline{central
+  tendency}}, or any of a number of other aspects of a
+  \href{https://onlinestatbook.com/2/glossary/distribution.html}{\underline{distribution}}.}
+is built on the foundation of probability theory, and has been remarkably
+successful in guiding opinion about the conclusions to be drawn from data. Yet
+(paradoxically) the very idea of probability has been plagued by controversy
+from the beginning of the subject to the present day. In this section we
+provide a glimpse of the debate about the interpretation of the probability
+concept.
+
+One conception of probability is drawn from the idea of \textbf{symmetrical
+outcomes}. For example, the two possible outcomes of tossing a fair coin seem
+not to be distinguishable in any way that affects which side will land up or
+down. Therefore the probability of heads is taken to be 1/2, as is the
+probability of tails. In general, if there are N symmetrical outcomes, the
+probability of any given one of them occurring is taken to be 1/N. Thus, if a
+six-sided die is rolled, the probability of any one of the six sides coming up
+is 1/6.
+
+Probabilities can also be thought of in terms of \textbf{relative
+frequencies}. If we tossed a coin millions of times, we would expect the
+proportion of tosses that came up heads to be pretty close to 1/2. As the
+number of tosses increases, the proportion of heads approaches 1/2. Therefore,
+we can say that the probability of a head is 1/2.
+
+If it has rained in Seattle on 62\% of the last 100,000 days, then the
+probability of it raining tomorrow might be taken to be 0.62. This is a
+natural idea but nonetheless unreasonable if we have further information
+relevant to whether it will rain tomorrow. For example, if tomorrow is August
+1, a day of the year on which it seldom rains in Seattle, we should only
+consider the percentage of the time it rained on August 1. But even this is
+not enough since the probability of rain on the next August 1 depends on the
+humidity. (The chances are higher in the presence of high humidity.) So, we
+should consult only the prior occurrences of August 1 that had the same
+humidity as the next occurrence of August 1. Of course, wind direction also
+affects probability ... You can see that our sample of prior cases will soon
+be reduced to the empty set. Anyway, past meteorological history is misleading
+if the climate is changing.
+
+\hypertarget{review-questions}{%
+\subsection{Review Questions}\label{review-questions}}
+
+\textbf{Select all that apply. Probability can be thought of as:}
+
+\begin{itemize}
+\item
+  symmetrical outcomes
+\item
+  relative frequencies
+\item
+  subjective
+\end{itemize}
+
+\textbf{The paper says there is an 80\% chance of rain today, so you plan
+indoor activities. Then it doesn't rain. Was the forecast wrong?}
+
+\begin{itemize}
+\item
+  yes
+\item
+  no
+\end{itemize}
+
+\hypertarget{binomial-distribution}{%
+\chapter{Binomial Distribution}\label{binomial-distribution}}
+
+\emph{Author(s)}
+
+David M. Lane
+
+\emph{Prerequisites}
+
+Distributions, Basic Probability, Variability
+
+\textbf{Learning Objectives}
+
+\begin{quote}
+1. Define binomial outcomes
+
+2. Compute the probability of getting X successes in N trials
+
+3. Compute cumulative binomial probabilities
+
+4. Find the mean and standard deviation of a binomial distribution
+\end{quote}
+
+When you flip a coin, there are two possible outcomes: heads and tails. Each
+outcome has a fixed probability, the same from trial to trial. In the case of
+coins, heads and tails each have the same probability of 1/2. More generally,
+there are situations in which the coin is biased, so that heads and tails have
+different probabilities. In the present section, we consider probability
+distributions for which there are just two possible outcomes with fixed
+probabilities summing to one. These distributions are called binomial
+distributions.
+
+\hypertarget{a-simple-example}{%
+\section{A Simple Example}\label{a-simple-example}}
+
+The four possible outcomes that could occur if you flipped a coin twice are
+listed below in Table 1. Note that the four outcomes are equally likely: each
+has probability 1/4. To see this, note that the tosses of the coin are
+independent (neither affects the other). Hence, the probability of a head on
+Flip 1 and a head on Flip 2 is the product of P(H) and P(H), which is 1/2 x
+1/2 = 1/4. The same calculation applies to the probability of a head on Flip 1
+and a tail on Flip 2. Each is 1/2 x 1/2 = 1/4.
+
+Table 1. Four Possible Outcomes.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.28}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.28}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.36}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Outcome
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+First Flip
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Second Flip
+\end{minipage} \\
+\midrule
+\endhead
+1 & Heads & Heads \\
+2 & Heads & Tails \\
+3 & Tails & Heads \\
+4 & Tails & Tails \\
+\bottomrule
+\end{longtable}
+
+The four possible outcomes can be classified in terms of the number of heads
+that come up. The number could be two (Outcome 1), one (Outcomes 2 and 3) or 0
+(Outcome 4). The probabilities of these possibilities are shown in Table 2 and
+in Figure 1. Since two of the outcomes represent the case in which just one
+head appears in the two tosses, the probability of this event is equal to 1/4
++ 1/4 = 1/2. Table 2 summarizes the situation.
+
+Table 2. Probabilities of Getting 0, 1, or 2 Heads.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.55}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.37}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Number of Heads
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Probability
+\end{minipage} \\
+\midrule
+\endhead
+0 & 1/4 \\
+1 & 1/2 \\
+2 & 1/4 \\
+\bottomrule
+\end{longtable}
+
+\includegraphics[width=4.92708in,height=3.51042in]{assets/images/media/image1.png}
+
+Figure 1. Probabilities of 0, 1, and 2 heads.
+
+Figure 1 is a discrete probability distribution: It shows the probability for
+each of the values on the X-axis. Defining a head as a "success," Figure 1
+shows the probability of 0, 1, and 2 successes for two trials (flips) for an
+event that has a probability of 0.5 of being a success on each trial. This
+makes Figure 1 an example of a binomial distribution.
+
+\hypertarget{the-formula-for-binomial-probabilities}{%
+\section{The Formula for Binomial
+Probabilities}\label{the-formula-for-binomial-probabilities}}
+
+The binomial distribution consists of the probabilities of each of the
+possible numbers of successes on N trials for independent events that each
+have a probability of π (the Greek letter pi) of occurring. For the coin flip
+example, N = 2 and π = 0.5. The formula for the binomial distribution is shown
+below:
+
+where P(x) is the probability of x successes out of N trials, N is the number
+of trials, and π is the probability of success on a given trial. Applying this
+to the coin flip example,
+
+If you flip a coin twice, what is the probability of getting one or more
+heads? Since the probability of getting exactly one head is 0.50 and the
+probability of getting exactly two heads is 0.25, the probability of getting
+one or more heads is 0.50 + 0.25 = 0.75.
+
+Now suppose that the coin is biased. The probability of heads is only 0.4.
+What is the probability of getting heads at least once in two tosses?
+Substituting into the general formula above, you should obtain the answer .64.
+
+\hypertarget{mean-and-standard-deviation-of-binomial-distributions}{%
+\section{Mean and Standard Deviation of Binomial
+Distributions}\label{mean-and-standard-deviation-of-binomial-distributions}}
+
+Consider a coin-tossing experiment in which you tossed a coin 12 times and
+recorded the number of heads. If you performed this experiment over and over
+again, what would the mean number of heads be? On average, you would expect
+half the coin tosses to come up heads. Therefore the mean number of heads
+would be 6. In general, the mean of a binomial distribution with parameters N
+(the number of trials) and π (the probability of success on each trial) is:
+
+μ = Nπ
+
+where μ is the mean of the binomial distribution. The variance of the binomial
+distribution is:
+
+σ\textsuperscript{2} = Nπ(1-π)
+
+where σ\textsuperscript{2} is the variance of the binomial distribution.
+
+Let's return to the coin-tossing experiment. The coin was tossed 12 times, so
+N = 12. A coin has a probability of 0.5 of coming up heads. Therefore, π =
+0.5. The mean and variance can therefore be computed as follows:
+
+μ = Nπ = (12)(0.5) = 6
+
+σ\textsuperscript{2} = Nπ(1-π) = (12)(0.5)(1.0 - 0.5) = 3.0.
+
+Naturally, the standard deviation (σ) is the square root of the variance
+(σ\textsuperscript{2}).
+
+\hypertarget{bibliography}{%
+\chapter*{References}\label{bibliography}}
+\addcontentsline{toc}{chapter}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-lantern}{}}%
+Diaz, Chris. 2021. {``Lantern.''} Northwestern University Libraries.
+
+\end{CSLReferences}
+
+\backmatter
+\end{document}
