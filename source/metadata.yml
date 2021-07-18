@@ -1,37 +1,36 @@
 # textbook information
 
-title: Title
+title: Happy Maevis Davis and the Half-Eaten Forrest Preserve Pizza
 subtitle: Subtitle
 
 author:
-  - name: First Author
-    affiliation: College
-  - name: Second Author
-    affiliation: University
+  - name: Tim Fluhr
+    affiliation: America U
+#  - name: Second Author
+#    affiliation: University
 
 contributor:
-  - Research Assistant
-  - Research Assistant
+  - Maevis Davis
+  - Little Ceasar's Pizza
 
 publication-year: 2021
 doi: 10.1000/xyz123
-isbn-p: something
-isbn-e: something
-website: seomthing
+isbn-p: 141515115
+isbn-e: 4621411515
+website: https://littlecaesars.com/en-us/
 
 keywords:
-  - keyword
-  - keyword
-  - keyword
+  - Pizza
+  - Dog
+  - Forrest Preserve
 
 subjects: 
-  - Subject
-  - Subject
-  - Subject
+  - Maevis Davis
+  - Little Ceasar's
+  - Joy
 
 description: |
-  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-
+  One day Maevis the dog was walking in the forrest preserve and found a treasure.  It was a half eaten Little Ceasar's Pizza.
 # this sets the language attribute for html and epub outpus
 # see https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang for more info
 lang: en-us 
@@ -47,14 +46,14 @@ copyright:
   license: Attribution 4.0 International (CC BY 4.0) 
   license-uri: https://creativecommons.org/licenses/by/4.0/
   attribution: |
-    [Lastname, Firstname. Title of Book. Place of publication: Publisher, Year of publication.]
+    [Fluhr, Tim. Happy Maevis Davis and the Half-Eaten Forrest Preserve Pizza. Chicago: Wet Dog Publishing Company, 2021.]
   exceptions:    
     - Chapter written under a different license
     - Image used with permission of the creator
 
 publisher:
-  name: Publishing Organization
-  location: City, State
+  name: Wet Dog Publishing Compay
+  location: Chicago, Il
   website: https://example.com
   disclaimer: |
     Use this space to add any legal disclaimers about the book.
